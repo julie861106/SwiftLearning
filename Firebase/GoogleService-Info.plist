@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>378953120554-5j6d05b863babe627j5mvn9pjikure74.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.378953120554-5j6d05b863babe627j5mvn9pjikure74</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDl988BDBAK5fvtZ7Xk0c5CwPsNN8RhWKU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>378953120554</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>dinglinlin</string>
+	<key>PROJECT_ID</key>
+	<string>joke-your-name</string>
+	<key>STORAGE_BUCKET</key>
+	<string>joke-your-name.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:378953120554:ios:4c4bc70fbc922e50</string>
+	<key>DATABASE_URL</key>
+	<string>https://joke-your-name.firebaseio.com</string>
+</dict>
+</plist>
