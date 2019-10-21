@@ -34,6 +34,7 @@
 		A3A6CB6323432ACC00A3973D /* Helper3TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A6CB6223432ACC00A3973D /* Helper3TableViewController.swift */; };
 		A3B5CA6E2338D8DC00B5612C /* RecommendTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B5CA6D2338D8DC00B5612C /* RecommendTableViewController.swift */; };
 		A3C1493F2292C55D003672E9 /* ProductPage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A3C1493D2292C55D003672E9 /* ProductPage.xcdatamodeld */; };
+		A3DCD6C4235CC0B30047716F /* ProductDetail2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DCD6C3235CC0B30047716F /* ProductDetail2ViewController.swift */; };
 		A3E5A3F2228154CA00A76CB5 /* RoundedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E5A3F1228154CA00A76CB5 /* RoundedTextField.swift */; };
 		A3E5A3F422815B5000A76CB5 /* NewProductTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E5A3F322815B5000A76CB5 /* NewProductTableViewController.swift */; };
 		A3F3043A22672F5F00BBF2B6 /* ProductDetailSeparatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F3043922672F5F00BBF2B6 /* ProductDetailSeparatorCell.swift */; };
@@ -72,6 +73,7 @@
 		A3A6CB6223432ACC00A3973D /* Helper3TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper3TableViewController.swift; sourceTree = "<group>"; };
 		A3B5CA6D2338D8DC00B5612C /* RecommendTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendTableViewController.swift; sourceTree = "<group>"; };
 		A3C1493E2292C55D003672E9 /* ProductPage.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ProductPage.xcdatamodel; sourceTree = "<group>"; };
+		A3DCD6C3235CC0B30047716F /* ProductDetail2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetail2ViewController.swift; sourceTree = "<group>"; };
 		A3E5A3F1228154CA00A76CB5 /* RoundedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextField.swift; sourceTree = "<group>"; };
 		A3E5A3F322815B5000A76CB5 /* NewProductTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProductTableViewController.swift; sourceTree = "<group>"; };
 		A3F3043922672F5F00BBF2B6 /* ProductDetailSeparatorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailSeparatorCell.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 			children = (
 				A3404786225C806E003E77E9 /* ProductTableViewController.swift */,
 				A3404788225C80A3003E77E9 /* ProductDetailViewController.swift */,
+				A3DCD6C3235CC0B30047716F /* ProductDetail2ViewController.swift */,
 				A3F3043F22675E3000BBF2B6 /* ProductRecommendViewController.swift */,
 				A37BE4B4228070D3005FC25A /* ReviewViewController.swift */,
 				A3E5A3F322815B5000A76CB5 /* NewProductTableViewController.swift */,
@@ -291,6 +294,7 @@
 				A340478B225C828D003E77E9 /* AppDelegate.swift in Sources */,
 				A3404785225C8036003E77E9 /* ProductTableViewCell.swift in Sources */,
 				A3F3043A22672F5F00BBF2B6 /* ProductDetailSeparatorCell.swift in Sources */,
+				A3DCD6C4235CC0B30047716F /* ProductDetail2ViewController.swift in Sources */,
 				A3A6CB5D2343253400A3973D /* Helper2TableViewController.swift in Sources */,
 				A3E5A3F2228154CA00A76CB5 /* RoundedTextField.swift in Sources */,
 				A3F3043C22672FDC00BBF2B6 /* ProductDetailMapCell.swift in Sources */,

@@ -10,7 +10,8 @@ import UIKit
 
 class Helper3TableViewController: UITableViewController {
 
-    var options3 = ["123", "23", "4", "1234"]
+    var options3 = ["Ｑ：你這頓飯的目的是什麼呢？", "單純吃飽", "與另一半約會", "與家人、朋友聚餐", "其他"]
+//    var options3 = ["123", "23", "4", "1234"]
     
     override func viewDidLoad() {
         super.viewDidLoad()

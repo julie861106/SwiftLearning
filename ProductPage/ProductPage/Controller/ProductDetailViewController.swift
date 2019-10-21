@@ -83,6 +83,8 @@ class ProductDetailViewController: UIViewController, UITableViewDelegate, UITabl
         
         navigationItem.largeTitleDisplayMode = .never
         
+        
+        
         // Configure the table view
         tableView.delegate = self
         tableView.dataSource = self
@@ -155,6 +157,19 @@ class ProductDetailViewController: UIViewController, UITableViewDelegate, UITabl
             if let rating = segue.identifier {
                 self.product.rating = rating
                 self.headerView.ratingImageView.image = UIImage(named: rating)
+                
+                // 獲取當前時間
+                let now = Date()
+                
+                // 創建一個日期格式器
+                let dformatter = DateFormatter()
+                dformatter.dateFormat = "yyyy年MM月dd日 HH:mm:ss"
+                print("日期時間：\(dformatter.string(from: now))")
+                
+                //當前時間的時間戳
+                let timeInterval:TimeInterval = now.timeIntervalSince1970
+                let timeStamp = Int(timeInterval)
+                print("時間戳：\(timeStamp)")
                 
                 if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
                     appDelegate.saveContext()

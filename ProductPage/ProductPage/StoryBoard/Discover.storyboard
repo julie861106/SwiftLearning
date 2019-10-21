@@ -92,7 +92,16 @@
                             <outlet property="delegate" destination="AnA-gS-X8g" id="2pw-rT-WtN"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Recommend" id="qBA-kM-jhj"/>
+                    <navigationItem key="navigationItem" title="Recommend" id="qBA-kM-jhj">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="VeN-ws-JB2">
+                            <connections>
+                                <action selector="reloadButton:" destination="AnA-gS-X8g" id="4sv-Rf-REF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="recommendTableView" destination="hMO-w4-hqE" id="7xN-5i-nRb"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E85-GP-cod" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

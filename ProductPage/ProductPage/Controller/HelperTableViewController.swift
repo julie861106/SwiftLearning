@@ -10,7 +10,11 @@ import UIKit
 
 class HelperTableViewController: UITableViewController{
     
-    var options = ["白色", "紅色", "綠色", "藍色", "黑色"]
+//    @IBOutlet weak var question: UILabel!
+    
+    var options = ["Ｑ：想叫外賣還是自己出門買？", "叫外賣", "自己出門買"]
+//    var options = ["Ｑ：很餓嗎？還是嘴饞呢？", "嘴饞而已", "小餓", "非常餓"]
+//    var options = ["Ｑ：你這頓飯的目的是什麼呢？", "單純吃飽", "與另一半約會", "與家人、朋友聚餐", "其他"]
 
     override func viewDidLoad() {
         super.viewDidLoad()

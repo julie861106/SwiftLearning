@@ -8,8 +8,10 @@
 
 import UIKit
 import CoreData
+import MapKit
+import CoreLocation
 
-class ProductTableViewController: UITableViewController, NSFetchedResultsControllerDelegate, UISearchResultsUpdating {
+class ProductTableViewController: UITableViewController, NSFetchedResultsControllerDelegate, MKMapViewDelegate, CLLocationManagerDelegate, UISearchResultsUpdating {
     
     var products:[ProductMO] = []
     var searchResults: [ProductMO] = []
@@ -31,13 +33,16 @@ class ProductTableViewController: UITableViewController, NSFetchedResultsControl
     //    var productIsLiked = Array(repeating: false, count: 10)
     
     
-    
+    // 1.創建一份 locationManager 對象，用於偵測用戶位置的變化
+    let locationManager = CLLocationManager()
 
     
     // MARK: - 視圖控制器生命週期
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        locationManager.delegate = self;
+        locationManager.distanceFilter = kCLLocationAccuracyNearestTenMeters;
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest;
 //        //action test
 //        let twitterImage = UIImage(named: "twitter_icon.png")!
 //        let plusImage = UIImage(named: "googleplus_icon.png")!
@@ -164,6 +169,25 @@ class ProductTableViewController: UITableViewController, NSFetchedResultsControl
         
     }
     
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // 1. 還沒有詢問過用戶以獲得權限
+        if CLLocationManager.authorizationStatus() == .notDetermined {
+            locationManager.requestAlwaysAuthorization()
+        }
+//            // 2. 用戶不同意
+//        else if CLLocationManager.authorizationStatus() == .denied {
+//            showAlert("Location services were previously denied. Please enable location services for this app in Settings.")
+//        }
+            // 3. 用戶已經同意
+        else if CLLocationManager.authorizationStatus() == .authorizedAlways {
+            locationManager.startUpdatingLocation()
+        }
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -174,6 +198,8 @@ class ProductTableViewController: UITableViewController, NSFetchedResultsControl
         super.didReceiveMemoryWarning()
         //處理可以重建的資源
     }
+    
+    
     
     
     // MARK: - UITableViewDataSource協定
@@ -308,12 +334,34 @@ class ProductTableViewController: UITableViewController, NSFetchedResultsControl
             self.products[indexPath.row].isLiked = (self.products[indexPath.row].isLiked) ? false : true
             productCell.heartImageView.isHidden = self.products[indexPath.row].isLiked ? false : true
             completionHandler(true)
+            if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+                appDelegate.saveContext()
+            }
         }
 
         likeAction.backgroundColor = UIColor(red: 39.0/255.0, green: 174.0/255.0, blue: 96.0/255.0, alpha: 1.0)
         likeAction.image = self.products[indexPath.row].isLiked ? UIImage(named: "undo") : UIImage(named: "tick")
 
         let swipeConfiguration = UISwipeActionsConfiguration(actions: [likeAction])
+        
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate){
+            appDelegate.saveContext()
+        }
+        
+        
+        
+        // 獲取當前時間
+        let now = Date()
+        
+        // 創建一個日期格式器
+        let dformatter = DateFormatter()
+        dformatter.dateFormat = "yyyy年MM月dd日 HH:mm:ss"
+        print("日期時間：\(dformatter.string(from: now))")
+        
+        //當前時間的時間戳
+        let timeInterval:TimeInterval = now.timeIntervalSince1970
+        let timeStamp = Int(timeInterval)
+        print("時間戳：\(timeStamp)")
 
         return swipeConfiguration
         
@@ -326,6 +374,26 @@ class ProductTableViewController: UITableViewController, NSFetchedResultsControl
             return true
         }
     }
+    
+//    //選取cell
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        
+//        let name = products[indexPath.row].name
+//        print("選擇的是 \(String(describing: name))")
+//        
+//        // 獲取當前時間
+//        let now = Date()
+//        
+//        // 創建一個日期格式器
+//        let dformatter = DateFormatter()
+//        dformatter.dateFormat = "yyyy年MM月dd日 HH:mm:ss"
+//        print("日期時間：\(dformatter.string(from: now))")
+//        
+//        //當前時間的時間戳
+//        let timeInterval:TimeInterval = now.timeIntervalSince1970
+//        let timeStamp = Int(timeInterval)
+//        print("時間戳：\(timeStamp)")
+//    }
     
     // MARK: - Navigation
     
@@ -373,16 +441,21 @@ class ProductTableViewController: UITableViewController, NSFetchedResultsControl
     //    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showProductDetail" {
+            
+            
             if let indexPath = tableView.indexPathForSelectedRow {
                 let destinationController = segue.destination as! ProductDetailViewController
                 
                 //轉給下一頁
                 destinationController.product = (searchController.isActive) ? searchResults[indexPath.row]:products[indexPath.row]
+                
 //                destinationController.product = products[indexPath.row]
                 //                destinationController.productImageViewName = str02_product_image[indexPath.row]
                 //                destinationController.productName = str02_product_name[indexPath.row]
                 //                destinationController.productStore = str02_store_name
                 //                destinationController.productType = str02_store_type
+                
+                
             }
         }
     }
