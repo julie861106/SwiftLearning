@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 
+//favorite
 class RecommendTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     //temp
     var productsT:[ProductMO] = []
@@ -18,6 +19,10 @@ class RecommendTableViewController: UITableViewController, NSFetchedResultsContr
     @IBOutlet var recommendTableView: UITableView!
     
     @IBAction func reloadButton(_ sender: Any) {
+        self.tableView.reloadData()
+        self.tableView.beginUpdates()
+        self.tableView.endUpdates()
+        print("OK")
         tableGenerate()
     }
     
@@ -43,6 +48,7 @@ class RecommendTableViewController: UITableViewController, NSFetchedResultsContr
                 }
             } catch {
                 print(error)
+                print("error occure")
             }
         }
         
@@ -99,6 +105,7 @@ class RecommendTableViewController: UITableViewController, NSFetchedResultsContr
                 }
             } catch {
                 print(error)
+                print("error here here")
             }
         }
         
@@ -137,15 +144,14 @@ class RecommendTableViewController: UITableViewController, NSFetchedResultsContr
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("WillAppear")
-        productsT.removeAll()
+        productsT.removeAll() //here
         //從CoreData取資料
         let fetchRequest: NSFetchRequest<ProductMO> = ProductMO.fetchRequest()
         let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
-        tableView.reloadData()
+        //tableView.reloadData()
         if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
             let context = appDelegate.persistentContainer.viewContext
-            
             fetchResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
             fetchResultController.delegate = self
             
@@ -161,7 +167,7 @@ class RecommendTableViewController: UITableViewController, NSFetchedResultsContr
         
         
         likedResults.removeAll()
-        recommendTableView.reloadData()
+        //recommendTableView.reloadData()
         
         for i in 0...productsT.count-1{
             if productsT[i].isLiked == true{
@@ -169,9 +175,9 @@ class RecommendTableViewController: UITableViewController, NSFetchedResultsContr
             }
         }
         print("likedResults.count：\(likedResults.count)")
-        
-        
-        recommendTableView.reloadData()
+        print("like result\(likedResults)")
+        //recommendTableView.reloadData()
+        //print("recommendTableView.reloadData()\(recommendTableView.reloadData())")
         
         
         
@@ -206,7 +212,7 @@ class RecommendTableViewController: UITableViewController, NSFetchedResultsContr
         // #warning Incomplete implementation, return the number of rows
         //        return str02_product_name.count
 
-        print(likedResults.count)
+        print("likedResults.count numberOfRowsInSection：\(likedResults.count)")
         return likedResults.count
         //temp
 //        return productsT.count
@@ -219,6 +225,7 @@ class RecommendTableViewController: UITableViewController, NSFetchedResultsContr
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cellIdentifier = "RecommendCell"
+        print("bug")
         let recommendCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)as!ProductTableViewCell
         
 //        for i in 0...productsT.count-1{
@@ -231,7 +238,7 @@ class RecommendTableViewController: UITableViewController, NSFetchedResultsContr
 //        let product = productsT[indexPath.row]
 //        let liked = productsT[indexPath.row]
         let liked = likedResults[indexPath.row]
-        print("liked：\(liked)")
+        print("liked：222\(liked)")
         print("likedResults.count：\(likedResults.count)")
         print("productsT.count：\(productsT.count)")
         
@@ -295,38 +302,38 @@ class RecommendTableViewController: UITableViewController, NSFetchedResultsContr
     
     // MARK: - NSFetchedResultsControllerDelegate methods 19.9
     
-    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        tableView.beginUpdates()
-    }
-    
-    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
-        
-        switch type {
-        case .insert:
-            if let newIndexPath = newIndexPath {
-                tableView.insertRows(at: [newIndexPath], with: .fade)
-            }
-        case .delete:
-            if let indexPath = indexPath {
-                tableView.deleteRows(at: [indexPath], with: .fade)
-            }
-        case .update:
-            if let indexPath = indexPath {
-                tableView.reloadRows(at: [indexPath], with: .fade)
-            }
-        default:
-            tableView.reloadData()
-        }
-        
-        if let fetchedObjects = controller.fetchedObjects {
-            productsT = fetchedObjects as! [ProductMO]
-        }
-    }
-    
-    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        tableView.endUpdates()
-    }
-    
+//    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+//        tableView.beginUpdates()
+//    }
+//
+//    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+//
+//        switch type {
+//        case .insert:
+//            if let newIndexPath = newIndexPath {
+//                tableView.insertRows(at: [newIndexPath], with: .fade)
+//            }
+//        case .delete:
+//            if let indexPath = indexPath {
+//                tableView.deleteRows(at: [indexPath], with: .fade)
+//            }
+//        case .update:
+//            if let indexPath = indexPath {
+//                tableView.reloadRows(at: [indexPath], with: .fade)
+//            }
+//        default:
+//            tableView.reloadData()
+//        }
+//
+//        if let fetchedObjects = controller.fetchedObjects {
+//            productsT = fetchedObjects as! [ProductMO]
+//        }
+//    }
+//
+//    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+//        tableView.endUpdates()
+//    }
+//
     //temp
 //    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
 //        let deleteAction = UIContextualAction(style: .destructive, title: "Delete"){

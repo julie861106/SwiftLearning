@@ -483,6 +483,7 @@ class ProductTableViewController: UITableViewController, NSFetchedResultsControl
             }
         case .update:
             if let indexPath = indexPath {
+                print("update")
                 tableView.reloadRows(at: [indexPath], with: .fade)
             }
         default:

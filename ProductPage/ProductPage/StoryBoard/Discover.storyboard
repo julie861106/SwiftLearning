@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Recommend-->
+        <!--Favorite-->
         <scene sceneID="mLb-Yh-xeg">
             <objects>
                 <tableViewController id="AnA-gS-X8g" customClass="RecommendTableViewController" customModule="ProductPage" customModuleProvider="target" sceneMemberID="viewController">
@@ -92,8 +92,9 @@
                             <outlet property="delegate" destination="AnA-gS-X8g" id="2pw-rT-WtN"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Recommend" id="qBA-kM-jhj">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="VeN-ws-JB2">
+                    <navigationItem key="navigationItem" title="Favorite" id="qBA-kM-jhj">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="refresh" id="VeN-ws-JB2">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="reloadButton:" destination="AnA-gS-X8g" id="4sv-Rf-REF"/>
                             </connections>
@@ -107,11 +108,11 @@
             </objects>
             <point key="canvasLocation" x="2425" y="833"/>
         </scene>
-        <!--Discover-->
+        <!--Favorite-->
         <scene sceneID="Ect-Dg-8Oj">
             <objects>
                 <navigationController id="Msv-j3-4XW" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Discover" image="discover" id="8Lw-55-up5"/>
+                    <tabBarItem key="tabBarItem" title="Favorite" image="discover" id="8Lw-55-up5"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eLK-9P-kxT">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -128,5 +129,6 @@
     <resources>
         <image name="discover" width="35" height="20"/>
         <image name="heart-tick" width="22" height="21"/>
+        <image name="refresh" width="32" height="32"/>
     </resources>
 </document>
