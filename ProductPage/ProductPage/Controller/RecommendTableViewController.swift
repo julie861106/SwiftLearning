@@ -176,7 +176,7 @@ class RecommendTableViewController: UITableViewController, NSFetchedResultsContr
         }
         print("likedResults.count：\(likedResults.count)")
         print("like result\(likedResults)")
-        //recommendTableView.reloadData()
+        recommendTableView.reloadData()
         //print("recommendTableView.reloadData()\(recommendTableView.reloadData())")
         
         

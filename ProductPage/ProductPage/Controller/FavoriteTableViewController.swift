@@ -46,6 +46,8 @@ class FavoriteTableViewController: UITableViewController{
         //        tableView.contentInsetAdjustmentBehavior = .never
         
         navigationController?.hidesBarsOnSwipe = true
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
