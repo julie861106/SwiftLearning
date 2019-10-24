@@ -1190,7 +1190,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ovp-T1-JiW">
-                                <rect key="frame" x="319" y="48" width="33" height="32"/>
+                                <rect key="frame" x="336" y="48" width="16" height="18"/>
                                 <state key="normal" backgroundImage="cross"/>
                                 <connections>
                                     <action selector="close:" destination="G7L-H6-ERf" eventType="touchUpInside" id="KiI-GH-ZRM"/>
@@ -1198,10 +1198,10 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="cpt-c5-AZL">
-                                <rect key="frame" x="62.5" y="93" width="250" height="481"/>
+                                <rect key="frame" x="93.5" y="166" width="188" height="335"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wTp-iT-FJD" userLabel="Love">
-                                        <rect key="frame" x="0.0" y="0.0" width="205" height="82"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="143" height="59"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="50"/>
                                         <state key="normal" title="LOVE" image="love">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1211,7 +1211,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rA3-cD-ix6" userLabel="Cool">
-                                        <rect key="frame" x="0.0" y="92" width="218" height="83"/>
+                                        <rect key="frame" x="0.0" y="69" width="156" height="59"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="50"/>
                                         <state key="normal" title="COOL" image="cool">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1221,7 +1221,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X6e-SD-E17" userLabel="Happy">
-                                        <rect key="frame" x="0.0" y="185" width="244" height="86"/>
+                                        <rect key="frame" x="0.0" y="138" width="182" height="59"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="50"/>
                                         <state key="normal" title="HAPPY" image="happy">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1231,7 +1231,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cRp-Lx-2T4" userLabel="Sad">
-                                        <rect key="frame" x="0.0" y="281" width="178" height="87"/>
+                                        <rect key="frame" x="0.0" y="207" width="116" height="59"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="50"/>
                                         <state key="normal" title="SAD" image="sad">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1241,7 +1241,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7g6-ar-c1q" userLabel="Angry">
-                                        <rect key="frame" x="0.0" y="378" width="250" height="103"/>
+                                        <rect key="frame" x="0.0" y="276" width="188" height="59"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="50"/>
                                         <state key="normal" title="ANGRY" image="angry">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1297,7 +1297,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GZM-w3-LzY">
-                                <rect key="frame" x="319" y="48" width="33" height="32"/>
+                                <rect key="frame" x="336" y="48" width="16" height="18"/>
                                 <state key="normal" backgroundImage="cross"/>
                                 <connections>
                                     <action selector="close:" destination="FW6-fK-ZqZ" eventType="touchUpInside" id="1fe-Cq-CrB"/>
@@ -1305,10 +1305,10 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7HH-II-RBZ">
-                                <rect key="frame" x="62.5" y="93" width="250" height="481"/>
+                                <rect key="frame" x="93.5" y="166" width="188" height="335"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ggw-Op-MDs" userLabel="Love">
-                                        <rect key="frame" x="0.0" y="0.0" width="205" height="82"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="143" height="59"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="50"/>
                                         <state key="normal" title="LOVE" image="love">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1318,7 +1318,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="405-fC-D7d" userLabel="Cool">
-                                        <rect key="frame" x="0.0" y="92" width="218" height="83"/>
+                                        <rect key="frame" x="0.0" y="69" width="156" height="59"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="50"/>
                                         <state key="normal" title="COOL" image="cool">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1328,7 +1328,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zuE-bU-IAF" userLabel="Happy">
-                                        <rect key="frame" x="0.0" y="185" width="244" height="86"/>
+                                        <rect key="frame" x="0.0" y="138" width="182" height="59"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="50"/>
                                         <state key="normal" title="HAPPY" image="happy">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1338,7 +1338,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cwR-gY-xrT" userLabel="Sad">
-                                        <rect key="frame" x="0.0" y="281" width="178" height="87"/>
+                                        <rect key="frame" x="0.0" y="207" width="116" height="59"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="50"/>
                                         <state key="normal" title="SAD" image="sad">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1348,7 +1348,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Elu-8e-MPw" userLabel="Angry">
-                                        <rect key="frame" x="0.0" y="378" width="250" height="103"/>
+                                        <rect key="frame" x="0.0" y="276" width="188" height="59"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="50"/>
                                         <state key="normal" title="ANGRY" image="angry">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
