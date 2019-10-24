@@ -39,7 +39,7 @@ class ProductDetail2ViewController: UIViewController, UITableViewDelegate, UITab
         navigationController?.navigationBar.shadowImage = UIImage()
         //導覽列不要出現
         tableView.contentInsetAdjustmentBehavior = .never
-        //        navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.tintColor = .white
         navigationController?.hidesBarsOnSwipe = false
         
         

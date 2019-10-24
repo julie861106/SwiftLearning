@@ -145,7 +145,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oGa-9l-biv">
-                                <rect key="frame" x="0.0" y="64" width="375" height="836"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="900"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="8rY-yl-5Oh" userLabel="Header View" customClass="ProductDetailHeaderView" customModule="ProductPage" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="350"/>
@@ -462,7 +462,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="oGa-9l-biv" firstAttribute="trailing" secondItem="Q9E-cD-tHg" secondAttribute="trailing" id="4lJ-92-Qye"/>
-                            <constraint firstItem="oGa-9l-biv" firstAttribute="top" secondItem="Q9E-cD-tHg" secondAttribute="top" id="LsE-xL-U7R"/>
+                            <constraint firstItem="oGa-9l-biv" firstAttribute="top" secondItem="DYv-Lp-kTB" secondAttribute="top" id="LsE-xL-U7R"/>
                             <constraint firstItem="oGa-9l-biv" firstAttribute="bottom" secondItem="Q9E-cD-tHg" secondAttribute="bottom" id="REW-mO-R3L"/>
                             <constraint firstItem="oGa-9l-biv" firstAttribute="leading" secondItem="Q9E-cD-tHg" secondAttribute="leading" id="Sz8-va-Reu"/>
                         </constraints>
@@ -478,7 +478,7 @@
             </objects>
             <point key="canvasLocation" x="3316" y="59"/>
         </scene>
-        <!--Title-->
+        <!--Product Detail2 View Controller-->
         <scene sceneID="LA3-MK-Exw">
             <objects>
                 <viewController id="PBO-nn-XhD" customClass="ProductDetail2ViewController" customModule="ProductPage" customModuleProvider="target" sceneMemberID="viewController">
@@ -486,9 +486,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="900"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IJH-BO-8kD">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IJH-BO-8kD">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="900"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rpv-C0-Ahw">
                                         <rect key="frame" x="0.0" y="20" width="375" height="880"/>
@@ -802,7 +801,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="rpv-C0-Ahw" firstAttribute="trailing" secondItem="9YT-fC-RHT" secondAttribute="trailing" id="BaU-9r-pha"/>
-                                    <constraint firstItem="rpv-C0-Ahw" firstAttribute="top" secondItem="9YT-fC-RHT" secondAttribute="top" id="EBf-Yn-gA0"/>
+                                    <constraint firstItem="rpv-C0-Ahw" firstAttribute="top" secondItem="IJH-BO-8kD" secondAttribute="top" id="EBf-Yn-gA0"/>
                                     <constraint firstItem="rpv-C0-Ahw" firstAttribute="bottom" secondItem="9YT-fC-RHT" secondAttribute="bottom" id="f6a-Yz-l2c"/>
                                     <constraint firstItem="rpv-C0-Ahw" firstAttribute="leading" secondItem="9YT-fC-RHT" secondAttribute="leading" id="zUG-z6-3rf"/>
                                 </constraints>
@@ -813,7 +812,7 @@
                         <viewLayoutGuide key="safeArea" id="8JA-Is-Lnn"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Title" id="7QQ-EP-PbS" userLabel="Recommend"/>
+                    <navigationItem key="navigationItem" id="7QQ-EP-PbS" userLabel="Recommend"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <size key="freeformSize" width="375" height="900"/>
                     <connections>
@@ -880,7 +879,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rcb-Ys-lHR">
-                                <rect key="frame" x="319" y="48" width="33" height="32"/>
+                                <rect key="frame" x="336" y="48" width="16" height="18"/>
                                 <state key="normal" backgroundImage="cross"/>
                                 <connections>
                                     <action selector="close:" destination="WFp-Dz-qy7" eventType="touchUpInside" id="ed0-hA-gbm"/>
@@ -888,10 +887,10 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3wt-nr-WMa">
-                                <rect key="frame" x="62.5" y="93" width="250" height="481"/>
+                                <rect key="frame" x="93.5" y="166" width="188" height="335"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kqz-Ce-vj4" userLabel="Love">
-                                        <rect key="frame" x="0.0" y="0.0" width="205" height="82"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="143" height="59"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="50"/>
                                         <state key="normal" title="LOVE" image="love">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -901,7 +900,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJU-pw-ePx" userLabel="Cool">
-                                        <rect key="frame" x="0.0" y="92" width="218" height="83"/>
+                                        <rect key="frame" x="0.0" y="69" width="156" height="59"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="50"/>
                                         <state key="normal" title="COOL" image="cool">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -911,7 +910,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sfS-gH-avM" userLabel="Happy">
-                                        <rect key="frame" x="0.0" y="185" width="244" height="86"/>
+                                        <rect key="frame" x="0.0" y="138" width="182" height="59"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="50"/>
                                         <state key="normal" title="HAPPY" image="happy">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -921,7 +920,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Li0-cs-0Km" userLabel="Sad">
-                                        <rect key="frame" x="0.0" y="281" width="178" height="87"/>
+                                        <rect key="frame" x="0.0" y="207" width="116" height="59"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="50"/>
                                         <state key="normal" title="SAD" image="sad">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -931,7 +930,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ysa-eI-cOI" userLabel="Angry">
-                                        <rect key="frame" x="0.0" y="378" width="250" height="103"/>
+                                        <rect key="frame" x="0.0" y="276" width="188" height="59"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="50"/>
                                         <state key="normal" title="ANGRY" image="angry">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1447,7 +1446,7 @@
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
                                     <connections>
-                                        <segue destination="kA1-ns-XVc" kind="presentation" id="39Z-cx-5Kq"/>
+                                        <segue destination="kA1-ns-XVc" kind="show" id="39Z-cx-5Kq"/>
                                     </connections>
                                 </button>
                             </subviews>
@@ -1481,7 +1480,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="option3Label" destination="7Pp-NO-pei" id="U5f-rg-vdK"/>
-                                    <segue destination="uV4-jC-rOw" kind="presentation" id="Z63-mQ-gRE"/>
+                                    <segue destination="kA1-ns-XVc" kind="show" id="AHa-kY-oYJ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -1779,6 +1778,7 @@
         <image name="shopping-cart" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="39Z-cx-5Kq"/>
         <segue reference="CC4-tB-FdB"/>
         <segue reference="mgS-b5-K25"/>
     </inferredMetricsTieBreakers>
