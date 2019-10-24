@@ -144,6 +144,8 @@ class ProductDetailViewController: UIViewController, UITableViewDelegate, UITabl
             let destinationController = segue.destination as! ReviewViewController
             destinationController.product = product
         }
+        
+        
     }
     
     @IBAction func close(segue: UIStoryboardSegue) {

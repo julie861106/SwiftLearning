@@ -164,6 +164,27 @@ class FavoriteTableViewController: UITableViewController{
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showRecommendDetail" {
+            
+            
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let destinationController = segue.destination as! ProductDetail2ViewController
+                
+                //轉給下一頁
+//                destinationController.product = (searchController.isActive) ? searchResults[indexPath.row]:products[indexPath.row]
+                
+                destinationController.product = products[indexPath.row]
+//                destinationController.productImageViewName = str02_product_image[indexPath.row]
+//                destinationController.productName = str02_product_name[indexPath.row]
+//                destinationController.productStore = str02_store_name
+//                destinationController.productType = str02_store_type
+                
+                
+            }
+        }
+    }
+    
     // MARK: - Navigation
     
     //    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
