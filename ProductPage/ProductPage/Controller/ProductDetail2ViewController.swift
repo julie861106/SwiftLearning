@@ -20,6 +20,14 @@ class ProductDetail2ViewController: UIViewController, UITableViewDelegate, UITab
     var productStore = ""
     var productType = ""
     var product: Product = Product()
+    
+    var recommendProducts:[Product] = [
+        Product(name: "燒肉珍珠堡(牛)", store: "mosburger", type: "food", price: "70", image: "pr_mos001", isLiked: false, description: "香Q美味的米飯，搭配新鮮現炒的紐西蘭牛肉片與洋蔥絲與青生菜，是最受歡迎的米漢堡"),
+        Product(name: "藜麥燒肉珍珠堡(牛)", store: "mosburger", type: "food", price: "75", image: "pr_mos002", isLiked: false, description: "香Q美味的米飯，搭配新鮮現炒的紐西蘭牛肉片與洋蔥絲與青生菜，是最受歡迎的米漢堡"),
+        Product(name: "薑燒珍珠堡", store: "mosburger", type: "food", price: "65", image: "pr_mos003", isLiked: false, description: "香Q美味的米飯，搭配現炒薑味醃製豬肉片，與青生菜"),
+        Product(name: "藜麥薑燒珍珠堡", store: "mosburger", type: "food", price: "70", image: "pr_mos004", isLiked: false, description: "香Q美味的米飯，搭配現炒薑味醃製豬肉片，與青生菜"),
+        Product(name: "海洋珍珠堡", store: "mosburger", type: "food", price: "75", image: "pr_mos005", isLiked: false, description: "香Q美味的米飯，搭配鮮蝦、干貝、墨魚等豐富的美味海鮮")
+    ]
 
     @IBOutlet weak var headerView: ProductDetailHeaderView!
     @IBOutlet weak var tableView: UITableView!
@@ -99,13 +107,7 @@ class ProductDetail2ViewController: UIViewController, UITableViewDelegate, UITab
             return cell
             
         case 3...5:
-            var recommendProducts:[Product] = [
-                Product(name: "燒肉珍珠堡(牛)", store: "mosburger", type: "food", price: "70", image: "pr_mos001", isLiked: false, description: "香Q美味的米飯，搭配新鮮現炒的紐西蘭牛肉片與洋蔥絲與青生菜，是最受歡迎的米漢堡"),
-                Product(name: "藜麥燒肉珍珠堡(牛)", store: "mosburger", type: "food", price: "75", image: "pr_mos002", isLiked: false, description: "香Q美味的米飯，搭配新鮮現炒的紐西蘭牛肉片與洋蔥絲與青生菜，是最受歡迎的米漢堡"),
-                Product(name: "薑燒珍珠堡", store: "mosburger", type: "food", price: "65", image: "pr_mos003", isLiked: false, description: "香Q美味的米飯，搭配現炒薑味醃製豬肉片，與青生菜"),
-                Product(name: "藜麥薑燒珍珠堡", store: "mosburger", type: "food", price: "70", image: "pr_mos004", isLiked: false, description: "香Q美味的米飯，搭配現炒薑味醃製豬肉片，與青生菜"),
-                Product(name: "海洋珍珠堡", store: "mosburger", type: "food", price: "75", image: "pr_mos005", isLiked: false, description: "香Q美味的米飯，搭配鮮蝦、干貝、墨魚等豐富的美味海鮮")
-            ]
+            
             let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ProductRecommendTableViewCell.self), for: indexPath) as! ProductRecommendTableViewCell
             
             cell.recommendNameLabel.text = recommendProducts[(indexPath.row)-3].name
@@ -165,6 +167,29 @@ class ProductDetail2ViewController: UIViewController, UITableViewDelegate, UITab
                 }, completion: nil)
             }
         })
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        
+        
+        if segue.identifier == "showProductDetail2" {
+            
+            
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let destinationController = segue.destination as! ProductDetail2ViewController
+                
+                //轉給下一頁
+                destinationController.product = recommendProducts[indexPath.row-3]
+                
+                //                destinationController.product = products[indexPath.row]
+                //                destinationController.productImageViewName = str02_product_image[indexPath.row]
+                //                destinationController.productName = str02_product_name[indexPath.row]
+                //                destinationController.productStore = str02_store_name
+                //                destinationController.productType = str02_store_type
+                
+                
+            }
+        }
     }
     
     
