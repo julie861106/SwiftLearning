@@ -194,6 +194,8 @@ class ProductDetail2ViewController: UIViewController, UITableViewDelegate, UITab
     
     
     
+    
+    
    
     
 

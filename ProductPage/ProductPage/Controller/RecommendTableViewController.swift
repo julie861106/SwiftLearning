@@ -26,6 +26,10 @@ class RecommendTableViewController: UITableViewController, NSFetchedResultsContr
         tableGenerate()
     }
     
+    @IBAction func unwindToFavorite(segue: UIStoryboardSegue) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     func tableGenerate() {
         
         
@@ -442,19 +446,26 @@ class RecommendTableViewController: UITableViewController, NSFetchedResultsContr
     //
     //
     //    }
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "showProductDetail" {
-//            if let indexPath = tableView.indexPathForSelectedRow {
-//                let destinationController = segue.destination as! ProductDetailViewController
-//                
-//                //轉給下一頁
-//                destinationController.product = products[indexPath.row]
-//                //                destinationController.productImageViewName = str02_product_image[indexPath.row]
-//                //                destinationController.productName = str02_product_name[indexPath.row]
-//                //                destinationController.productStore = str02_store_name
-//                //                destinationController.productType = str02_store_type
-//            }
-//        }
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showFavoriteProductDetail" {
+            
+            
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let destinationController = segue.destination as! ProductDetailViewController
+                
+                //轉給下一頁
+                destinationController.product = likedResults[indexPath.row]
+                
+                //                destinationController.product = products[indexPath.row]
+                //                destinationController.productImageViewName = str02_product_image[indexPath.row]
+                //                destinationController.productName = str02_product_name[indexPath.row]
+                //                destinationController.productStore = str02_store_name
+                //                destinationController.productType = str02_store_type
+                
+                
+            }
+        }
+        
+    }
     
 }
