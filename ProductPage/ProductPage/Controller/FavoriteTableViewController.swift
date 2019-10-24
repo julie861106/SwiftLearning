@@ -48,6 +48,7 @@ class FavoriteTableViewController: UITableViewController{
         navigationController?.hidesBarsOnSwipe = true
         
         
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

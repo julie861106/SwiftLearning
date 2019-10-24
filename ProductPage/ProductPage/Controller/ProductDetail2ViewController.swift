@@ -62,6 +62,13 @@ class ProductDetail2ViewController: UIViewController, UITableViewDelegate, UITab
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.hidesBarsOnSwipe = false
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
     
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -117,6 +124,47 @@ class ProductDetail2ViewController: UIViewController, UITableViewDelegate, UITab
         default:
             fatalError("Failed to instantiate the table view cell for detail view controller")
         }
+    }
+    
+    @IBAction func close(segue: UIStoryboardSegue) {
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func rateProduct(segue: UIStoryboardSegue){
+        
+        dismiss(animated: true, completion: {
+            if let rating = segue.identifier {
+                self.product.rating = rating
+                self.headerView.ratingImageView.image = UIImage(named: rating)
+                
+                // 獲取當前時間
+                let now = Date()
+                
+                // 創建一個日期格式器
+                let dformatter = DateFormatter()
+                dformatter.dateFormat = "yyyy年MM月dd日 HH:mm:ss"
+                print("日期時間：\(dformatter.string(from: now))")
+                
+                //當前時間的時間戳
+                let timeInterval:TimeInterval = now.timeIntervalSince1970
+                let timeStamp = Int(timeInterval)
+                print("時間戳：\(timeStamp)")
+                
+                if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+                    appDelegate.saveContext()
+                }
+                
+                let scaleTransform = CGAffineTransform.init(scaleX: 0.1, y: 0.1)
+                self.headerView.ratingImageView.transform = scaleTransform
+                self.headerView.ratingImageView.alpha = 0
+                
+                UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.7, options: [], animations: {
+                    self.headerView.ratingImageView.transform = .identity
+                    self.headerView.ratingImageView.alpha = 1
+                }, completion: nil)
+            }
+        })
     }
     
     
