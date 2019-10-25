@@ -14,6 +14,8 @@ class Helper2TableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let item = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+        self.navigationItem.backBarButtonItem = item
 //        tableView.cellLayoutMarginsFollowReadableWidth = true
 //        navigationController?.navigationBar.prefersLargeTitles = true
 //        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
@@ -22,7 +24,7 @@ class Helper2TableViewController: UITableViewController {
 //            navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(red: 231.0/255.0, green: 76.0/255.0, blue: 60.0/255.0, alpha: 1.0), NSAttributedString.Key.font: customFont]
 //        }
         
-        navigationController?.hidesBarsOnSwipe = true
+//        navigationController?.hidesBarsOnSwipe = true
     }
 
     // MARK: - Table view data source

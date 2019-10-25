@@ -15,6 +15,8 @@ class Helper3TableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let item = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+        self.navigationItem.backBarButtonItem = item
         
     }
     
