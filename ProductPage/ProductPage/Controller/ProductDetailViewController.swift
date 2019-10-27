@@ -11,9 +11,9 @@ import UIKit
 class ProductDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var recommendProducts:[Product] = [
-        Product(name: "燒肉珍珠堡(牛)", store: "mosburger", type: "food", price: "70", image: "pr_mos001", isLiked: false, description: "香Q美味的米飯，搭配新鮮現炒的紐西蘭牛肉片與洋蔥絲與青生菜，是最受歡迎的米漢堡"),
-        Product(name: "藜麥燒肉珍珠堡(牛)", store: "mosburger", type: "food", price: "75", image: "pr_mos002", isLiked: false, description: "香Q美味的米飯，搭配新鮮現炒的紐西蘭牛肉片與洋蔥絲與青生菜，是最受歡迎的米漢堡"),
-        Product(name: "薑燒珍珠堡", store: "mosburger", type: "food", price: "65", image: "pr_mos003", isLiked: false, description: "香Q美味的米飯，搭配現炒薑味醃製豬肉片，與青生菜"),
+        Product(name: "燒肉珍珠堡(牛)", store: "mosburger", type: "food", price: "70", image: "https://images.theconversation.com/files/280024/original/file-20190618-118505-aag3r7.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=496&fit=clip", isLiked: false, description: "香Q美味的米飯，搭配新鮮現炒的紐西蘭牛肉片與洋蔥絲與青生菜，是最受歡迎的米漢堡"),
+        Product(name: "藜麥燒肉珍珠堡(牛)", store: "mosburger", type: "food", price: "75", image: "https://timesofindia.indiatimes.com/thumb/msid-69058419,width-800,height-600,resizemode-4/69058419.jpg", isLiked: false, description: "香Q美味的米飯，搭配新鮮現炒的紐西蘭牛肉片與洋蔥絲與青生菜，是最受歡迎的米漢堡"),
+        Product(name: "薑燒珍珠堡", store: "mosburger", type: "food", price: "65", image: "https://timesofindia.indiatimes.com/thumb/msid-70143101,imgsize-1269404,width-800,height-600,resizemode-4/70143101.jpg", isLiked: false, description: "香Q美味的米飯，搭配現炒薑味醃製豬肉片，與青生菜"),
         Product(name: "藜麥薑燒珍珠堡", store: "mosburger", type: "food", price: "70", image: "pr_mos004", isLiked: false, description: "香Q美味的米飯，搭配現炒薑味醃製豬肉片，與青生菜"),
         Product(name: "海洋珍珠堡", store: "mosburger", type: "food", price: "75", image: "pr_mos005", isLiked: false, description: "香Q美味的米飯，搭配鮮蝦、干貝、墨魚等豐富的美味海鮮")
     ]
@@ -48,14 +48,18 @@ class ProductDetailViewController: UIViewController, UITableViewDelegate, UITabl
         case 3...5:
             let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ProductRecommendTableViewCell.self), for: indexPath) as! ProductRecommendTableViewCell
             
-//            let urlStr = NSURL(string: "http://img.ivsky.com/img/tupian/pre/201509/13/tianzhukui.jpg")
-//            let data = NSData(contentsOfURL: urlStr!)
-//            let image = UIImage(data: data!）
+//            let urlStr = NSURL(string: "https://images.theconversation.com/files/280024/original/file-20190618-118505-aag3r7.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=496&fit=clip")
+//            let data = NSData(contentsOf: urlStr! as URL)
+//            cell.recommendThumbnailImageView.image = UIImage(data: data! as Data)
+            
+            let urlStr = NSURL(string: recommendProducts[(indexPath.row)-3].image)
+            let data = NSData(contentsOf: urlStr! as URL)
+            cell.recommendThumbnailImageView.image = UIImage(data: data! as Data)
             
             cell.recommendNameLabel.text = recommendProducts[(indexPath.row)-3].name
             cell.recommendStoreLabel.text = recommendProducts[(indexPath.row)-3].store
             cell.recommendTypeLabel.text = recommendProducts[(indexPath.row)-3].type
-            cell.recommendThumbnailImageView.image = UIImage(named: recommendProducts[(indexPath.row)-3].image)
+//            cell.recommendThumbnailImageView.image = UIImage(named: recommendProducts[(indexPath.row)-3].image)
             cell.recommendHeartImageView.isHidden = recommendProducts[(indexPath.row)-3].isLiked ? false : true
             
             return cell
