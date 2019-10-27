@@ -35,7 +35,7 @@ class ProductTableViewController: UITableViewController, NSFetchedResultsControl
     
     // 1.創建一份 locationManager 對象，用於偵測用戶位置的變化
     let locationManager = CLLocationManager()
-
+//    print(locationManager.location)
     
     // MARK: - 視圖控制器生命週期
     override func viewDidLoad() {

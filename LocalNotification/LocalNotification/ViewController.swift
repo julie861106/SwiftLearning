@@ -27,9 +27,9 @@ class ViewController: UIViewController {
     // 點擊建立通知按鈕
     @objc func onClickCreateNotificationBtn(_ sender: UIButton) {
         let content = UNMutableNotificationContent()
-        content.title = "title：測試本地通知"
+        content.title = "注意！"
         content.subtitle = "subtitle：佳妤想睡覺"
-        content.body = "body：這裡是內容"
+        content.body = "距離你附近500公尺有一家餐廳"
         content.badge = 1
         content.sound = UNNotificationSound.default
         

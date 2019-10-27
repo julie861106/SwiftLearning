@@ -48,6 +48,10 @@ class ProductDetailViewController: UIViewController, UITableViewDelegate, UITabl
         case 3...5:
             let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ProductRecommendTableViewCell.self), for: indexPath) as! ProductRecommendTableViewCell
             
+//            let urlStr = NSURL(string: "http://img.ivsky.com/img/tupian/pre/201509/13/tianzhukui.jpg")
+//            let data = NSData(contentsOfURL: urlStr!)
+//            let image = UIImage(data: data!）
+            
             cell.recommendNameLabel.text = recommendProducts[(indexPath.row)-3].name
             cell.recommendStoreLabel.text = recommendProducts[(indexPath.row)-3].store
             cell.recommendTypeLabel.text = recommendProducts[(indexPath.row)-3].type

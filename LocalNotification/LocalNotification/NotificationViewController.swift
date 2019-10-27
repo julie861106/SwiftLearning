@@ -20,24 +20,24 @@ class NotificationViewController: UIViewController {
         
         //設置推送内容
         let content = UNMutableNotificationContent()
-        content.title = "title：測試本地通知"
-        content.subtitle = "subtitle：佳妤想睡覺"
-        content.body = "body：這裡是內容"
+        content.title = "注意！"
+//        content.subtitle = "subtitle：佳妤想睡覺"
+        content.body = "距離你附近500公尺有一家餐廳"
         content.badge = 1
         content.sound = UNNotificationSound.default
         // 設置點擊通知後取得的資訊
         content.userInfo = ["link" : "https://www.nccu.edu.tw"]
         
-        // 設置通知的圖片
-        let imageURL = Bundle.main.url(forResource: "apple", withExtension: "png")
-        let attachment = try! UNNotificationAttachment(identifier: "", url: imageURL!, options: nil)
-        content.attachments = [attachment]
+//        // 設置通知的圖片
+//        let imageURL = Bundle.main.url(forResource: "apple", withExtension: "png")
+//        let attachment = try! UNNotificationAttachment(identifier: "", url: imageURL!, options: nil)
+//        content.attachments = [attachment]
         
         
         //設置通知觸發器
         
         //UNTimeIntervalNotificationTrigger
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 3, repeats: false)
         
         //UNCalendarNotificationTrigger日曆
 //        var components = DateComponents()
