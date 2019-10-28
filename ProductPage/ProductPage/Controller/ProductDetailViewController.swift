@@ -52,6 +52,7 @@ class ProductDetailViewController: UIViewController, UITableViewDelegate, UITabl
 //            let data = NSData(contentsOf: urlStr! as URL)
 //            cell.recommendThumbnailImageView.image = UIImage(data: data! as Data)
             
+            //利用網址抓圖片
             let urlStr = NSURL(string: recommendProducts[(indexPath.row)-3].image)
             let data = NSData(contentsOf: urlStr! as URL)
             cell.recommendThumbnailImageView.image = UIImage(data: data! as Data)
