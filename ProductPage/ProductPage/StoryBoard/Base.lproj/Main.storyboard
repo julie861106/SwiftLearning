@@ -42,7 +42,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="0xx-T2-3DY">
-                                                    <rect key="frame" x="75" y="0.0" width="225" height="54.5"/>
+                                                    <rect key="frame" x="75" y="0.0" width="231" height="54.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6hT-7n-BjM">
                                                             <rect key="frame" x="0.0" y="0.0" width="47" height="20.5"/>
@@ -65,7 +65,7 @@
                                                     </subviews>
                                                 </stackView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart-tick" translatesAutoresizingMaskIntoConstraints="NO" id="WLK-YZ-pZ5">
-                                                    <rect key="frame" x="315" y="0.0" width="22" height="21"/>
+                                                    <rect key="frame" x="321" y="0.0" width="16" height="16"/>
                                                 </imageView>
                                             </subviews>
                                         </stackView>
@@ -413,7 +413,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="CSS-PU-zad">
-                                                            <rect key="frame" x="75" y="0.0" width="227" height="54.5"/>
+                                                            <rect key="frame" x="75" y="0.0" width="233" height="54.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9De-25-K3b">
                                                                     <rect key="frame" x="0.0" y="0.0" width="47" height="20.5"/>
@@ -436,7 +436,7 @@
                                                             </subviews>
                                                         </stackView>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart-tick" translatesAutoresizingMaskIntoConstraints="NO" id="QM8-Pp-76Z">
-                                                            <rect key="frame" x="317" y="0.0" width="22" height="21"/>
+                                                            <rect key="frame" x="323" y="0.0" width="16" height="16"/>
                                                         </imageView>
                                                     </subviews>
                                                 </stackView>
@@ -758,7 +758,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="TgT-JI-waY">
-                                                            <rect key="frame" x="75" y="0.0" width="227" height="54.5"/>
+                                                            <rect key="frame" x="75" y="0.0" width="233" height="54.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fAx-2h-kwX">
                                                                     <rect key="frame" x="0.0" y="0.0" width="47" height="20.5"/>
@@ -781,7 +781,7 @@
                                                             </subviews>
                                                         </stackView>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart-tick" translatesAutoresizingMaskIntoConstraints="NO" id="obq-cX-7sZ">
-                                                            <rect key="frame" x="317" y="0.0" width="22" height="21"/>
+                                                            <rect key="frame" x="323" y="0.0" width="16" height="16"/>
                                                         </imageView>
                                                     </subviews>
                                                 </stackView>
@@ -1641,7 +1641,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="gnZ-RX-UvV">
-                                                    <rect key="frame" x="75" y="0.0" width="225" height="54.5"/>
+                                                    <rect key="frame" x="75" y="0.0" width="231" height="54.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kIB-fV-Lmp">
                                                             <rect key="frame" x="0.0" y="0.0" width="47" height="20.5"/>
@@ -1664,7 +1664,7 @@
                                                     </subviews>
                                                 </stackView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart-tick" translatesAutoresizingMaskIntoConstraints="NO" id="idR-k3-CpP">
-                                                    <rect key="frame" x="315" y="0.0" width="22" height="21"/>
+                                                    <rect key="frame" x="321" y="0.0" width="16" height="16"/>
                                                 </imageView>
                                             </subviews>
                                         </stackView>
@@ -2121,7 +2121,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="rxR-YT-f33">
-                                                            <rect key="frame" x="75" y="0.0" width="227" height="54.5"/>
+                                                            <rect key="frame" x="75" y="0.0" width="233" height="54.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vXL-rT-Uwh">
                                                                     <rect key="frame" x="0.0" y="0.0" width="47" height="20.5"/>
@@ -2144,7 +2144,7 @@
                                                             </subviews>
                                                         </stackView>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart-tick" translatesAutoresizingMaskIntoConstraints="NO" id="kFF-sn-RXk">
-                                                            <rect key="frame" x="317" y="0.0" width="22" height="21"/>
+                                                            <rect key="frame" x="323" y="0.0" width="16" height="16"/>
                                                         </imageView>
                                                     </subviews>
                                                 </stackView>
