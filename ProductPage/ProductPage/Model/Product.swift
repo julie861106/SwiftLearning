@@ -18,8 +18,9 @@ class Product{
     var isLiked: Bool
     var description: String
     var rating: String
+    var cart: Bool
     
-    init(name: String, store: String, type: String, price: String, image: String, isLiked: Bool, description:String, rating: String = "") {
+    init(name: String, store: String, type: String, price: String, image: String, isLiked: Bool, description:String, rating: String = "", cart: Bool) {
         self.name = name
         self.store = store
         self.type = type
@@ -28,10 +29,11 @@ class Product{
         self.isLiked = isLiked
         self.description = description
         self.rating = rating
+        self.cart = cart
     }
     
     convenience init(){
-        self.init(name: "", store: "", type: "", price: "", image: "", isLiked: false, description:"")
+        self.init(name: "", store: "", type: "", price: "", image: "", isLiked: false, description:"", cart:false)
     }
 
     

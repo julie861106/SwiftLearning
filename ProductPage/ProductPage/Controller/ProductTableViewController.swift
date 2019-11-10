@@ -82,16 +82,17 @@ class ProductTableViewController: UITableViewController, NSFetchedResultsControl
 //        tableView.backgroundView = emptyProductView
         tableView.backgroundView?.isHidden = true
         
-        // Adding a search bar
-        searchController = UISearchController(searchResultsController: nil)
-        searchController.searchResultsUpdater = self
-        searchController.dimsBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search product..."
-        searchController.searchBar.barTintColor = .white
-        searchController.searchBar.backgroundImage = UIImage()
-        searchController.searchBar.tintColor = UIColor(red: 231/255.0, green: 76/255.0, blue: 60/255.0, alpha: 1.0)
-//        //        self.navigationItem.searchController = searchController
-        tableView.tableHeaderView = searchController.searchBar
+        //1110
+//        // Adding a search bar
+//        searchController = UISearchController(searchResultsController: nil)
+//        searchController.searchResultsUpdater = self
+//        searchController.dimsBackgroundDuringPresentation = false
+//        searchController.searchBar.placeholder = "Search product..."
+//        searchController.searchBar.barTintColor = .white
+//        searchController.searchBar.backgroundImage = UIImage()
+//        searchController.searchBar.tintColor = UIColor(red: 231/255.0, green: 76/255.0, blue: 60/255.0, alpha: 1.0)
+////        //        self.navigationItem.searchController = searchController
+//        tableView.tableHeaderView = searchController.searchBar
         
         
         // Fetch data from data store 19.9
@@ -117,16 +118,16 @@ class ProductTableViewController: UITableViewController, NSFetchedResultsControl
 //        }
         
         var productsT:[Product] = [
-            Product(name: "燒肉珍珠堡(牛)", store: "mosburger", type: "food", price: "70", image: "pr_mos001", isLiked: false, description: "香Q美味的米飯，搭配新鮮現炒的紐西蘭牛肉片與洋蔥絲與青生菜，是最受歡迎的米漢堡"),
-            Product(name: "藜麥燒肉珍珠堡(牛)", store: "mosburger", type: "food", price: "75", image: "pr_mos002", isLiked: false, description: "香Q美味的米飯，搭配新鮮現炒的紐西蘭牛肉片與洋蔥絲與青生菜，是最受歡迎的米漢堡"),
-            Product(name: "薑燒珍珠堡", store: "mosburger", type: "food", price: "65", image: "pr_mos003", isLiked: false, description: "香Q美味的米飯，搭配現炒薑味醃製豬肉片，與青生菜"),
-            Product(name: "藜麥薑燒珍珠堡", store: "mosburger", type: "food", price: "70", image: "pr_mos004", isLiked: false, description: "香Q美味的米飯，搭配現炒薑味醃製豬肉片，與青生菜"),
-            Product(name: "海洋珍珠堡", store: "mosburger", type: "food", price: "75", image: "pr_mos005", isLiked: false, description: "香Q美味的米飯，搭配鮮蝦、干貝、墨魚等豐富的美味海鮮"),
-            Product(name: "藜麥海洋珍珠堡", store: "mosburger", type: "food", price: "80", image: "pr_mos006", isLiked: false, description: "香Q美味的米飯，搭配鮮蝦、干貝、墨魚等豐富的美味海鮮"),
-            Product(name: "藜麥蓮藕牛蒡珍珠堡", store: "mosburger", type: "food", price: "80", image: "pr_mos007", isLiked: false, description: "使用薑末慢火爆香，加入牛蒡、蓮藕、紅蘿蔔及鴻喜菇等蔬菜焙炒，並使用香椿及七味粉調出鹹香帶甜且微辣的美味，最後再加入蒟蒻條讓口感層次更豐富。是一款充滿醬香、富有口感且低負擔的漢堡，讓喜愛健康飲食的顧客有多一種選擇"),
-            Product(name: "杏鮑菇珍珠堡", store: "mosburger", type: "food", price: "70", image: "pr_mos008", isLiked: false, description: "選用杏鮑菇為主食材，搭配豆皮及紅蘿蔔一同料理，口味鹹香帶甜，讓素食風味也可以很滿足！"),
-            Product(name: "藜麥杏鮑菇珍珠堡", store: "mosburger", type: "food", price: "75", image: "pr_mos009", isLiked: false, description: "選用杏鮑菇為主食材，搭配豆皮及紅蘿蔔一同料理，口味鹹香帶甜，讓素食風味也可以很滿足！"),
-            Product(name: "元氣和牛珍珠堡(牛)", store: "mosburger", type: "food", price: "105", image: "pr_mos010", isLiked: false, description: "使用澳洲和牛，搭配摩斯獨家蔬菜醬，蔬果原汁原味的清甜與香氣，使漢堡整體更增層次感。與摩斯特有米漢堡、元氣蛋相互搭配，交疊出獨特的風味")
+            Product(name: "燒肉珍珠堡(牛)", store: "mosburger", type: "food", price: "70", image: "pr_mos001", isLiked: false, description: "香Q美味的米飯，搭配新鮮現炒的紐西蘭牛肉片與洋蔥絲與青生菜，是最受歡迎的米漢堡", cart:false),
+            Product(name: "藜麥燒肉珍珠堡(牛)", store: "mosburger", type: "food", price: "75", image: "pr_mos002", isLiked: false, description: "香Q美味的米飯，搭配新鮮現炒的紐西蘭牛肉片與洋蔥絲與青生菜，是最受歡迎的米漢堡", cart:false),
+            Product(name: "薑燒珍珠堡", store: "mosburger", type: "food", price: "65", image: "pr_mos003", isLiked: false, description: "香Q美味的米飯，搭配現炒薑味醃製豬肉片，與青生菜", cart:false),
+            Product(name: "藜麥薑燒珍珠堡", store: "mosburger", type: "food", price: "70", image: "pr_mos004", isLiked: false, description: "香Q美味的米飯，搭配現炒薑味醃製豬肉片，與青生菜", cart:false),
+            Product(name: "海洋珍珠堡", store: "mosburger", type: "food", price: "75", image: "pr_mos005", isLiked: false, description: "香Q美味的米飯，搭配鮮蝦、干貝、墨魚等豐富的美味海鮮", cart:false),
+            Product(name: "藜麥海洋珍珠堡", store: "mosburger", type: "food", price: "80", image: "pr_mos006", isLiked: false, description: "香Q美味的米飯，搭配鮮蝦、干貝、墨魚等豐富的美味海鮮", cart:false),
+            Product(name: "藜麥蓮藕牛蒡珍珠堡", store: "mosburger", type: "food", price: "80", image: "pr_mos007", isLiked: false, description: "使用薑末慢火爆香，加入牛蒡、蓮藕、紅蘿蔔及鴻喜菇等蔬菜焙炒，並使用香椿及七味粉調出鹹香帶甜且微辣的美味，最後再加入蒟蒻條讓口感層次更豐富。是一款充滿醬香、富有口感且低負擔的漢堡，讓喜愛健康飲食的顧客有多一種選擇", cart:false),
+            Product(name: "杏鮑菇珍珠堡", store: "mosburger", type: "food", price: "70", image: "pr_mos008", isLiked: false, description: "選用杏鮑菇為主食材，搭配豆皮及紅蘿蔔一同料理，口味鹹香帶甜，讓素食風味也可以很滿足！", cart:false),
+            Product(name: "藜麥杏鮑菇珍珠堡", store: "mosburger", type: "food", price: "75", image: "pr_mos009", isLiked: false, description: "選用杏鮑菇為主食材，搭配豆皮及紅蘿蔔一同料理，口味鹹香帶甜，讓素食風味也可以很滿足！", cart:false),
+            Product(name: "元氣和牛珍珠堡(牛)", store: "mosburger", type: "food", price: "105", image: "pr_mos010", isLiked: false, description: "使用澳洲和牛，搭配摩斯獨家蔬菜醬，蔬果原汁原味的清甜與香氣，使漢堡整體更增層次感。與摩斯特有米漢堡、元氣蛋相互搭配，交疊出獨特的風味", cart:false)
         ]
         
         if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
@@ -221,11 +222,13 @@ class ProductTableViewController: UITableViewController, NSFetchedResultsControl
         // #warning Incomplete implementation, return the number of rows
         //        return str02_product_name.count
         
-        if searchController.isActive{
-            return searchResults.count
-        }else{
-            return products.count
-        }
+        //1110
+        return products.count
+//        if searchController.isActive{
+//            return searchResults.count
+//        }else{
+//            return products.count
+//        }
         
     }
     
@@ -235,8 +238,10 @@ class ProductTableViewController: UITableViewController, NSFetchedResultsControl
         let cellIdentifier = "ProductCell"
         let productCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)as!ProductTableViewCell
         
-        // Determine if we get the restaurant from search result or the original array 20.4
-        let product = (searchController.isActive) ? searchResults[indexPath.row] : products[indexPath.row]
+        let product = products[indexPath.row]
+        //1110
+//        // Determine if we get the restaurant from search result or the original array 20.4
+//        let product = (searchController.isActive) ? searchResults[indexPath.row] : products[indexPath.row]
         
         //設定cell
         productCell.nameLabel.text = product.name
@@ -366,14 +371,15 @@ class ProductTableViewController: UITableViewController, NSFetchedResultsControl
         return swipeConfiguration
         
     }
-    //20.4
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        if searchController.isActive {
-            return false
-        } else {
-            return true
-        }
-    }
+    //1110
+//    //20.4
+//    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+//        if searchController.isActive {
+//            return false
+//        } else {
+//            return true
+//        }
+//    }
     
 //    //選取cell
 //    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -446,8 +452,10 @@ class ProductTableViewController: UITableViewController, NSFetchedResultsControl
             if let indexPath = tableView.indexPathForSelectedRow {
                 let destinationController = segue.destination as! ProductDetailViewController
                 
-                //轉給下一頁
-                destinationController.product = (searchController.isActive) ? searchResults[indexPath.row]:products[indexPath.row]
+                //1110
+                destinationController.product = products[indexPath.row]
+//                //轉給下一頁
+//                destinationController.product = (searchController.isActive) ? searchResults[indexPath.row]:products[indexPath.row]
                 
 //                destinationController.product = products[indexPath.row]
                 //                destinationController.productImageViewName = str02_product_image[indexPath.row]

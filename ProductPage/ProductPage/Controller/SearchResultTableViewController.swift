@@ -1,17 +1,15 @@
 //
-//  FavoriteTableViewController.swift
+//  SearchResultTableViewController.swift
 //  ProductPage
 //
-//  Created by Julie Yao on 2019/10/22.
+//  Created by Julie Yao on 2019/11/10.
 //  Copyright © 2019 DingLinLin. All rights reserved.
 //
 
 import UIKit
 import CoreData
 
-//recommend
-class FavoriteTableViewController: UITableViewController{
-    
+class SearchResultTableViewController: UITableViewController {
     var products:[Product] = [
         Product(name: "燒肉珍珠堡(牛)", store: "mosburger", type: "food", price: "70", image: "https://images.theconversation.com/files/280024/original/file-20190618-118505-aag3r7.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=496&fit=clip", isLiked: false, description: "香Q美味的米飯，搭配新鮮現炒的紐西蘭牛肉片與洋蔥絲與青生菜，是最受歡迎的米漢堡", cart:false),
         Product(name: "藜麥燒肉珍珠堡(牛)", store: "mosburger", type: "food", price: "75", image: "https://timesofindia.indiatimes.com/thumb/msid-70143101,imgsize-1269404,width-800,height-600,resizemode-4/70143101.jpg", isLiked: false, description: "香Q美味的米飯，搭配新鮮現炒的紐西蘭牛肉片與洋蔥絲與青生菜，是最受歡迎的米漢堡", cart:false),
@@ -78,18 +76,18 @@ class FavoriteTableViewController: UITableViewController{
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cellIdentifier = "FavoriteCell"
-        let recommendCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)as!ProductTableViewCell
+        let cellIdentifier = "ResultCell"
+        let resultCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)as!ProductTableViewCell
         
         //利用網址抓圖片
         let urlStr = NSURL(string: products[indexPath.row].image)
         let data = NSData(contentsOf: urlStr! as URL)
-        recommendCell.thumbnailImageView.image = UIImage(data: data! as Data)
+        resultCell.thumbnailImageView.image = UIImage(data: data! as Data)
         
         //設定cell
-        recommendCell.nameLabel.text = products[indexPath.row].name
-//        recommendCell.thumbnailImageView.image = UIImage(named: products[indexPath.row].image)
-        recommendCell.storeLabel.text = products[indexPath.row].store
+        resultCell.nameLabel.text = products[indexPath.row].name
+        //        recommendCell.thumbnailImageView.image = UIImage(named: products[indexPath.row].image)
+        resultCell.storeLabel.text = products[indexPath.row].store
         //recommendCell.typeLabel.text = products[indexPath.row].type
         
         //        productCell.nameLabel.text = str02_product_name[indexPath.row]
@@ -104,9 +102,9 @@ class FavoriteTableViewController: UITableViewController{
         //            productCell.accessoryType = .none
         //        }
         //        productCell.heartImageView.isHidden = self.productIsLiked[indexPath.row] ? false : true
-        recommendCell.heartImageView.isHidden = products[indexPath.row].isLiked ? false : true
+        resultCell.heartImageView.isHidden = products[indexPath.row].isLiked ? false : true
         
-        return recommendCell
+        return resultCell
     }
     
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
@@ -169,20 +167,20 @@ class FavoriteTableViewController: UITableViewController{
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showRecommendDetail" {
+        if segue.identifier == "showResultDetail" {
             
             
             if let indexPath = tableView.indexPathForSelectedRow {
                 let destinationController = segue.destination as! ProductDetail2ViewController
                 
                 //轉給下一頁
-//                destinationController.product = (searchController.isActive) ? searchResults[indexPath.row]:products[indexPath.row]
+                //                destinationController.product = (searchController.isActive) ? searchResults[indexPath.row]:products[indexPath.row]
                 
                 destinationController.product = products[indexPath.row]
-//                destinationController.productImageViewName = str02_product_image[indexPath.row]
-//                destinationController.productName = str02_product_name[indexPath.row]
-//                destinationController.productStore = str02_store_name
-//                destinationController.productType = str02_store_type
+                //                destinationController.productImageViewName = str02_product_image[indexPath.row]
+                //                destinationController.productName = str02_product_name[indexPath.row]
+                //                destinationController.productStore = str02_store_name
+                //                destinationController.productType = str02_store_type
                 
                 
             }
