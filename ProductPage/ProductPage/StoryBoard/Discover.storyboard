@@ -114,7 +114,7 @@
         <scene sceneID="Ect-Dg-8Oj">
             <objects>
                 <navigationController id="Msv-j3-4XW" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Favorite" image="discover" id="8Lw-55-up5"/>
+                    <tabBarItem key="tabBarItem" title="Favorite" image="heart3" id="8Lw-55-up5"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eLK-9P-kxT">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1446,9 +1446,9 @@
         <image name="close" width="16" height="16"/>
         <image name="cool" width="78" height="83"/>
         <image name="cross" width="33" height="32"/>
-        <image name="discover" width="35" height="20"/>
         <image name="happy" width="78" height="86"/>
         <image name="heart-tick" width="22" height="21"/>
+        <image name="heart3" width="24" height="24"/>
         <image name="love" width="78" height="82"/>
         <image name="refresh" width="32" height="32"/>
         <image name="sad" width="78" height="87"/>

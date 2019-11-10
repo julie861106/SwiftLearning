@@ -8,9 +8,10 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
     
     var window: UIWindow?
     
@@ -23,6 +24,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UITabBar.appearance().tintColor = UIColor(red: 231/255.0, green: 76/255.0, blue: 60/255.0, alpha: 1.0)
         UITabBar.appearance().barTintColor = UIColor(red: 250/255.0, green: 250/255.0, blue: 250/255.0, alpha: 1.0)
+        
+        //1030
+        // 在程式一啟動即詢問使用者是否接受圖文(alert)、聲音(sound)、數字(badge)三種類型的通知
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge, .carPlay], completionHandler: {(granted, error) in
+            if granted {
+                print("允許")
+            } else {
+                print("不允許")
+            }
+        })
+        
+        UNUserNotificationCenter.current().delegate = self
         
         
         return true
@@ -93,6 +106,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
+    }
+    
+    // 在前景收到通知
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.badge, .sound, .alert])
+        print("在前景收到通知...")
+    }
+    
+    // 點擊通知觸發的事件
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        let content: UNNotificationContent = response.notification.request.content
+        
+        completionHandler()
+        
+        // 取出userInfo的link並開啟網頁
+        let requestUrl = URL(string: content.userInfo["link"]! as! String)
+        UIApplication.shared.open(requestUrl!, options: [:], completionHandler: nil)
     }
     
     

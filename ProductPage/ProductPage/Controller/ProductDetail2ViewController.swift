@@ -122,7 +122,7 @@ class ProductDetail2ViewController: UIViewController, UITableViewDelegate, UITab
             
             cell.recommendNameLabel.text = recommendProducts[(indexPath.row)-3].name
             cell.recommendStoreLabel.text = recommendProducts[(indexPath.row)-3].store
-            cell.recommendTypeLabel.text = recommendProducts[(indexPath.row)-3].type
+            //cell.recommendTypeLabel.text = recommendProducts[(indexPath.row)-3].type
 //            cell.recommendThumbnailImageView.image = UIImage(named: recommendProducts[(indexPath.row)-3].image)
             cell.recommendHeartImageView.isHidden = recommendProducts[(indexPath.row)-3].isLiked ? false : true
             

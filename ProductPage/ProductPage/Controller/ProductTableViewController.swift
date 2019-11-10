@@ -144,7 +144,7 @@ class ProductTableViewController: UITableViewController, NSFetchedResultsControl
             
 //            if let productImage = productsTest[IndexPath.row].image {
 //                products.image = productImage.pngData()
-//            }？
+//            }
         
             let context = appDelegate.persistentContainer.viewContext
             fetchResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
@@ -244,7 +244,7 @@ class ProductTableViewController: UITableViewController, NSFetchedResultsControl
             productCell.thumbnailImageView.image = UIImage(data: productImage as Data)
         }
         productCell.storeLabel.text = product.store
-        productCell.typeLabel.text = product.type
+        //productCell.typeLabel.text = product.type
         productCell.heartImageView.isHidden = product.isLiked ? false : true
         
 //        productCell.nameLabel.text = products[indexPath.row].name

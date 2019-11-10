@@ -1,18 +1,18 @@
 //
-//  AboutTableViewController.swift
+//  RecordTableViewController.swift
 //  ProductPage
 //
-//  Created by Julie Yao on 2019/5/22.
+//  Created by Julie Yao on 2019/11/6.
 //  Copyright © 2019 DingLinLin. All rights reserved.
 //
 
 import UIKit
 
-class AboutTableViewController: UITableViewController {
+class RecordTableViewController: UITableViewController {
 
     
-    var profileTitle = ["姓名", "帳號", "性別", "生日", "email"]
-    var profileInfo = ["叮伶伶", "dinglinlin", "女", "2019/12/09", "dinglinlin@nccu.edu.tw"]
+    var profileInfo = ["女聚酯纖維針織刷毛附帽大衣", "女有機棉粗織天竺七分袖寬肩T恤", "女速乾縱橫彈性聚酯纖維舒適寬擺褲", "女羊毛混雙面織洋裝", "女棉混撥水加工長版開襟衫", "女羊毛混雙面織裙"]
+    var profileTitle = ["$990", "$650", "$1190", "$2390", "$2690", "$2050"]
     
     
     override func viewDidLoad() {
@@ -27,32 +27,32 @@ class AboutTableViewController: UITableViewController {
         
         
     }
-
+    
     // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return profileInfo.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellIdentifier = "AboutCell"
-        let aboutCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)as!AboutTableViewCell
-
-
-        //設定cell
-        aboutCell.profileTitleLabel.text = profileTitle[indexPath.row]
-        aboutCell.profileInfoLabel.text = profileInfo[indexPath.row]
+        let cellIdentifier = "RecordCell"
+        let recordCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)as!AboutTableViewCell
         
-
-        return aboutCell
+        
+        //設定cell
+        recordCell.profileTitleLabel.text = profileTitle[indexPath.row]
+        recordCell.profileInfoLabel.text = profileInfo[indexPath.row]
+        
+        
+        return recordCell
     }
-
     
-
+    
+    
 }

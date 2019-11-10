@@ -18,6 +18,7 @@
 		A323C66D235EA63400EECB71 /* FavoriteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A323C66C235EA63400EECB71 /* FavoriteTableViewController.swift */; };
 		A3319ADA2264D6B2001601DA /* ProductDetailPriceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3319AD92264D6B2001601DA /* ProductDetailPriceTableViewCell.swift */; };
 		A3319ADC2264D9BD001601DA /* ProductDetailTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3319ADB2264D9BD001601DA /* ProductDetailTextTableViewCell.swift */; };
+		A33D2F0B2372A97700BD808F /* RecordTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33D2F0A2372A97700BD808F /* RecordTableViewController.swift */; };
 		A3404772225C7EE5003E77E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3404770225C7EE5003E77E9 /* Main.storyboard */; };
 		A3404774225C7EE7003E77E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3404773225C7EE7003E77E9 /* Assets.xcassets */; };
 		A3404777225C7EE7003E77E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3404775225C7EE7003E77E9 /* LaunchScreen.storyboard */; };
@@ -58,6 +59,7 @@
 		A323C66C235EA63400EECB71 /* FavoriteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewController.swift; sourceTree = "<group>"; };
 		A3319AD92264D6B2001601DA /* ProductDetailPriceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailPriceTableViewCell.swift; sourceTree = "<group>"; };
 		A3319ADB2264D9BD001601DA /* ProductDetailTextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailTextTableViewCell.swift; sourceTree = "<group>"; };
+		A33D2F0A2372A97700BD808F /* RecordTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordTableViewController.swift; sourceTree = "<group>"; };
 		A3404769225C7EE5003E77E9 /* ProductPage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProductPage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3404771225C7EE5003E77E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A3404773225C7EE7003E77E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 				A38C2ABD2361C37B003FF728 /* Review2ViewController.swift */,
 				A3E5A3F322815B5000A76CB5 /* NewProductTableViewController.swift */,
 				A31DF878229524BE006FFC7E /* AboutTableViewController.swift */,
+				A33D2F0A2372A97700BD808F /* RecordTableViewController.swift */,
 				A3B5CA6D2338D8DC00B5612C /* RecommendTableViewController.swift */,
 				A323C66C235EA63400EECB71 /* FavoriteTableViewController.swift */,
 				A316AE0D233A74AD0057115D /* HelperTableViewController.swift */,
@@ -295,6 +298,7 @@
 				A316AE10233A774E0057115D /* HelperTableViewCell.swift in Sources */,
 				A316AE0E233A74AD0057115D /* HelperTableViewController.swift in Sources */,
 				A3319ADA2264D6B2001601DA /* ProductDetailPriceTableViewCell.swift in Sources */,
+				A33D2F0B2372A97700BD808F /* RecordTableViewController.swift in Sources */,
 				A39A22832265F67200390639 /* UINavigationController+Ext.swift in Sources */,
 				A3404783225C7FB0003E77E9 /* Product.swift in Sources */,
 				A37BE4B7228085BF005FC25A /* ProductDetailHeaderView.swift in Sources */,

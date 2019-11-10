@@ -19,10 +19,8 @@ class FavoriteTableViewController: UITableViewController{
         Product(name: "藜麥薑燒珍珠堡", store: "mosburger", type: "food", price: "70", image: "https://timesofindia.indiatimes.com/thumb/msid-69058419,width-800,height-600,resizemode-4/69058419.jpg", isLiked: false, description: "香Q美味的米飯，搭配現炒薑味醃製豬肉片，與青生菜"),
         Product(name: "海洋珍珠堡", store: "mosburger", type: "food", price: "75", image: "https://images.theconversation.com/files/280024/original/file-20190618-118505-aag3r7.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=496&fit=clip", isLiked: false, description: "香Q美味的米飯，搭配鮮蝦、干貝、墨魚等豐富的美味海鮮"),
         Product(name: "藜麥海洋珍珠堡", store: "mosburger", type: "food", price: "80", image: "https://timesofindia.indiatimes.com/thumb/msid-69058419,width-800,height-600,resizemode-4/69058419.jpg", isLiked: false, description: "香Q美味的米飯，搭配鮮蝦、干貝、墨魚等豐富的美味海鮮"),
-        Product(name: "藜麥蓮藕牛蒡珍珠堡", store: "mosburger", type: "food", price: "80", image: "https://images.theconversation.com/files/280024/original/file-20190618-118505-aag3r7.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=496&fit=clip", isLiked: false, description: "使用薑末慢火爆香，加入牛蒡、蓮藕、紅蘿蔔及鴻喜菇等蔬菜焙炒，並使用香椿及七味粉調出鹹香帶甜且微辣的美味，最後再加入蒟蒻條讓口感層次更豐富。是一款充滿醬香、富有口感且低負擔的漢堡，讓喜愛健康飲食的顧客有多一種選擇"),
-        Product(name: "杏鮑菇珍珠堡", store: "mosburger", type: "food", price: "70", image: "https://timesofindia.indiatimes.com/thumb/msid-70143101,imgsize-1269404,width-800,height-600,resizemode-4/70143101.jpg", isLiked: false, description: "選用杏鮑菇為主食材，搭配豆皮及紅蘿蔔一同料理，口味鹹香帶甜，讓素食風味也可以很滿足！"),
-        Product(name: "藜麥杏鮑菇珍珠堡", store: "mosburger", type: "food", price: "75", image: "https://timesofindia.indiatimes.com/thumb/msid-69058419,width-800,height-600,resizemode-4/69058419.jpg", isLiked: false, description: "選用杏鮑菇為主食材，搭配豆皮及紅蘿蔔一同料理，口味鹹香帶甜，讓素食風味也可以很滿足！"),
-        Product(name: "元氣和牛珍珠堡(牛)", store: "mosburger", type: "food", price: "105", image: "https://images.theconversation.com/files/280024/original/file-20190618-118505-aag3r7.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=496&fit=clip", isLiked: false, description: "使用澳洲和牛，搭配摩斯獨家蔬菜醬，蔬果原汁原味的清甜與香氣，使漢堡整體更增層次感。與摩斯特有米漢堡、元氣蛋相互搭配，交疊出獨特的風味")
+        Product(name: "藜麥蓮藕牛蒡珍珠堡", store: "mosburger", type: "food", price: "80", image: "https://images.theconversation.com/files/280024/original/file-20190618-118505-aag3r7.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=496&fit=clip", isLiked: false, description: "使用薑末慢火爆香，加入牛蒡、蓮藕、紅蘿蔔及鴻喜菇等蔬菜焙炒，並使用香椿及七味粉調出鹹香帶甜且微辣的美味，最後再加入蒟蒻條讓口感層次更豐富。是一款充滿醬香、富有口感且低負擔的漢堡，讓喜愛健康飲食的顧客有多一種選擇")
+        
     ]
     
     //    var str02_product_name = ["燒肉珍珠堡(牛)", "藜麥燒肉珍珠堡(牛)", "薑燒珍珠堡", "藜麥薑燒珍珠堡", "海洋珍珠堡", "藜麥海洋珍珠堡", "藜麥蓮藕牛蒡珍珠堡", "杏鮑菇珍珠堡", "藜麥杏鮑菇珍珠堡", "元氣和牛珍珠堡(牛)"]
@@ -92,7 +90,7 @@ class FavoriteTableViewController: UITableViewController{
         recommendCell.nameLabel.text = products[indexPath.row].name
 //        recommendCell.thumbnailImageView.image = UIImage(named: products[indexPath.row].image)
         recommendCell.storeLabel.text = products[indexPath.row].store
-        recommendCell.typeLabel.text = products[indexPath.row].type
+        //recommendCell.typeLabel.text = products[indexPath.row].type
         
         //        productCell.nameLabel.text = str02_product_name[indexPath.row]
         //        productCell.thumbnailImageView.image = UIImage(named: str02_product_image[indexPath.row])
