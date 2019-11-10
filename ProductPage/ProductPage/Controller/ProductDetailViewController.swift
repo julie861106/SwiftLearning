@@ -7,8 +7,38 @@
 //
 
 import UIKit
+import CoreData
 
 class ProductDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    var cart: CartMO!
+    
+    @IBAction func addToCart(_ sender: AnyObject) {
+        
+        // Saving the restaurant to database 19.8
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+            cart = CartMO(context: appDelegate.persistentContainer.viewContext)
+            cart.name = product.name
+            cart.price = product.price
+           
+            
+            print("Saving data to context ...")
+            appDelegate.saveContext()
+        }
+        
+//        let appdelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+//        let context = appdelegate.managedObjectContext
+//        var cart = NSEntityDescription.insertNewObjectForEntityForName("Cart", InManagedObjectContext: context) as! Cart
+//        cart.name = product.name
+//        cart.price = product.price
+//
+//        appdelegate.saveContext()
+//
+//        var name = [product.name]
+//        var price = [product.price]
+//        print(product.name)
+//        print(product.price)
+        
+    }
     
     var recommendProducts:[Product] = [
         Product(name: "燒肉珍珠堡(牛)", store: "categories", type: "id", price: "70", image: "https://images.theconversation.com/files/280024/original/file-20190618-118505-aag3r7.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=496&fit=clip", isLiked: false, description: "香Q美味的米飯，搭配新鮮現炒的紐西蘭牛肉片與洋蔥絲與青生菜，是最受歡迎的米漢堡", cart:false),
