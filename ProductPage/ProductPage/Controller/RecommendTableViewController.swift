@@ -77,13 +77,13 @@ class RecommendTableViewController: UITableViewController, NSFetchedResultsContr
         recommendTableView.dataSource = self
         recommendTableView.delegate = self
         
-        tableView.cellLayoutMarginsFollowReadableWidth = true
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController?.navigationBar.shadowImage = UIImage()
-        if let customFont = UIFont(name: "Futura", size: 40.0){
-            navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(red: 231.0/255.0, green: 76.0/255.0, blue: 60.0/255.0, alpha: 1.0), NSAttributedString.Key.font: customFont]
-        }
+//        tableView.cellLayoutMarginsFollowReadableWidth = true
+//        navigationController?.navigationBar.prefersLargeTitles = true
+//        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+//        navigationController?.navigationBar.shadowImage = UIImage()
+//        if let customFont = UIFont(name: "Futura", size: 40.0){
+//            navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(red: 231.0/255.0, green: 76.0/255.0, blue: 60.0/255.0, alpha: 1.0), NSAttributedString.Key.font: customFont]
+//        }
         //導覽列不要出現
         //        tableView.contentInsetAdjustmentBehavior = .never
         
@@ -257,7 +257,7 @@ class RecommendTableViewController: UITableViewController, NSFetchedResultsContr
             recommendCell.thumbnailImageView.image = UIImage(data: productImage as Data)
         }
         recommendCell.storeLabel.text = liked.store
-        recommendCell.typeLabel.text = liked.type
+//        recommendCell.typeLabel.text = liked.type
         recommendCell.heartImageView.isHidden = liked.isLiked ? false : true
         
 //        //temp

@@ -61,6 +61,9 @@
                                             <integer key="value" value="10"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <segue destination="9bC-Qh-n72" kind="show" id="51R-bN-hcF"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fyp-Fs-61U">
                                     <rect key="frame" x="229" y="47" width="135" height="35"/>
@@ -78,6 +81,9 @@
                                             <integer key="value" value="10"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <segue destination="9bC-Qh-n72" kind="show" id="ChM-nx-ft8"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ym-Zd-N6A">
                                     <rect key="frame" x="127" y="47" width="93" height="35"/>
@@ -95,6 +101,9 @@
                                             <integer key="value" value="10"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <segue destination="9bC-Qh-n72" kind="show" id="f0D-f2-4K9"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -189,7 +198,7 @@
                                     <segue destination="mHw-5a-gPr" kind="presentation" identifier="addProduct" id="qxm-tb-8CW"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="Item" image="plus" id="fbE-Kd-oEM" userLabel="Helper">
+                            <barButtonItem title="Item" image="messenger" id="fbE-Kd-oEM" userLabel="Helper">
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <segue destination="NJp-Oa-bSN" kind="presentation" id="VvZ-rj-hBm"/>
@@ -977,7 +986,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rcb-Ys-lHR">
-                                <rect key="frame" x="319" y="48" width="33" height="32"/>
+                                <rect key="frame" x="336" y="48" width="16" height="18"/>
                                 <state key="normal" backgroundImage="cross"/>
                                 <connections>
                                     <action selector="close:" destination="WFp-Dz-qy7" eventType="touchUpInside" id="ed0-hA-gbm"/>
@@ -985,10 +994,10 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3wt-nr-WMa">
-                                <rect key="frame" x="62.5" y="93" width="250" height="481"/>
+                                <rect key="frame" x="93.5" y="166" width="188" height="335"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kqz-Ce-vj4" userLabel="Love">
-                                        <rect key="frame" x="0.0" y="0.0" width="205" height="82"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="143" height="59"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="50"/>
                                         <state key="normal" title="LOVE" image="love">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -998,7 +1007,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJU-pw-ePx" userLabel="Cool">
-                                        <rect key="frame" x="0.0" y="92" width="218" height="83"/>
+                                        <rect key="frame" x="0.0" y="69" width="156" height="59"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="50"/>
                                         <state key="normal" title="COOL" image="cool">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1008,7 +1017,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sfS-gH-avM" userLabel="Happy">
-                                        <rect key="frame" x="0.0" y="185" width="244" height="86"/>
+                                        <rect key="frame" x="0.0" y="138" width="182" height="59"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="50"/>
                                         <state key="normal" title="HAPPY" image="happy">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1018,7 +1027,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Li0-cs-0Km" userLabel="Sad">
-                                        <rect key="frame" x="0.0" y="281" width="178" height="87"/>
+                                        <rect key="frame" x="0.0" y="207" width="116" height="59"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="50"/>
                                         <state key="normal" title="SAD" image="sad">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1028,7 +1037,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ysa-eI-cOI" userLabel="Angry">
-                                        <rect key="frame" x="0.0" y="378" width="250" height="103"/>
+                                        <rect key="frame" x="0.0" y="276" width="188" height="59"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="50"/>
                                         <state key="normal" title="ANGRY" image="angry">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1328,7 +1337,7 @@
             </objects>
             <point key="canvasLocation" x="6020" y="62"/>
         </scene>
-        <!--Helper-->
+        <!--Chatbot Helper-->
         <scene sceneID="nhp-uz-j55">
             <objects>
                 <tableViewController id="oXi-qe-sg3" customClass="HelperTableViewController" customModule="ProductPage" customModuleProvider="target" sceneMemberID="viewController">
@@ -1336,8 +1345,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="Lzp-5g-yHl">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
                         <view key="tableFooterView" contentMode="scaleToFill" id="dTp-o4-DeO">
-                            <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                            <rect key="frame" x="0.0" y="93" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oeh-9m-Frx">
@@ -1363,7 +1377,7 @@
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="HelperCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HelperCell" id="ioi-co-mNS" customClass="HelperTableViewCell" customModule="ProductPage" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="49" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ioi-co-mNS" id="t0a-TX-pPh">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -1394,13 +1408,16 @@
                             <outlet property="delegate" destination="oXi-qe-sg3" id="nLr-t2-r1v"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Helper" id="mR2-yO-HwM">
+                    <navigationItem key="navigationItem" title="Chatbot Helper" id="mR2-yO-HwM">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="close" id="6Eq-UP-YR4">
-                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="unwindToHome:" destination="AXu-z6-pnK" id="NTv-wv-IJ1"/>
                                 <segue destination="yWx-3p-6y1" kind="unwind" unwindAction="unwindToHomeWithSegue:" id="okF-hL-Owv"/>
                             </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="messenger" id="kDu-VK-Efd">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
@@ -1596,10 +1613,15 @@
         <scene sceneID="LNP-4a-GK3">
             <objects>
                 <navigationController id="NJp-Oa-bSN" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="D3n-e5-cs9">
-                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="D3n-e5-cs9">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.83983546499999995" green="0.34268105030000001" blue="0.2705485225" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="oXi-qe-sg3" kind="relationship" relationship="rootViewController" id="UrK-2S-VFc"/>
@@ -1678,6 +1700,11 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IUC-uI-RhL">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.83983546499999995" green="0.34268105030000001" blue="0.2705485225" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="z8B-Kw-Y32" kind="relationship" relationship="rootViewController" id="jm3-Kd-BH8"/>
@@ -1817,7 +1844,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kaH-LR-QpA">
-                                <rect key="frame" x="319" y="48" width="33" height="32"/>
+                                <rect key="frame" x="336" y="48" width="16" height="18"/>
                                 <state key="normal" backgroundImage="cross"/>
                                 <connections>
                                     <action selector="close:" destination="WFp-Dz-qy7" eventType="touchUpInside" id="J0r-t1-0x4"/>
@@ -1826,10 +1853,10 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="6ky-53-h8w">
-                                <rect key="frame" x="62.5" y="93" width="250" height="481"/>
+                                <rect key="frame" x="93.5" y="166" width="188" height="335"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pqE-pS-8KG" userLabel="Love">
-                                        <rect key="frame" x="0.0" y="0.0" width="205" height="82"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="143" height="59"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="50"/>
                                         <state key="normal" title="LOVE" image="love">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1839,7 +1866,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3WY-61-Vj1" userLabel="Cool">
-                                        <rect key="frame" x="0.0" y="92" width="218" height="83"/>
+                                        <rect key="frame" x="0.0" y="69" width="156" height="59"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="50"/>
                                         <state key="normal" title="COOL" image="cool">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1849,7 +1876,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P7F-xb-WuY" userLabel="Happy">
-                                        <rect key="frame" x="0.0" y="185" width="244" height="86"/>
+                                        <rect key="frame" x="0.0" y="138" width="182" height="59"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="50"/>
                                         <state key="normal" title="HAPPY" image="happy">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1859,7 +1886,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wfs-gN-H4E" userLabel="Sad">
-                                        <rect key="frame" x="0.0" y="281" width="178" height="87"/>
+                                        <rect key="frame" x="0.0" y="207" width="116" height="59"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="50"/>
                                         <state key="normal" title="SAD" image="sad">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1869,7 +1896,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sZm-Jd-mGD" userLabel="Angry">
-                                        <rect key="frame" x="0.0" y="378" width="250" height="103"/>
+                                        <rect key="frame" x="0.0" y="276" width="188" height="59"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="50"/>
                                         <state key="normal" title="ANGRY" image="angry">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2271,9 +2298,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="VuF-IY-T82">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AboutCell" id="wy1-Jz-xwd" customClass="AboutTableViewCell" customModule="ProductPage" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="49" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wy1-Jz-xwd" id="Pey-ky-DKD">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -2320,7 +2352,11 @@
                             <outlet property="delegate" destination="z8B-Kw-Y32" id="nqb-DX-tWC"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="About" id="KQV-2X-qAL"/>
+                    <navigationItem key="navigationItem" title="About" id="KQV-2X-qAL">
+                        <barButtonItem key="rightBarButtonItem" image="about" id="znW-Zd-hl5">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oyX-1R-0Ww" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2453,8 +2489,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="tPZ-oI-akT">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
                         <view key="tableFooterView" contentMode="scaleToFill" id="z7n-xj-M6j">
-                            <rect key="frame" x="0.0" y="78" width="375" height="44"/>
+                            <rect key="frame" x="0.0" y="99" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HLO-zS-Ex4">
@@ -2477,7 +2518,7 @@
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecordCell" rowHeight="50" id="VWs-FU-SWq" customClass="AboutTableViewCell" customModule="ProductPage" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="49" width="375" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VWs-FU-SWq" id="DqM-LH-Cxk">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
@@ -2524,7 +2565,11 @@
                             <outlet property="delegate" destination="Dpn-I7-Pxj" id="OOr-oD-8vU"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Cart" id="aEg-bN-vWg"/>
+                    <navigationItem key="navigationItem" title="Cart" id="aEg-bN-vWg">
+                        <barButtonItem key="rightBarButtonItem" image="cart" id="zHq-g2-1i5">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bki-qS-jyn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2535,9 +2580,14 @@
             <objects>
                 <navigationController id="UVA-Z1-CFG" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Cart" image="cart" id="INq-bN-Ar0"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="CAc-xQ-dms">
-                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CAc-xQ-dms">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.83983546499999995" green="0.34268105030000001" blue="0.2705485225" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="Dpn-I7-Pxj" kind="relationship" relationship="rootViewController" id="bF3-9Z-HRs"/>
@@ -2618,9 +2668,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="q5g-uC-qOg">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecommendCell" rowHeight="80" id="txq-t4-Xxc" customClass="ProductTableViewCell" customModule="ProductPage" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="80"/>
+                                <rect key="frame" x="0.0" y="49" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="txq-t4-Xxc" id="Q9h-bf-Rlb">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
@@ -2688,11 +2743,8 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Favorite" id="sbK-Jo-Rsp">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="refresh" id="dZh-J1-VAh">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <action selector="reloadButton:" destination="ZDq-ts-qza" id="ZAC-Bq-Ove"/>
-                            </connections>
+                        <barButtonItem key="rightBarButtonItem" image="heart3" id="81f-LH-aip">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -2711,6 +2763,11 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uKq-cK-kLo">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.83983546499999995" green="0.34268105030000001" blue="0.2705485225" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="ZDq-ts-qza" kind="relationship" relationship="rootViewController" id="k8l-KW-rxg"/>
@@ -2735,16 +2792,17 @@
         <image name="home" width="24" height="24"/>
         <image name="love" width="78" height="82"/>
         <image name="magnifier (1)" width="24" height="24"/>
+        <image name="messenger" width="24" height="24"/>
         <image name="photo" width="24" height="18"/>
         <image name="plus" width="16" height="16"/>
         <image name="recommend" width="24" height="24"/>
-        <image name="refresh" width="32" height="32"/>
         <image name="sad" width="78" height="87"/>
         <image name="save" width="20" height="20"/>
         <image name="shopping-basket" width="512" height="512"/>
         <image name="shopping-cart" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="f0D-f2-4K9"/>
         <segue reference="CUa-jk-gcu"/>
         <segue reference="0Kt-Bq-jhj"/>
         <segue reference="U9J-l5-JG5"/>
