@@ -19,30 +19,47 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="21r-ui-Jvs">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zHm-fP-X6q">
-                                    <rect key="frame" x="8" y="6" width="296" height="30"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zHm-fP-X6q">
+                                    <rect key="frame" x="62" y="7" width="258" height="30"/>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Usm-p7-WQx">
-                                    <rect key="frame" x="312" y="6" width="30" height="30"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" title="GO"/>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="magnifier (1)" translatesAutoresizingMaskIntoConstraints="NO" id="SMj-RN-CZd">
+                                    <rect key="frame" x="20" y="10" width="25" height="24"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="25" id="0oD-D9-PeB"/>
+                                        <constraint firstAttribute="height" constant="24" id="7t2-Kk-gkN"/>
+                                    </constraints>
+                                </imageView>
+                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Usm-p7-WQx">
+                                    <rect key="frame" x="330" y="5" width="30" height="34"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                    <state key="normal" title="GO">
+                                        <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
                                     <connections>
                                         <segue destination="9bC-Qh-n72" kind="show" id="gt1-uG-36b"/>
                                     </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="Usm-p7-WQx" firstAttribute="centerY" secondItem="SMj-RN-CZd" secondAttribute="centerY" id="J1N-SB-9gR"/>
+                                <constraint firstItem="Usm-p7-WQx" firstAttribute="leading" secondItem="zHm-fP-X6q" secondAttribute="trailing" constant="10" id="Owg-DQ-BYc"/>
+                                <constraint firstItem="SMj-RN-CZd" firstAttribute="top" secondItem="21r-ui-Jvs" secondAttribute="top" constant="10" id="We3-sj-jhi"/>
+                                <constraint firstItem="zHm-fP-X6q" firstAttribute="centerY" secondItem="SMj-RN-CZd" secondAttribute="centerY" id="lI8-mA-AhY"/>
+                                <constraint firstItem="zHm-fP-X6q" firstAttribute="leading" secondItem="SMj-RN-CZd" secondAttribute="trailing" constant="17" id="rNU-qm-qCN"/>
+                                <constraint firstItem="SMj-RN-CZd" firstAttribute="leading" secondItem="21r-ui-Jvs" secondAttribute="leading" constant="20" id="t7E-pU-9im"/>
+                                <constraint firstAttribute="trailing" secondItem="Usm-p7-WQx" secondAttribute="trailing" constant="15" id="upC-6H-KoH"/>
+                            </constraints>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductCell" rowHeight="80" id="S0y-UB-YMP" customClass="ProductTableViewCell" customModule="ProductPage" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="375" height="80"/>
+                                <rect key="frame" x="0.0" y="178" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="S0y-UB-YMP" id="xZU-e3-J95">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
@@ -52,7 +69,7 @@
                                             <rect key="frame" x="22" y="13" width="337" height="54.5"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tZg-2t-pvK">
-                                                    <rect key="frame" x="0.0" y="0.0" width="60" height="54.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="60" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="60" id="7JR-ig-pGd"/>
                                                         <constraint firstAttribute="width" constant="60" id="YeQ-tN-nw1"/>
@@ -903,7 +920,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rcb-Ys-lHR">
-                                <rect key="frame" x="336" y="48" width="16" height="18"/>
+                                <rect key="frame" x="319" y="48" width="33" height="32"/>
                                 <state key="normal" backgroundImage="cross"/>
                                 <connections>
                                     <action selector="close:" destination="WFp-Dz-qy7" eventType="touchUpInside" id="ed0-hA-gbm"/>
@@ -911,10 +928,10 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3wt-nr-WMa">
-                                <rect key="frame" x="93.5" y="166" width="188" height="335"/>
+                                <rect key="frame" x="62.5" y="93" width="250" height="481"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kqz-Ce-vj4" userLabel="Love">
-                                        <rect key="frame" x="0.0" y="0.0" width="143" height="59"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="205" height="82"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="50"/>
                                         <state key="normal" title="LOVE" image="love">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -924,7 +941,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJU-pw-ePx" userLabel="Cool">
-                                        <rect key="frame" x="0.0" y="69" width="156" height="59"/>
+                                        <rect key="frame" x="0.0" y="92" width="218" height="83"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="50"/>
                                         <state key="normal" title="COOL" image="cool">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -934,7 +951,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sfS-gH-avM" userLabel="Happy">
-                                        <rect key="frame" x="0.0" y="138" width="182" height="59"/>
+                                        <rect key="frame" x="0.0" y="185" width="244" height="86"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="50"/>
                                         <state key="normal" title="HAPPY" image="happy">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -944,7 +961,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Li0-cs-0Km" userLabel="Sad">
-                                        <rect key="frame" x="0.0" y="207" width="116" height="59"/>
+                                        <rect key="frame" x="0.0" y="281" width="178" height="87"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="50"/>
                                         <state key="normal" title="SAD" image="sad">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -954,7 +971,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ysa-eI-cOI" userLabel="Angry">
-                                        <rect key="frame" x="0.0" y="276" width="188" height="59"/>
+                                        <rect key="frame" x="0.0" y="378" width="250" height="103"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="50"/>
                                         <state key="normal" title="ANGRY" image="angry">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1535,11 +1552,11 @@
             </objects>
             <point key="canvasLocation" x="682" y="-1128"/>
         </scene>
-        <!--Product-->
+        <!--Home-->
         <scene sceneID="ojZ-ad-qRv">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7mQ-4N-1f7" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Product" image="favorite" id="tMP-jH-rz0"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="home" id="tMP-jH-rz0"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="FZ3-dL-tmq">
                         <rect key="frame" x="0.0" y="20" width="375" height="96"/>
@@ -1740,7 +1757,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kaH-LR-QpA">
-                                <rect key="frame" x="336" y="48" width="16" height="18"/>
+                                <rect key="frame" x="319" y="48" width="33" height="32"/>
                                 <state key="normal" backgroundImage="cross"/>
                                 <connections>
                                     <action selector="close:" destination="WFp-Dz-qy7" eventType="touchUpInside" id="J0r-t1-0x4"/>
@@ -1749,10 +1766,10 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="6ky-53-h8w">
-                                <rect key="frame" x="93.5" y="166" width="188" height="335"/>
+                                <rect key="frame" x="62.5" y="93" width="250" height="481"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pqE-pS-8KG" userLabel="Love">
-                                        <rect key="frame" x="0.0" y="0.0" width="143" height="59"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="205" height="82"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="50"/>
                                         <state key="normal" title="LOVE" image="love">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1762,7 +1779,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3WY-61-Vj1" userLabel="Cool">
-                                        <rect key="frame" x="0.0" y="69" width="156" height="59"/>
+                                        <rect key="frame" x="0.0" y="92" width="218" height="83"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="50"/>
                                         <state key="normal" title="COOL" image="cool">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1772,7 +1789,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P7F-xb-WuY" userLabel="Happy">
-                                        <rect key="frame" x="0.0" y="138" width="182" height="59"/>
+                                        <rect key="frame" x="0.0" y="185" width="244" height="86"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="50"/>
                                         <state key="normal" title="HAPPY" image="happy">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1782,7 +1799,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wfs-gN-H4E" userLabel="Sad">
-                                        <rect key="frame" x="0.0" y="207" width="116" height="59"/>
+                                        <rect key="frame" x="0.0" y="281" width="178" height="87"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="50"/>
                                         <state key="normal" title="SAD" image="sad">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1792,7 +1809,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sZm-Jd-mGD" userLabel="Angry">
-                                        <rect key="frame" x="0.0" y="276" width="188" height="59"/>
+                                        <rect key="frame" x="0.0" y="378" width="250" height="103"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="50"/>
                                         <state key="normal" title="ANGRY" image="angry">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2650,6 +2667,19 @@
             </objects>
             <point key="canvasLocation" x="-1298" y="1120"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="f0f-Rr-wPU">
+            <objects>
+                <viewController id="SW8-qs-Re3" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Kbv-ls-gMg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QtL-sl-uWx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
     </scenes>
     <resources>
         <image name="about" width="23" height="21"/>
@@ -2659,11 +2689,12 @@
         <image name="cool" width="78" height="83"/>
         <image name="cross" width="33" height="32"/>
         <image name="empty" width="310" height="372"/>
-        <image name="favorite" width="22" height="22"/>
         <image name="happy" width="78" height="86"/>
         <image name="heart-tick" width="22" height="21"/>
         <image name="heart3" width="24" height="24"/>
+        <image name="home" width="24" height="24"/>
         <image name="love" width="78" height="82"/>
+        <image name="magnifier (1)" width="24" height="24"/>
         <image name="photo" width="24" height="18"/>
         <image name="plus" width="16" height="16"/>
         <image name="recommend" width="24" height="24"/>
@@ -2680,6 +2711,6 @@
         <segue reference="3Ql-pr-0mW"/>
         <segue reference="pou-ZD-O6R"/>
         <segue reference="5zy-La-yuB"/>
-        <segue reference="Jxn-uV-c2e"/>
+        <segue reference="Wpw-9O-DfS"/>
     </inferredMetricsTieBreakers>
 </document>
