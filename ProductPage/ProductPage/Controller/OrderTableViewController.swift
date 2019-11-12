@@ -1,96 +1,39 @@
 //
-//  RecordTableViewController.swift
+//  OrderTableViewController.swift
 //  ProductPage
 //
-//  Created by Julie Yao on 2019/11/6.
+//  Created by Julie Yao on 2019/11/12.
 //  Copyright © 2019 DingLinLin. All rights reserved.
 //
 
 import UIKit
 import CoreData
 
-class RecordTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
-    
-    
-    var cartResults: [CartMO] = []
-    var fetchResultController: NSFetchedResultsController<CartMO>!
+class OrderTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
 
     
-//    var profileInfo = ["女聚酯纖維針織刷毛附帽大衣", "女有機棉粗織天竺七分袖寬肩T恤", "女速乾縱橫彈性聚酯纖維舒適寬擺褲", "女羊毛混雙面織洋裝", "女棉混撥水加工長版開襟衫", "女羊毛混雙面織裙"]
-//    var profileTitle = ["$990", "$650", "$1190", "$2390", "$2690", "$2050"]
-    
-    var order: OrderMO!
+    var orderResults: [OrderMO] = []
+    var fetchResultController: NSFetchedResultsController<OrderMO>!
     
     
+    //    var profileInfo = ["女聚酯纖維針織刷毛附帽大衣", "女有機棉粗織天竺七分袖寬肩T恤", "女速乾縱橫彈性聚酯纖維舒適寬擺褲", "女羊毛混雙面織洋裝", "女棉混撥水加工長版開襟衫", "女羊毛混雙面織裙"]
+    //    var profileTitle = ["$990", "$650", "$1190", "$2390", "$2690", "$2050"]
     
-    @IBAction func addToOrder(_ sender: AnyObject) {
-        
-        for i in 0...cartResults.count-1{
-            if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
-
-                order = OrderMO(context: appDelegate.persistentContainer.viewContext)
-                let cartT = cartResults[i]
-                order.name = cartT.name
-                order.price = cartT.price
-
-                print("Saving data to context ...")
-                appDelegate.saveContext()
-                
-            }
-            
-//            if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
-//                let context = appDelegate.persistentContainer.viewContext
-//                let productToDelete = self.fetchResultController.object(at: indexPath)
-//                context.delete(productToDelete)
-//
-//                appDelegate.saveContext()
-//            }
-            
-//            if let appDelegate2 = (UIApplication.shared.delegate as? AppDelegate) {
-//                let context2 = appDelegate2.persistentContainer.viewContext
-//
-//
-//                let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Cart")
-//                let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
-//
-//                do {
-//                    try NSPersistentStoreCoordinator.executeRequest(
-//                        NSBatchDeleteRequest, withContext:context2
-//                    )
-////                    try myPersistentStoreCoordinator.executeRequest(deleteRequest, withContext: context2)
-//
-//                } catch let error as NSError {
-//                    // TODO: handle the error
-//                }
-//
-////                let productToDelete = self.fetchResultController.object(at: indexPath)
-////                context2.delete(productToDelete)
-//
-//                appDelegate2.saveContext()
-//            }
-            
-            
-            
-            
-            
-
-        }
-        
-    }
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        tableView.cellLayoutMarginsFollowReadableWidth = true
-//        navigationController?.navigationBar.prefersLargeTitles = true
-//        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-//        navigationController?.navigationBar.shadowImage = UIImage()
-//        if let customFont = UIFont(name: "Futura", size: 40.0){
-//            navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(red: 231.0/255.0, green: 76.0/255.0, blue: 60.0/255.0, alpha: 1.0), NSAttributedString.Key.font: customFont]
-//        }
+        //        tableView.cellLayoutMarginsFollowReadableWidth = true
+        //        navigationController?.navigationBar.prefersLargeTitles = true
+        //        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        //        navigationController?.navigationBar.shadowImage = UIImage()
+        //        if let customFont = UIFont(name: "Futura", size: 40.0){
+        //            navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(red: 231.0/255.0, green: 76.0/255.0, blue: 60.0/255.0, alpha: 1.0), NSAttributedString.Key.font: customFont]
+        //        }
         
         //從CoreData取資料
-        let fetchRequest: NSFetchRequest<CartMO> = CartMO.fetchRequest()
+        let fetchRequest: NSFetchRequest<OrderMO> = OrderMO.fetchRequest()
         let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
         
@@ -104,7 +47,7 @@ class RecordTableViewController: UITableViewController, NSFetchedResultsControll
             do {
                 try fetchResultController.performFetch()
                 if let fetchedObjects = fetchResultController.fetchedObjects {
-                    cartResults = fetchedObjects
+                    orderResults = fetchedObjects
                 }
             } catch {
                 print(error)
@@ -122,7 +65,7 @@ class RecordTableViewController: UITableViewController, NSFetchedResultsControll
         //cartResults.removeAll() //here
         
         //從CoreData取資料
-        let fetchRequest: NSFetchRequest<CartMO> = CartMO.fetchRequest()
+        let fetchRequest: NSFetchRequest<OrderMO> = OrderMO.fetchRequest()
         let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
         
@@ -136,7 +79,7 @@ class RecordTableViewController: UITableViewController, NSFetchedResultsControll
             do {
                 try fetchResultController.performFetch()
                 if let fetchedObjects = fetchResultController.fetchedObjects {
-                    cartResults = fetchedObjects
+                    orderResults = fetchedObjects
                 }
             } catch {
                 print(error)
@@ -161,24 +104,24 @@ class RecordTableViewController: UITableViewController, NSFetchedResultsControll
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-//        return profileInfo.count
-        return cartResults.count
+        //        return profileInfo.count
+        return orderResults.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellIdentifier = "RecordCell"
-        let recordCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)as!AboutTableViewCell
-        let cart = cartResults[indexPath.row]
+        let cellIdentifier = "OrderCell"
+        let orderCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)as!AboutTableViewCell
+        let order = orderResults[indexPath.row]
         
         
-        recordCell.profileInfoLabel.text = cart.name
-        recordCell.profileTitleLabel.text = cart.price
-//        //設定cell
-//        recordCell.profileTitleLabel.text = profileTitle[indexPath.row]
-//        recordCell.profileInfoLabel.text = profileInfo[indexPath.row]
+        orderCell.profileInfoLabel.text = order.name
+        orderCell.profileTitleLabel.text = order.price
+        //        //設定cell
+        //        recordCell.profileTitleLabel.text = profileTitle[indexPath.row]
+        //        recordCell.profileInfoLabel.text = profileInfo[indexPath.row]
         
         
-        return recordCell
+        return orderCell
     }
     
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
@@ -207,11 +150,11 @@ class RecordTableViewController: UITableViewController, NSFetchedResultsControll
         
         deleteAction.backgroundColor = UIColor(red: 231.0/255.0, green: 76.0/255.0, blue: 60.0/255.0, alpha: 1.0)
         deleteAction.image = UIImage(named: "delete")
-//        deleteAction.backgroundColor = UIColor(red: 254.0/255.0, green: 149.0/255.0, blue: 38.0/255.0, alpha: 1.0)
-//        shareAction.image = UIImage(named: "share")
+        //        deleteAction.backgroundColor = UIColor(red: 254.0/255.0, green: 149.0/255.0, blue: 38.0/255.0, alpha: 1.0)
+        //        shareAction.image = UIImage(named: "share")
         
         let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction])
-//        let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction, shareAction])
+        //        let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction, shareAction])
         
         return swipeConfiguration
         

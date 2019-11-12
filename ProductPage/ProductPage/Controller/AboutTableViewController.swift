@@ -38,19 +38,32 @@ class AboutTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return profileInfo.count
+//        return 7
     }
     
+    
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellIdentifier = "AboutCell"
-        let aboutCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)as!AboutTableViewCell
-
-
-        //設定cell
-        aboutCell.profileTitleLabel.text = profileTitle[indexPath.row]
-        aboutCell.profileInfoLabel.text = profileInfo[indexPath.row]
+//        switch indexPath.row {
+//        case 0...4:
+            let cellIdentifier = "AboutCell"
+            let aboutCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)as!AboutTableViewCell
+            
+                //設定cell
+            aboutCell.profileTitleLabel.text = profileTitle[indexPath.row]
+            aboutCell.profileInfoLabel.text = profileInfo[indexPath.row]
+                
+                
+            return aboutCell
+            
+//        case 5:
+            
+            
+//        default:
+//            fatalError("Failed to instantiate the table view cell for detail view controller")
+//
+//        }
         
-
-        return aboutCell
     }
 
     

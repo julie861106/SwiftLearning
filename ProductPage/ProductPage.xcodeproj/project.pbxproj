@@ -31,6 +31,7 @@
 		A37BE4B7228085BF005FC25A /* ProductDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37BE4B6228085BF005FC25A /* ProductDetailHeaderView.swift */; };
 		A38C2ABC2361BD17003FF728 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38C2ABB2361BD17003FF728 /* UIColor+Ext.swift */; };
 		A38C2ABE2361C37B003FF728 /* Review2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38C2ABD2361C37B003FF728 /* Review2ViewController.swift */; };
+		A3948BBF237AFBCD00FD339B /* OrderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3948BBE237AFBCD00FD339B /* OrderTableViewController.swift */; };
 		A39A22832265F67200390639 /* UINavigationController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39A22822265F67200390639 /* UINavigationController+Ext.swift */; };
 		A3A6CB5D2343253400A3973D /* Helper2TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A6CB5C2343253400A3973D /* Helper2TableViewController.swift */; };
 		A3A6CB5F2343276400A3973D /* Helper2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A6CB5E2343276400A3973D /* Helper2TableViewCell.swift */; };
@@ -75,6 +76,7 @@
 		A37BE4B6228085BF005FC25A /* ProductDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailHeaderView.swift; sourceTree = "<group>"; };
 		A38C2ABB2361BD17003FF728 /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 		A38C2ABD2361C37B003FF728 /* Review2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review2ViewController.swift; sourceTree = "<group>"; };
+		A3948BBE237AFBCD00FD339B /* OrderTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewController.swift; sourceTree = "<group>"; };
 		A39A22822265F67200390639 /* UINavigationController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Ext.swift"; sourceTree = "<group>"; };
 		A3A6CB5C2343253400A3973D /* Helper2TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper2TableViewController.swift; sourceTree = "<group>"; };
 		A3A6CB5E2343276400A3973D /* Helper2TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper2TableViewCell.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 				A3E5A3F322815B5000A76CB5 /* NewProductTableViewController.swift */,
 				A31DF878229524BE006FFC7E /* AboutTableViewController.swift */,
 				A33D2F0A2372A97700BD808F /* RecordTableViewController.swift */,
+				A3948BBE237AFBCD00FD339B /* OrderTableViewController.swift */,
 				A3B5CA6D2338D8DC00B5612C /* RecommendTableViewController.swift */,
 				A323C66C235EA63400EECB71 /* FavoriteTableViewController.swift */,
 				A3CB055B23782046000E3F3A /* SearchResultTableViewController.swift */,
@@ -289,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A316AE0C233A6B280057115D /* ActionButtonItem.swift in Sources */,
+				A3948BBF237AFBCD00FD339B /* OrderTableViewController.swift in Sources */,
 				A3E5A3F422815B5000A76CB5 /* NewProductTableViewController.swift in Sources */,
 				A3CB055C23782046000E3F3A /* SearchResultTableViewController.swift in Sources */,
 				A3319ADC2264D9BD001601DA /* ProductDetailTextTableViewCell.swift in Sources */,
