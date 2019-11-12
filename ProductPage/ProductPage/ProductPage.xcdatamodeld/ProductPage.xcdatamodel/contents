@@ -4,6 +4,10 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="price" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="Order" representedClassName="OrderMO" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="price" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="Product" representedClassName="ProductMO" syncable="YES" codeGenerationType="class">
         <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="isLiked" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
@@ -15,7 +19,8 @@
         <attribute name="type" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Product" positionX="-63" positionY="-18" width="128" height="165"/>
         <element name="Cart" positionX="-63" positionY="45" width="128" height="75"/>
+        <element name="Product" positionX="-63" positionY="-18" width="128" height="165"/>
+        <element name="Order" positionX="-63" positionY="45" width="128" height="75"/>
     </elements>
 </model>

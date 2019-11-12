@@ -19,6 +19,31 @@ class RecordTableViewController: UITableViewController, NSFetchedResultsControll
 //    var profileInfo = ["女聚酯纖維針織刷毛附帽大衣", "女有機棉粗織天竺七分袖寬肩T恤", "女速乾縱橫彈性聚酯纖維舒適寬擺褲", "女羊毛混雙面織洋裝", "女棉混撥水加工長版開襟衫", "女羊毛混雙面織裙"]
 //    var profileTitle = ["$990", "$650", "$1190", "$2390", "$2690", "$2050"]
     
+    var order: OrderMO!
+    
+    @IBAction func addToOrder(_ sender: AnyObject) {
+        
+        for i in 1...cartResults.count{
+            if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+                
+                order = OrderMO(context: appDelegate.persistentContainer.viewContext)
+                let cartT = cartResults[i]
+                order.name = cartT.name
+                order.price = cartT.price
+                
+                print("Saving data to context ...")
+                appDelegate.saveContext()
+            }
+            
+        }
+        
+        // Saving the restaurant to database 19.8
+        
+        
+        
+        
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +80,8 @@ class RecordTableViewController: UITableViewController, NSFetchedResultsControll
         
         
     }
+    
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -118,6 +145,42 @@ class RecordTableViewController: UITableViewController, NSFetchedResultsControll
         
         
         return recordCell
+    }
+    
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        //        let deleteAction = UIContextualAction(style: .destructive, title: "Delete"){
+        //            (action, sourceView, completionHandler) in
+        //            self.products.remove(at: indexPath.row)
+        //            self.tableView.deleteRows(at: [indexPath], with: .fade)
+        //            completionHandler(true)
+        //        }
+        
+        //19.10
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (action, sourceView, completionHandler) in
+            // Delete the row from the data store
+            if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+                let context = appDelegate.persistentContainer.viewContext
+                let productToDelete = self.fetchResultController.object(at: indexPath)
+                context.delete(productToDelete)
+                
+                appDelegate.saveContext()
+            }
+            
+            // Call completion handler with true to indicate
+            completionHandler(true)
+        }
+        
+        
+        deleteAction.backgroundColor = UIColor(red: 231.0/255.0, green: 76.0/255.0, blue: 60.0/255.0, alpha: 1.0)
+        deleteAction.image = UIImage(named: "delete")
+//        deleteAction.backgroundColor = UIColor(red: 254.0/255.0, green: 149.0/255.0, blue: 38.0/255.0, alpha: 1.0)
+//        shareAction.image = UIImage(named: "share")
+        
+        let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction])
+//        let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction, shareAction])
+        
+        return swipeConfiguration
+        
     }
     
     
