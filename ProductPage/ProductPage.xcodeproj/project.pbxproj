@@ -43,6 +43,7 @@
 		A3DCD6C4235CC0B30047716F /* ProductDetail2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DCD6C3235CC0B30047716F /* ProductDetail2ViewController.swift */; };
 		A3E5A3F2228154CA00A76CB5 /* RoundedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E5A3F1228154CA00A76CB5 /* RoundedTextField.swift */; };
 		A3E5A3F422815B5000A76CB5 /* NewProductTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E5A3F322815B5000A76CB5 /* NewProductTableViewController.swift */; };
+		A3F1A45C237BCFC500834D91 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3F1A45B237BCFC500834D91 /* MapKit.framework */; };
 		A3F3043A22672F5F00BBF2B6 /* ProductDetailSeparatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F3043922672F5F00BBF2B6 /* ProductDetailSeparatorCell.swift */; };
 		A3F3043C22672FDC00BBF2B6 /* ProductDetailMapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F3043B22672FDC00BBF2B6 /* ProductDetailMapCell.swift */; };
 		A3F3043E22674F7600BBF2B6 /* ProductRecommendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F3043D22674F7600BBF2B6 /* ProductRecommendTableViewCell.swift */; };
@@ -88,6 +89,7 @@
 		A3DCD6C3235CC0B30047716F /* ProductDetail2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetail2ViewController.swift; sourceTree = "<group>"; };
 		A3E5A3F1228154CA00A76CB5 /* RoundedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextField.swift; sourceTree = "<group>"; };
 		A3E5A3F322815B5000A76CB5 /* NewProductTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProductTableViewController.swift; sourceTree = "<group>"; };
+		A3F1A45B237BCFC500834D91 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		A3F3043922672F5F00BBF2B6 /* ProductDetailSeparatorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailSeparatorCell.swift; sourceTree = "<group>"; };
 		A3F3043B22672FDC00BBF2B6 /* ProductDetailMapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailMapCell.swift; sourceTree = "<group>"; };
 		A3F3043D22674F7600BBF2B6 /* ProductRecommendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRecommendTableViewCell.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3F1A45C237BCFC500834D91 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,6 +131,7 @@
 			children = (
 				A340476B225C7EE5003E77E9 /* ProductPage */,
 				A340476A225C7EE5003E77E9 /* Products */,
+				A3F1A45A237BCFC500834D91 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -217,6 +221,14 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		A3F1A45A237BCFC500834D91 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A3F1A45B237BCFC500834D91 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -250,6 +262,11 @@
 					A3404768225C7EE5003E77E9 = {
 						CreatedOnToolsVersion = 10.1;
 						LastSwiftMigration = 1020;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};

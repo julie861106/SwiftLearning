@@ -45,7 +45,10 @@ class ProductDetailViewController: UIViewController, UITableViewDelegate, UITabl
         Product(name: "藜麥燒肉珍珠堡(牛)", store: "categories", type: "id", price: "75", image: "https://timesofindia.indiatimes.com/thumb/msid-69058419,width-800,height-600,resizemode-4/69058419.jpg", isLiked: false, description: "香Q美味的米飯，搭配新鮮現炒的紐西蘭牛肉片與洋蔥絲與青生菜，是最受歡迎的米漢堡", cart:false),
         Product(name: "薑燒珍珠堡", store: "categories", type: "id", price: "65", image: "https://timesofindia.indiatimes.com/thumb/msid-70143101,imgsize-1269404,width-800,height-600,resizemode-4/70143101.jpg", isLiked: false, description: "香Q美味的米飯，搭配現炒薑味醃製豬肉片，與青生菜", cart:false),
         Product(name: "藜麥薑燒珍珠堡", store: "categories", type: "id", price: "70", image: "pr_mos004", isLiked: false, description: "香Q美味的米飯，搭配現炒薑味醃製豬肉片，與青生菜", cart:false),
-        Product(name: "海洋珍珠堡", store: "categories", type: "id", price: "75", image: "pr_mos005", isLiked: false, description: "香Q美味的米飯，搭配鮮蝦、干貝、墨魚等豐富的美味海鮮", cart:false)
+        Product(name: "海洋珍珠堡", store: "categories", type: "id", price: "75", image: "pr_mos005", isLiked: false, description: "香Q美味的米飯，搭配鮮蝦、干貝、墨魚等豐富的美味海鮮", cart:false),
+        Product(name: "燒肉珍珠堡(牛)", store: "categories", type: "id", price: "70", image: "https://images.theconversation.com/files/280024/original/file-20190618-118505-aag3r7.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=496&fit=clip", isLiked: false, description: "香Q美味的米飯，搭配新鮮現炒的紐西蘭牛肉片與洋蔥絲與青生菜，是最受歡迎的米漢堡", cart:false),
+        Product(name: "藜麥燒肉珍珠堡(牛)", store: "categories", type: "id", price: "75", image: "https://timesofindia.indiatimes.com/thumb/msid-69058419,width-800,height-600,resizemode-4/69058419.jpg", isLiked: false, description: "香Q美味的米飯，搭配新鮮現炒的紐西蘭牛肉片與洋蔥絲與青生菜，是最受歡迎的米漢堡", cart:false),
+        Product(name: "薑燒珍珠堡", store: "categories", type: "id", price: "65", image: "https://timesofindia.indiatimes.com/thumb/msid-70143101,imgsize-1269404,width-800,height-600,resizemode-4/70143101.jpg", isLiked: false, description: "香Q美味的米飯，搭配現炒薑味醃製豬肉片，與青生菜", cart:false)
     ]
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -53,7 +56,7 @@ class ProductDetailViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return 7
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -70,12 +73,23 @@ class ProductDetailViewController: UIViewController, UITableViewDelegate, UITabl
             return cell
             
         case 2:
+            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ProductDetailMapCell.self), for: indexPath) as! ProductDetailMapCell
+            
+            cell.settingStudioAnnotation()
+//            cell.configure(location: "524 Ct St, Brooklyn, NY 11231")
+            
+            return cell
+        
+        case 3:
             let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ProductDetailSeparatorCell.self), for: indexPath) as! ProductDetailSeparatorCell
             cell.recommendLabel.text = "Recommend"
             
             return cell
+            
         
-        case 3...5:
+            
+        
+        case 4...6:
             let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ProductRecommendTableViewCell.self), for: indexPath) as! ProductRecommendTableViewCell
             
 //            let urlStr = NSURL(string: "https://images.theconversation.com/files/280024/original/file-20190618-118505-aag3r7.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=496&fit=clip")
@@ -83,22 +97,19 @@ class ProductDetailViewController: UIViewController, UITableViewDelegate, UITabl
 //            cell.recommendThumbnailImageView.image = UIImage(data: data! as Data)
             
             //利用網址抓圖片
-            let urlStr = NSURL(string: recommendProducts[(indexPath.row)-3].image)
+            let urlStr = NSURL(string: recommendProducts[(indexPath.row)-4].image)
             let data = NSData(contentsOf: urlStr! as URL)
             cell.recommendThumbnailImageView.image = UIImage(data: data! as Data)
             
-            cell.recommendNameLabel.text = recommendProducts[(indexPath.row)-3].name
-            cell.recommendStoreLabel.text = recommendProducts[(indexPath.row)-3].store
+            cell.recommendNameLabel.text = recommendProducts[(indexPath.row)-4].name
+            cell.recommendStoreLabel.text = recommendProducts[(indexPath.row)-4].store
             //cell.recommendTypeLabel.text = recommendProducts[(indexPath.row)-3].type
 //            cell.recommendThumbnailImageView.image = UIImage(named: recommendProducts[(indexPath.row)-3].image)
-            cell.recommendHeartImageView.isHidden = recommendProducts[(indexPath.row)-3].isLiked ? false : true
+            cell.recommendHeartImageView.isHidden = recommendProducts[(indexPath.row)-4].isLiked ? false : true
             
             return cell
 
             
-//        case 4:
-//            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ProductDetailMapCell.self), for: indexPath) as! ProductDetailMapCell
-//            return cell
             
         default:
             fatalError("Failed to instantiate the table view cell for detail view controller")
@@ -191,7 +202,7 @@ class ProductDetailViewController: UIViewController, UITableViewDelegate, UITabl
                 let destinationController = segue.destination as! ProductDetail2ViewController
                 
                 //轉給下一頁
-                destinationController.product = recommendProducts[indexPath.row-3]
+                destinationController.product = recommendProducts[indexPath.row-4]
               
                 
                 
