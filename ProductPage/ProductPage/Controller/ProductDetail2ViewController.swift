@@ -8,8 +8,10 @@
 
 import UIKit
 import CoreData
+import MapKit
+import CoreLocation
 
-class ProductDetail2ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
+class ProductDetail2ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMapViewDelegate   {
     
     
     
@@ -118,7 +120,7 @@ class ProductDetail2ViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return 8
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -136,25 +138,47 @@ class ProductDetail2ViewController: UIViewController, UITableViewDelegate, UITab
             
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ProductDetailSeparatorCell.self), for: indexPath) as! ProductDetailSeparatorCell
+            cell.recommendLabel.text = "How to go"
+            
+            return cell
+            
+        case 3:
+            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ProductDetailMapCell.self), for: indexPath) as! ProductDetailMapCell
+            let locationManager = CLLocationManager()
+            if CLLocationManager.authorizationStatus()  == .notDetermined {
+                // 詢問使用者是否取得當前位置的授權
+                locationManager.requestWhenInUseAuthorization()
+                // 開始定位自身位置
+                locationManager.startUpdatingLocation()
+            }
+            
+            
+            cell.settingStudioAnnotation()
+            //            cell.configure(location: "524 Ct St, Brooklyn, NY 11231")
+            
+            return cell
+            
+        case 4:
+            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ProductDetailSeparatorCell.self), for: indexPath) as! ProductDetailSeparatorCell
             cell.recommendLabel.text = "Recommend"
             
             return cell
             
-        case 3...5:
+        case 5...7:
             
             let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ProductRecommendTableViewCell.self), for: indexPath) as! ProductRecommendTableViewCell
             
             //利用網址抓圖片
-            let urlStr = NSURL(string: recommendProducts[(indexPath.row)-3].image)
+            let urlStr = NSURL(string: recommendProducts[(indexPath.row)-5].image)
             let data = NSData(contentsOf: urlStr! as URL)
             cell.recommendThumbnailImageView.image = UIImage(data: data! as Data)
             
             
-            cell.recommendNameLabel.text = recommendProducts[(indexPath.row)-3].name
-            cell.recommendStoreLabel.text = recommendProducts[(indexPath.row)-3].store
-            //cell.recommendTypeLabel.text = recommendProducts[(indexPath.row)-3].type
-//            cell.recommendThumbnailImageView.image = UIImage(named: recommendProducts[(indexPath.row)-3].image)
-            cell.recommendHeartImageView.isHidden = recommendProducts[(indexPath.row)-3].isLiked ? false : true
+            cell.recommendNameLabel.text = recommendProducts[(indexPath.row)-5].name
+            cell.recommendStoreLabel.text = recommendProducts[(indexPath.row)-5].store
+            //cell.recommendTypeLabel.text = recommendProducts[(indexPath.row)-5].type
+//            cell.recommendThumbnailImageView.image = UIImage(named: recommendProducts[(indexPath.row)-5].image)
+            cell.recommendHeartImageView.isHidden = recommendProducts[(indexPath.row)-5].isLiked ? false : true
             
             return cell
             
@@ -219,7 +243,7 @@ class ProductDetail2ViewController: UIViewController, UITableViewDelegate, UITab
                 let destinationController = segue.destination as! ProductDetail2ViewController
                 
                 //轉給下一頁
-                destinationController.product = recommendProducts[indexPath.row-3]
+                destinationController.product = recommendProducts[indexPath.row-5]
                 
                 //                destinationController.product = products[indexPath.row]
                 //                destinationController.productImageViewName = str02_product_image[indexPath.row]

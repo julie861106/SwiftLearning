@@ -17,6 +17,8 @@ class ProductTableViewController: UITableViewController, NSFetchedResultsControl
     var searchResults: [ProductMO] = []
     var productsTest: ProductMO!
     
+    
+    
     //actiontest
 //    var actionButton: ActionButton!
     
@@ -43,6 +45,9 @@ class ProductTableViewController: UITableViewController, NSFetchedResultsControl
         locationManager.delegate = self;
         locationManager.distanceFilter = kCLLocationAccuracyNearestTenMeters;
         locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+        
+    
+        locationManager.requestWhenInUseAuthorization()
 //        //action test
 //        let twitterImage = UIImage(named: "twitter_icon.png")!
 //        let plusImage = UIImage(named: "googleplus_icon.png")!

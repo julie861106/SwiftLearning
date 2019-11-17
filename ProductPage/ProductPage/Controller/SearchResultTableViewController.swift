@@ -8,8 +8,10 @@
 
 import UIKit
 import CoreData
+import MapKit
+import CoreLocation
 
-class SearchResultTableViewController: UITableViewController {
+class SearchResultTableViewController: UITableViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     var products:[Product] = [
         
         Product(name:"Glow in the Dark Fashion Beaded Penuar", store:"clothing", type:"1304743128", price:"19.99", image:"http://ecx.images-amazon.com/images/I/41qSrLck4gL._SY300_.jpg", isLiked: false, description: "glow in the dark fashion penuar", cart: false),
@@ -37,6 +39,9 @@ class SearchResultTableViewController: UITableViewController {
     //
     //    var productIsLiked = Array(repeating: false, count: 10)
     
+    
+    let locationManager = CLLocationManager()
+    
     // MARK: - 視圖控制器生命週期
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +54,13 @@ class SearchResultTableViewController: UITableViewController {
         }
         //導覽列不要出現
         //        tableView.contentInsetAdjustmentBehavior = .never
+        
+        locationManager.delegate = self;
+        locationManager.distanceFilter = kCLLocationAccuracyNearestTenMeters;
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+        
+        
+        locationManager.requestWhenInUseAuthorization()
         
         navigationController?.hidesBarsOnSwipe = true
         
