@@ -18,6 +18,26 @@ class NotificationViewController: UIViewController {
         
         super.viewDidLoad()
         
+        //導航
+        let content = UNMutableNotificationContent()
+        content.title = "ABC store"
+        //        content.subtitle = "subtitle：佳妤想睡覺"
+        content.body = "我發現最近您都在瀏覽秋冬毛呢背心！\n我們新出了好幾款您可能會喜歡的，\n點進來看看吧🔜🔜🔜"
+        
+        //        content.body = "‼️上週你的3個商品還沒完成結帳哦！\n庫存已經不多了，趕快去看看吧👀"
+        //        content.body = "嘿！你好像越來越接近我們的商店囉！🛍\n剛好最近我們正在做當季折扣，點我前進導航🔜"
+        content.badge = 1
+        content.sound = UNNotificationSound.default
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 3, repeats: false)
+        
+        let request = UNNotificationRequest(identifier: "notification", content: content, trigger: trigger)
+        
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: {error in
+            print("成功建立通知...")
+        })
+        
+        /*
         //設置推送内容
         let content = UNMutableNotificationContent()
         content.title = "ABC store"
@@ -29,7 +49,7 @@ class NotificationViewController: UIViewController {
         content.badge = 1
         content.sound = UNNotificationSound.default
         // 設置點擊通知後取得的資訊
-        content.userInfo = ["link" : "https://www.nccu.edu.tw"]
+//        content.userInfo = ["link" : "https://www.nccu.edu.tw"]
         
         //設置推送内容
         let content2 = UNMutableNotificationContent()
@@ -99,6 +119,7 @@ class NotificationViewController: UIViewController {
         UNUserNotificationCenter.current().add(request3, withCompletionHandler: {error in
             print("成功建立通知...")
         })
+         */
         
         
     }

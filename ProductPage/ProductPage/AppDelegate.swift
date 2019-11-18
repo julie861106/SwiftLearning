@@ -114,16 +114,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         print("在前景收到通知...")
     }
     
-    // 點擊通知觸發的事件
-    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        let content: UNNotificationContent = response.notification.request.content
-        
-        completionHandler()
-        
-        // 取出userInfo的link並開啟網頁
-        let requestUrl = URL(string: content.userInfo["link"]! as! String)
-        UIApplication.shared.open(requestUrl!, options: [:], completionHandler: nil)
-    }
+    
     
     
 }

@@ -8,6 +8,8 @@
 
 import UIKit
 import UserNotifications
+import MapKit
+import CoreLocation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
@@ -62,12 +64,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     // 點擊通知觸發的事件
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         let content: UNNotificationContent = response.notification.request.content
-        
+
         completionHandler()
-        
-        // 取出userInfo的link並開啟網頁
-        let requestUrl = URL(string: content.userInfo["link"]! as! String)
-        UIApplication.shared.open(requestUrl!, options: [:], completionHandler: nil)
+
+        // 2. 終點座標
+        let sourceLocation = CLLocationCoordinate2D(latitude: 25.0195714, longitude: 121.5412916)
+        //25.0196607,121.5411974
+        //25.0304814,121.5331462
+        let destinationLocation = CLLocationCoordinate2D(latitude: 25.0304814, longitude: 121.5331462)
+
+        // 3. 初始化 MKPlacemark
+        let sourcePlacemark = MKPlacemark(coordinate: sourceLocation, addressDictionary: nil)
+        let destinationPlacemark = MKPlacemark(coordinate: destinationLocation, addressDictionary: nil)
+
+        // 4. 透過 Placemark 初始化一個 MKMapItem
+        let sourceMapItem = MKMapItem(placemark: sourcePlacemark)
+        let destinationMapItem = MKMapItem(placemark: destinationPlacemark)
+        //            let destinationMapItem = MKMapItem.forCurrentLocation()
+
+        // 建立導航路線的起點及終點 MKMapItem
+        let routes = [destinationMapItem,sourceMapItem]
+        // 我們可以透過 launchOptions 選擇我們的導航模式，例如：開車、走路等等...
+        MKMapItem.openMaps(with: routes, launchOptions:
+            //                [MKLaunchOptionsDirectionsModeKey:MKLaunchOptionsDirectionsModeWalking])
+            
+            [MKLaunchOptionsDirectionsModeKey:MKLaunchOptionsDirectionsModeDriving])
+
+//        // 取出userInfo的link並開啟網頁
+//        let requestUrl = URL(string: content.userInfo["link"]! as! String)
+//        UIApplication.shared.open(requestUrl!, options: [:], completionHandler: nil)
     }
 
 
