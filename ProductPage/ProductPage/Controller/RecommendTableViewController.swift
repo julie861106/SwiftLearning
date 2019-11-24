@@ -93,7 +93,7 @@ class RecommendTableViewController: UITableViewController, NSFetchedResultsContr
         navigationController?.hidesBarsOnSwipe = true
         
         //從CoreData取資料
-        let fetchRequest: NSFetchRequest<FavoriteMO> = OrderMO.fetchRequest()
+        let fetchRequest: NSFetchRequest<FavoriteMO> = FavoriteMO.fetchRequest()
         let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
         
@@ -276,7 +276,7 @@ class RecommendTableViewController: UITableViewController, NSFetchedResultsContr
         // #warning Incomplete implementation, return the number of rows
         //        return str02_product_name.count
 
-        print("likedResults.count numberOfRowsInSection：\(likedResults.count)")
+//        print("likedResults.count numberOfRowsInSection：\(likedResults.count)")
         return favoriteResults.count
 //        return likedResults.count
         //temp
@@ -285,7 +285,7 @@ class RecommendTableViewController: UITableViewController, NSFetchedResultsContr
 //        return products.count
         
     }
-    
+    var favoriteimages: String = ""
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -309,12 +309,20 @@ class RecommendTableViewController: UITableViewController, NSFetchedResultsContr
 //        likedResults = productsT.filter({_ in product.isLiked = true})
         
         recommendCell.nameLabel.text = favorite.name
-        let urlStr = NSURL(string: favorite.image)
-        let data = NSData(contentsOf: urlStr! as URL)
-        cell.recommendThumbnailImageView.image = UIImage(data: data! as Data)
-        if let productImage = liked.image {
-            recommendCell.thumbnailImageView.image = UIImage(data: productImage as Data)
+//        recommendCell.thumbnailImageView.image = favorite.image
+        
+        print("image\(favorite.image)")
+        
+        if favorite.image != nil{
+            favoriteimages = favorite.image!
+            let urlStr = NSURL(string: favoriteimages)
+            let data = NSData(contentsOf: urlStr! as URL)
+            recommendCell.thumbnailImageView.image = UIImage(data: data! as Data)
         }
+        
+//        if let productImage = liked.image {
+//            recommendCell.thumbnailImageView.image = UIImage(data: productImage as Data)
+//        }
         recommendCell.storeLabel.text = favorite.store
         //        recommendCell.typeLabel.text = liked.type
         recommendCell.heartImageView.isHidden = favorite.isLiked ? false : true
@@ -373,6 +381,42 @@ class RecommendTableViewController: UITableViewController, NSFetchedResultsContr
 
         
         return recommendCell
+    }
+    
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        //        let deleteAction = UIContextualAction(style: .destructive, title: "Delete"){
+        //            (action, sourceView, completionHandler) in
+        //            self.products.remove(at: indexPath.row)
+        //            self.tableView.deleteRows(at: [indexPath], with: .fade)
+        //            completionHandler(true)
+        //        }
+        
+        //19.10
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (action, sourceView, completionHandler) in
+            // Delete the row from the data store
+            if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+                let context = appDelegate.persistentContainer.viewContext
+                let productToDelete = self.fetchResultController.object(at: indexPath)
+                context.delete(productToDelete)
+                
+                appDelegate.saveContext()
+            }
+            
+            // Call completion handler with true to indicate
+            completionHandler(true)
+        }
+        
+        
+        deleteAction.backgroundColor = UIColor(red: 231.0/255.0, green: 76.0/255.0, blue: 60.0/255.0, alpha: 1.0)
+        deleteAction.image = UIImage(named: "delete")
+        //        deleteAction.backgroundColor = UIColor(red: 254.0/255.0, green: 149.0/255.0, blue: 38.0/255.0, alpha: 1.0)
+        //        shareAction.image = UIImage(named: "share")
+        
+        let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction])
+        //        let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction, shareAction])
+        
+        return swipeConfiguration
+        
     }
     
     // MARK: - NSFetchedResultsControllerDelegate methods 19.9
@@ -517,26 +561,27 @@ class RecommendTableViewController: UITableViewController, NSFetchedResultsContr
     //
     //
     //    }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showFavoriteProductDetail" {
-            
-            
-            if let indexPath = tableView.indexPathForSelectedRow {
-                let destinationController = segue.destination as! ProductDetail2ViewController
-                
-                //轉給下一頁
-                destinationController.product = favoriteResults[indexPath.row]
-                
-                //                destinationController.product = products[indexPath.row]
-                //                destinationController.productImageViewName = str02_product_image[indexPath.row]
-                //                destinationController.productName = str02_product_name[indexPath.row]
-                //                destinationController.productStore = str02_store_name
-                //                destinationController.productType = str02_store_type
-                
-                
-            }
-        }
-        
-    }
+    //1124
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "showFavoriteProductDetail" {
+//
+//
+//            if let indexPath = tableView.indexPathForSelectedRow {
+//                let destinationController = segue.destination as! ProductDetail2ViewController
+//
+//                //轉給下一頁
+//                destinationController.product = favoriteResults[indexPath.row]
+//
+//                //                destinationController.product = products[indexPath.row]
+//                //                destinationController.productImageViewName = str02_product_image[indexPath.row]
+//                //                destinationController.productName = str02_product_name[indexPath.row]
+//                //                destinationController.productStore = str02_store_name
+//                //                destinationController.productType = str02_store_type
+//
+//
+//            }
+//        }
+//
+//    }
     
 }

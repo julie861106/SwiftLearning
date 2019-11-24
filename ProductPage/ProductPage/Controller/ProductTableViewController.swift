@@ -20,33 +20,33 @@ class ProductTableViewController: UITableViewController, NSFetchedResultsControl
     
     var favorite: FavoriteMO!
     
-    @IBAction func addToLiked(_ sender: AnyObject) {
-        
-        // Saving the restaurant to database 19.8
-        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
-            favorite = FavoriteMO(context: appDelegate.persistentContainer.viewContext)
-            favorite.name = productT.name
-            favorite.store = productT.store
-            favorite.type = productT.type
-            favorite.price = productT.price
-            favorite.isLiked = productT.isLiked
-            favorite.description = productT.description
-            favorite.cart = productT.cart
-            
-            
-            print("Saving data to context ...")
-            appDelegate.saveContext()
-        }
-        
-        
-    }
+//    @IBAction func addToLiked(_ sender: AnyObject) {
+//
+//        // Saving the restaurant to database 19.8
+//        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+//            favorite = FavoriteMO(context: appDelegate.persistentContainer.viewContext)
+//            favorite.name = productT.name
+//            favorite.store = productT.store
+//            favorite.type = productT.type
+//            favorite.price = productT.price
+//            favorite.isLiked = productT.isLiked
+//            favorite.description = productT.description
+//            favorite.cart = productT.cart
+//
+//
+//            print("Saving data to context ...")
+//            appDelegate.saveContext()
+//        }
+//
+//
+//    }
     
     var productsT:[Product] = [
         Product(name: "燒肉珍珠堡(牛)", store: "mosburger", type: "food", price: "70", image: "https://images.theconversation.com/files/280024/original/file-20190618-118505-aag3r7.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=496&fit=clip", isLiked: false, description: "香Q美味的米飯，搭配新鮮現炒的紐西蘭牛肉片與洋蔥絲與青生菜，是最受歡迎的米漢堡", cart:false),
         Product(name: "藜麥燒肉珍珠堡(牛)", store: "mosburger", type: "food", price: "75", image: "https://timesofindia.indiatimes.com/thumb/msid-69058419,width-800,height-600,resizemode-4/69058419.jpg", isLiked: false, description: "香Q美味的米飯，搭配新鮮現炒的紐西蘭牛肉片與洋蔥絲與青生菜，是最受歡迎的米漢堡", cart:false),
         Product(name: "薑燒珍珠堡", store: "mosburger", type: "food", price: "65", image: "https://timesofindia.indiatimes.com/thumb/msid-70143101,imgsize-1269404,width-800,height-600,resizemode-4/70143101.jpg", isLiked: false, description: "香Q美味的米飯，搭配現炒薑味醃製豬肉片，與青生菜", cart:false),
-        Product(name: "藜麥薑燒珍珠堡", store: "mosburger", type: "food", price: "70", image: "pr_mos004", isLiked: false, description: "香Q美味的米飯，搭配現炒薑味醃製豬肉片，與青生菜", cart:false),
-        Product(name: "海洋珍珠堡", store: "mosburger", type: "food", price: "75", image: "pr_mos005", isLiked: false, description: "香Q美味的米飯，搭配鮮蝦、干貝、墨魚等豐富的美味海鮮", cart:false)
+        Product(name: "藜麥薑燒珍珠堡", store: "mosburger", type: "food", price: "70", image: "https://images.theconversation.com/files/280024/original/file-20190618-118505-aag3r7.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=496&fit=clip", isLiked: false, description: "香Q美味的米飯，搭配現炒薑味醃製豬肉片，與青生菜", cart:false),
+        Product(name: "海洋珍珠堡", store: "mosburger", type: "food", price: "75", image: "https://images.theconversation.com/files/280024/original/file-20190618-118505-aag3r7.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=496&fit=clip", isLiked: false, description: "香Q美味的米飯，搭配鮮蝦、干貝、墨魚等豐富的美味海鮮", cart:false)
     ]
     
     
@@ -58,7 +58,7 @@ class ProductTableViewController: UITableViewController, NSFetchedResultsControl
     
     @IBOutlet var emptyProductView: UIView!
     
-    var fetchResultController: NSFetchedResultsController<ProductMO>!
+//    var fetchResultController: NSFetchedResultsController<ProductMO>!
     var searchController: UISearchController!
     
     //    var str02_product_name = ["燒肉珍珠堡(牛)", "藜麥燒肉珍珠堡(牛)", "薑燒珍珠堡", "藜麥薑燒珍珠堡", "海洋珍珠堡", "藜麥海洋珍珠堡", "藜麥蓮藕牛蒡珍珠堡", "杏鮑菇珍珠堡", "藜麥杏鮑菇珍珠堡", "元氣和牛珍珠堡(牛)"]
@@ -135,9 +135,9 @@ class ProductTableViewController: UITableViewController, NSFetchedResultsControl
         
         
         // Fetch data from data store 19.9
-        let fetchRequest: NSFetchRequest<ProductMO> = ProductMO.fetchRequest()
-        let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
-        fetchRequest.sortDescriptors = [sortDescriptor]
+//        let fetchRequest: NSFetchRequest<ProductMO> = ProductMO.fetchRequest()
+//        let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+//        fetchRequest.sortDescriptors = [sortDescriptor]
         
 //        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
 //            product = ProductMO(context: appDelegate.persistentContainer.viewContext)
@@ -158,36 +158,36 @@ class ProductTableViewController: UITableViewController, NSFetchedResultsControl
         
         
         
-        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
-//            productsTest = ProductMO(context: appDelegate.persistentContainer.viewContext)
-//            productsTest.name = "燒肉珍珠堡(牛)"
-//            productsTest.store = "mosburger"
-//            productsTest.type = "food"
-//            productsTest.price = "70"
-//            productsTest.summary = "香Q美味的米飯，搭配新鮮現炒的紐西蘭牛肉片與洋蔥絲與青生菜，是最受歡迎的米漢堡"
-//            appDelegate.saveContext()
-            
-//            productsTest.summary = productsT[IndexPath.row].summary
-//            productsTest.isLiked = false
-//            productsTest.image = UIImage(named: "pr_mos001")
-            
-//            if let productImage = productsTest[IndexPath.row].image {
-//                products.image = productImage.pngData()
+//        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+////            productsTest = ProductMO(context: appDelegate.persistentContainer.viewContext)
+////            productsTest.name = "燒肉珍珠堡(牛)"
+////            productsTest.store = "mosburger"
+////            productsTest.type = "food"
+////            productsTest.price = "70"
+////            productsTest.summary = "香Q美味的米飯，搭配新鮮現炒的紐西蘭牛肉片與洋蔥絲與青生菜，是最受歡迎的米漢堡"
+////            appDelegate.saveContext()
+//
+////            productsTest.summary = productsT[IndexPath.row].summary
+////            productsTest.isLiked = false
+////            productsTest.image = UIImage(named: "pr_mos001")
+//
+////            if let productImage = productsTest[IndexPath.row].image {
+////                products.image = productImage.pngData()
+////            }
+//
+//            let context = appDelegate.persistentContainer.viewContext
+//            fetchResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+//            fetchResultController.delegate = self
+//
+//            do {
+//                try fetchResultController.performFetch()
+//                if let fetchedObjects = fetchResultController.fetchedObjects {
+//                    products = fetchedObjects
+//                }
+//            } catch {
+//                print(error)
 //            }
-        
-            let context = appDelegate.persistentContainer.viewContext
-            fetchResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
-            fetchResultController.delegate = self
-            
-            do {
-                try fetchResultController.performFetch()
-                if let fetchedObjects = fetchResultController.fetchedObjects {
-                    products = fetchedObjects
-                }
-            } catch {
-                print(error)
-            }
-        }
+//        }
         
 //        searchController = UISearchController(searchResultsController: nil)
 //        self.navigationItem.searchController = searchController
@@ -435,18 +435,22 @@ class ProductTableViewController: UITableViewController, NSFetchedResultsControl
         let likeAction = UIContextualAction(style: .normal, title: "Like"){
             (action, sourceView, completionHandler) in
             let productCell = tableView.cellForRow(at: indexPath) as! ProductTableViewCell
-            self.productsT[indexPath.row].isLiked = (self.products[indexPath.row].isLiked) ? false : true
+            self.productsT[indexPath.row].isLiked = (self.productsT[indexPath.row].isLiked) ? false : true
             productCell.heartImageView.isHidden = self.productsT[indexPath.row].isLiked ? false : true
             completionHandler(true)
+            
+            
             if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+                var favorite: FavoriteMO!
                 favorite = FavoriteMO(context: appDelegate.persistentContainer.viewContext)
-                favorite.name = productT.name
-                favorite.store = productT.store
-                favorite.type = productT.type
-                favorite.price = productT.price
-                favorite.isLiked = productT.isLiked
-                favorite.description = productT.description
-                favorite.cart = productT.cart
+                favorite.name = self.productsT[indexPath.row].name
+                favorite.store = self.productsT[indexPath.row].store
+                favorite.type = self.productsT[indexPath.row].type
+                favorite.price = self.productsT[indexPath.row].price
+                favorite.image = self.productsT[indexPath.row].image
+                favorite.isLiked = self.productsT[indexPath.row].isLiked
+                favorite.summary = self.productsT[indexPath.row].description
+                favorite.cart = self.productsT[indexPath.row].cart
                 
                 
                 print("Saving data to context ...")

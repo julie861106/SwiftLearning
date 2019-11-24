@@ -63,6 +63,9 @@ class ProductDetail2ViewController: UIViewController, UITableViewDelegate, UITab
 
     @IBOutlet weak var headerView: ProductDetailHeaderView!
     @IBOutlet weak var tableView: UITableView!
+    
+    var productimages: String = ""
+    
     override func viewDidLoad(){
         super.viewDidLoad()
         
@@ -90,9 +93,17 @@ class ProductDetail2ViewController: UIViewController, UITableViewDelegate, UITab
         
         headerView.productNameLabel.text = product.name
         headerView.productStoreLabel.text = product.store
-        let urlStr = NSURL(string: product.image)
-        let data = NSData(contentsOf: urlStr! as URL)
-        headerView.headerImageView.image = UIImage(data: data! as Data)
+        
+        if product.image != nil{
+            productimages = product.image
+            let urlStr = NSURL(string: productimages)
+            let data = NSData(contentsOf: urlStr! as URL)
+            headerView.headerImageView.image = UIImage(data: data! as Data)
+        }
+        
+//        let urlStr = NSURL(string: product.image)
+//        let data = NSData(contentsOf: urlStr! as URL)
+//        headerView.headerImageView.image = UIImage(data: data! as Data)
         
 //        headerView.headerImageView.image = UIImage(named: product.image)
         headerView.heartImageView.isHidden = (product.isLiked) ? false : true

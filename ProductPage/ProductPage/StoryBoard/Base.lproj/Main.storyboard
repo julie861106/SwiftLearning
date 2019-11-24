@@ -712,7 +712,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rpv-C0-Ahw">
-                                <rect key="frame" x="0.0" y="52" width="375" height="1148"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="edB-xN-Lx1" userLabel="Header View" customClass="ProductDetailHeaderView" customModule="ProductPage" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="350"/>
@@ -2131,7 +2131,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qFo-0o-ElG">
-                                <rect key="frame" x="0.0" y="52" width="375" height="1148"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="rbM-nv-dN4" userLabel="Header View" customClass="ProductDetailHeaderView" customModule="ProductPage" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="350"/>
@@ -3080,7 +3080,6 @@
                                     <outlet property="nameLabel" destination="o5E-9L-1nf" id="VyO-ft-y8f"/>
                                     <outlet property="storeLabel" destination="gB8-KQ-bzT" id="5yu-kZ-gVz"/>
                                     <outlet property="thumbnailImageView" destination="6cU-9i-GdS" id="X06-Ue-Tfh"/>
-                                    <segue destination="9UL-ia-GAT" kind="show" identifier="showFavoriteProductDetail" id="Jxn-uV-c2e"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -3700,6 +3699,6 @@
         <segue reference="U9J-l5-JG5"/>
         <segue reference="3Ql-pr-0mW"/>
         <segue reference="MfN-gK-oMC"/>
-        <segue reference="SSY-so-Ega"/>
+        <segue reference="JNp-QQ-Pf2"/>
     </inferredMetricsTieBreakers>
 </document>
