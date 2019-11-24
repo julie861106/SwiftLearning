@@ -75,7 +75,7 @@ class ProductDetailViewController: UIViewController, UITableViewDelegate, UITabl
             
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ProductDetailTextTableViewCell.self), for: indexPath) as! ProductDetailTextTableViewCell
-            cell.detailLabel.text = product.summary
+            cell.detailLabel.text = product.description
             return cell
             
         case 2:
@@ -155,8 +155,8 @@ class ProductDetailViewController: UIViewController, UITableViewDelegate, UITabl
     //    var productName = ""
     //    var productStore = ""
     //    var productType = ""
-//    var product: Product = Product()
-    var product: ProductMO!
+    var product: Product = Product()
+//    var product: ProductMO!
     
     
     override func viewDidLoad() {
@@ -179,23 +179,32 @@ class ProductDetailViewController: UIViewController, UITableViewDelegate, UITabl
         navigationController?.navigationBar.tintColor = .white
         navigationController?.hidesBarsOnSwipe = false
         
-        headerView.heartImageView.isHidden = (product.isLiked) ? false : true
-        
-        if let productImage = product.image{
-            headerView.headerImageView.image = UIImage(data: productImage as Data)
-        }
-//        headerView.headerImageView.image = UIImage(named: product.image)
-        
         headerView.productNameLabel.text = product.name
         headerView.productStoreLabel.text = product.store
-//        productTypeLabel.text = product.type
+        let urlStr = NSURL(string: product.image)
+        let data = NSData(contentsOf: urlStr! as URL)
+        headerView.headerImageView.image = UIImage(data: data! as Data)
         
-        //        productImageView.image = UIImage(named: productImageViewName)
-        
-        
-        //        productNameLabel.text = productName
-        //        productStoreLabel.text = productStore
-        //        productTypeLabel.text = productType
+        //        headerView.headerImageView.image = UIImage(named: product.image)
+        headerView.heartImageView.isHidden = (product.isLiked) ? false : true
+//
+//        headerView.heartImageView.isHidden = (product.isLiked) ? false : true
+//
+//        if let productImage = product.image{
+//            headerView.headerImageView.image = UIImage(data: productImage as Data)
+//        }
+////        headerView.headerImageView.image = UIImage(named: product.image)
+//
+//        headerView.productNameLabel.text = product.name
+//        headerView.productStoreLabel.text = product.store
+////        productTypeLabel.text = product.type
+//
+//        //        productImageView.image = UIImage(named: productImageViewName)
+//
+//
+//        //        productNameLabel.text = productName
+//        //        productStoreLabel.text = productStore
+//        //        productTypeLabel.text = productType
     }
     
     //    func prepare(for segue: UIStoryboard, sender: Any?){
@@ -223,10 +232,10 @@ class ProductDetailViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showReview"{
-            let destinationController = segue.destination as! ReviewViewController
-            destinationController.product = product
-        }
+//        if segue.identifier == "showReview"{
+//            let destinationController = segue.destination as! ReviewViewController
+//            destinationController.product = product
+//        }
         if segue.identifier == "showProductDetail2" {
             
             

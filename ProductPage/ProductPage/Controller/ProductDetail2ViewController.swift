@@ -142,8 +142,10 @@ class ProductDetail2ViewController: UIViewController, UITableViewDelegate, UITab
             
             return cell
             
+        //map
         case 3:
             let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ProductDetailMapCell.self), for: indexPath) as! ProductDetailMapCell
+            
             let locationManager = CLLocationManager()
             if CLLocationManager.authorizationStatus()  == .notDetermined {
                 // 詢問使用者是否取得當前位置的授權
@@ -154,8 +156,12 @@ class ProductDetail2ViewController: UIViewController, UITableViewDelegate, UITab
             
             
             cell.settingStudioAnnotation()
+            //            cell.mapView(mapView, viewFor: annotation)
             //            cell.configure(location: "524 Ct St, Brooklyn, NY 11231")
             
+            //            self.present(optionMenu, animation: true, completion: nil)
+            
+       
             return cell
             
         case 4:
@@ -260,17 +266,5 @@ class ProductDetail2ViewController: UIViewController, UITableViewDelegate, UITab
     
     
     
-   
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+  
 }

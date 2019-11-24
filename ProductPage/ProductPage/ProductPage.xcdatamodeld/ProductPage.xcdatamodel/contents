@@ -4,6 +4,16 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="price" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="Favorite" representedClassName="FavoriteMO" syncable="YES" codeGenerationType="class">
+        <attribute name="cart" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isLiked" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="price" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="store" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="summary" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="Order" representedClassName="OrderMO" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="price" optional="YES" attributeType="String" syncable="YES"/>
@@ -20,7 +30,8 @@
     </entity>
     <elements>
         <element name="Cart" positionX="-63" positionY="45" width="128" height="75"/>
-        <element name="Product" positionX="-63" positionY="-18" width="128" height="165"/>
         <element name="Order" positionX="-63" positionY="45" width="128" height="75"/>
+        <element name="Product" positionX="-63" positionY="-18" width="128" height="165"/>
+        <element name="Favorite" positionX="-63" positionY="45" width="128" height="165"/>
     </elements>
 </model>

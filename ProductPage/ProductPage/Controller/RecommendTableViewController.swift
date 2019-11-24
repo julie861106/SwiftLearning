@@ -13,8 +13,11 @@ import CoreData
 class RecommendTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     //temp
     var productsT:[ProductMO] = []
-    var likedResults: [ProductMO] = []
-    var fetchResultController: NSFetchedResultsController<ProductMO>!
+//    var likedResults: [ProductMO] = []
+//    var fetchResultController: NSFetchedResultsController<ProductMO>!
+    
+    var favoriteResults: [FavoriteMO] = []
+    var fetchResultController: NSFetchedResultsController<FavoriteMO>!
 
     @IBOutlet var recommendTableView: UITableView!
     
@@ -33,39 +36,39 @@ class RecommendTableViewController: UITableViewController, NSFetchedResultsContr
     func tableGenerate() {
         
         
-        //從CoreData取資料
-        let fetchRequest: NSFetchRequest<ProductMO> = ProductMO.fetchRequest()
-        let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
-        fetchRequest.sortDescriptors = [sortDescriptor]
-        
-        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
-            let context = appDelegate.persistentContainer.viewContext
-            
-            fetchResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
-            fetchResultController.delegate = self
-            
-            
-            do {
-                try fetchResultController.performFetch()
-                if let fetchedObjects = fetchResultController.fetchedObjects {
-                    productsT = fetchedObjects
-                }
-            } catch {
-                print(error)
-                print("error occure")
-            }
-        }
-        
-        likedResults.removeAll()
-        
-        for i in 0...productsT.count-1{
-            
-            if productsT[i].isLiked == true{
-                likedResults.append(productsT[i])
-            }
-        }
-        print("更新\(likedResults.count)")
-        
+//        //從CoreData取資料
+//        let fetchRequest: NSFetchRequest<ProductMO> = ProductMO.fetchRequest()
+//        let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+//        fetchRequest.sortDescriptors = [sortDescriptor]
+//        
+//        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+//            let context = appDelegate.persistentContainer.viewContext
+//            
+//            fetchResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+//            fetchResultController.delegate = self
+//            
+//            
+//            do {
+//                try fetchResultController.performFetch()
+//                if let fetchedObjects = fetchResultController.fetchedObjects {
+//                    productsT = fetchedObjects
+//                }
+//            } catch {
+//                print(error)
+//                print("error occure")
+//            }
+//        }
+//        
+//        likedResults.removeAll()
+//        
+//        for i in 0...productsT.count-1{
+//            
+//            if productsT[i].isLiked == true{
+//                likedResults.append(productsT[i])
+//            }
+//        }
+//        print("更新\(likedResults.count)")
+//        
         recommendTableView.reloadData()
     }
     
@@ -89,23 +92,22 @@ class RecommendTableViewController: UITableViewController, NSFetchedResultsContr
         
         navigationController?.hidesBarsOnSwipe = true
         
-        //temp
         //從CoreData取資料
-        let fetchRequest: NSFetchRequest<ProductMO> = ProductMO.fetchRequest()
+        let fetchRequest: NSFetchRequest<FavoriteMO> = OrderMO.fetchRequest()
         let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
-
+        
         if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
             let context = appDelegate.persistentContainer.viewContext
             
             fetchResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
             fetchResultController.delegate = self
             
-           
+            
             do {
                 try fetchResultController.performFetch()
                 if let fetchedObjects = fetchResultController.fetchedObjects {
-                    productsT = fetchedObjects
+                    favoriteResults = fetchedObjects
                 }
             } catch {
                 print(error)
@@ -113,15 +115,39 @@ class RecommendTableViewController: UITableViewController, NSFetchedResultsContr
             }
         }
         
-//        likedResults.removeAll()
-    
-        for i in 0...productsT.count-1{
-            
-            if productsT[i].isLiked == true{
-                likedResults.append(productsT[i])
-            }
-        }
-        print("likedResults.count：\(likedResults.count)")
+//        //temp
+//        //從CoreData取資料
+//        let fetchRequest: NSFetchRequest<ProductMO> = ProductMO.fetchRequest()
+//        let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+//        fetchRequest.sortDescriptors = [sortDescriptor]
+//
+//        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+//            let context = appDelegate.persistentContainer.viewContext
+//            
+//            fetchResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+//            fetchResultController.delegate = self
+//            
+//           
+//            do {
+//                try fetchResultController.performFetch()
+//                if let fetchedObjects = fetchResultController.fetchedObjects {
+//                    productsT = fetchedObjects
+//                }
+//            } catch {
+//                print(error)
+//                print("error here here")
+//            }
+//        }
+//        
+////        likedResults.removeAll()
+//    
+//        for i in 0...productsT.count-1{
+//            
+//            if productsT[i].isLiked == true{
+//                likedResults.append(productsT[i])
+//            }
+//        }
+//        print("likedResults.count：\(likedResults.count)")
         
         //開始下拉更新的功能
 //        recommendTableView.refreshControl = UIRefreshControl()
@@ -148,41 +174,75 @@ class RecommendTableViewController: UITableViewController, NSFetchedResultsContr
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("WillAppear")
-        productsT.removeAll() //here
+        
+        super.viewWillAppear(animated)
+        //cartResults.removeAll() //here
+        
         //從CoreData取資料
-        let fetchRequest: NSFetchRequest<ProductMO> = ProductMO.fetchRequest()
+        let fetchRequest: NSFetchRequest<FavoriteMO> = FavoriteMO.fetchRequest()
         let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
-        //tableView.reloadData()
+        
         if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
             let context = appDelegate.persistentContainer.viewContext
+            
             fetchResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
             fetchResultController.delegate = self
+            
             
             do {
                 try fetchResultController.performFetch()
                 if let fetchedObjects = fetchResultController.fetchedObjects {
-                    productsT = fetchedObjects
+                    favoriteResults = fetchedObjects
                 }
             } catch {
                 print(error)
+                print("error here here")
             }
         }
         
-        
-        likedResults.removeAll()
-        //recommendTableView.reloadData()
-        
-        for i in 0...productsT.count-1{
-            if productsT[i].isLiked == true{
-                likedResults.append(productsT[i])
-            }
-        }
-        print("likedResults.count：\(likedResults.count)")
-        print("like result\(likedResults)")
-        recommendTableView.reloadData()
+        tableView.reloadData()
         //print("recommendTableView.reloadData()\(recommendTableView.reloadData())")
         
+        
+        
+        navigationController?.hidesBarsOnSwipe = true
+        
+//        productsT.removeAll() //here
+//        //從CoreData取資料
+//        let fetchRequest: NSFetchRequest<ProductMO> = ProductMO.fetchRequest()
+//        let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+//        fetchRequest.sortDescriptors = [sortDescriptor]
+//        //tableView.reloadData()
+//        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+//            let context = appDelegate.persistentContainer.viewContext
+//            fetchResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+//            fetchResultController.delegate = self
+//
+//            do {
+//                try fetchResultController.performFetch()
+//                if let fetchedObjects = fetchResultController.fetchedObjects {
+//                    productsT = fetchedObjects
+//                }
+//            } catch {
+//                print(error)
+//            }
+//        }
+//
+//
+//        likedResults.removeAll()
+//        //recommendTableView.reloadData()
+//
+//        for i in 0...productsT.count-1{
+//            if productsT[i].isLiked == true{
+//                likedResults.append(productsT[i])
+//            }
+//        }
+//        print("likedResults.count：\(likedResults.count)")
+//        print("like result\(likedResults)")
+//        recommendTableView.reloadData()
+//        //print("recommendTableView.reloadData()\(recommendTableView.reloadData())")
+//
         
         
         navigationController?.hidesBarsOnSwipe = true
@@ -217,7 +277,8 @@ class RecommendTableViewController: UITableViewController, NSFetchedResultsContr
         //        return str02_product_name.count
 
         print("likedResults.count numberOfRowsInSection：\(likedResults.count)")
-        return likedResults.count
+        return favoriteResults.count
+//        return likedResults.count
         //temp
 //        return productsT.count
         //temp
@@ -241,24 +302,34 @@ class RecommendTableViewController: UITableViewController, NSFetchedResultsContr
         //temp
 //        let product = productsT[indexPath.row]
 //        let liked = productsT[indexPath.row]
-        let liked = likedResults[indexPath.row]
-        print("liked：222\(liked)")
-        print("likedResults.count：\(likedResults.count)")
-        print("productsT.count：\(productsT.count)")
+        let favorite = favoriteResults[indexPath.row]
+        
+//        let liked = likedResults[indexPath.row]
         
 //        likedResults = productsT.filter({_ in product.isLiked = true})
         
-
-        
-        //temp
-        //設定cell
-        recommendCell.nameLabel.text = liked.name
+        recommendCell.nameLabel.text = favorite.name
+        let urlStr = NSURL(string: favorite.image)
+        let data = NSData(contentsOf: urlStr! as URL)
+        cell.recommendThumbnailImageView.image = UIImage(data: data! as Data)
         if let productImage = liked.image {
             recommendCell.thumbnailImageView.image = UIImage(data: productImage as Data)
         }
-        recommendCell.storeLabel.text = liked.store
-//        recommendCell.typeLabel.text = liked.type
-        recommendCell.heartImageView.isHidden = liked.isLiked ? false : true
+        recommendCell.storeLabel.text = favorite.store
+        //        recommendCell.typeLabel.text = liked.type
+        recommendCell.heartImageView.isHidden = favorite.isLiked ? false : true
+        
+
+        
+//        //temp
+//        //設定cell
+//        recommendCell.nameLabel.text = liked.name
+//        if let productImage = liked.image {
+//            recommendCell.thumbnailImageView.image = UIImage(data: productImage as Data)
+//        }
+//        recommendCell.storeLabel.text = liked.store
+////        recommendCell.typeLabel.text = liked.type
+//        recommendCell.heartImageView.isHidden = liked.isLiked ? false : true
         
 //        //temp
 //        //設定cell
@@ -451,10 +522,10 @@ class RecommendTableViewController: UITableViewController, NSFetchedResultsContr
             
             
             if let indexPath = tableView.indexPathForSelectedRow {
-                let destinationController = segue.destination as! ProductDetailViewController
+                let destinationController = segue.destination as! ProductDetail2ViewController
                 
                 //轉給下一頁
-                destinationController.product = likedResults[indexPath.row]
+                destinationController.product = favoriteResults[indexPath.row]
                 
                 //                destinationController.product = products[indexPath.row]
                 //                destinationController.productImageViewName = str02_product_image[indexPath.row]

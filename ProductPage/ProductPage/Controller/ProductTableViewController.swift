@@ -18,6 +18,39 @@ class ProductTableViewController: UITableViewController, NSFetchedResultsControl
     var searchResults: [ProductMO] = []
     var productsTest: ProductMO!
     
+    var favorite: FavoriteMO!
+    
+    @IBAction func addToLiked(_ sender: AnyObject) {
+        
+        // Saving the restaurant to database 19.8
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+            favorite = FavoriteMO(context: appDelegate.persistentContainer.viewContext)
+            favorite.name = productT.name
+            favorite.store = productT.store
+            favorite.type = productT.type
+            favorite.price = productT.price
+            favorite.isLiked = productT.isLiked
+            favorite.description = productT.description
+            favorite.cart = productT.cart
+            
+            
+            print("Saving data to context ...")
+            appDelegate.saveContext()
+        }
+        
+        
+    }
+    
+    var productsT:[Product] = [
+        Product(name: "燒肉珍珠堡(牛)", store: "mosburger", type: "food", price: "70", image: "https://images.theconversation.com/files/280024/original/file-20190618-118505-aag3r7.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=496&fit=clip", isLiked: false, description: "香Q美味的米飯，搭配新鮮現炒的紐西蘭牛肉片與洋蔥絲與青生菜，是最受歡迎的米漢堡", cart:false),
+        Product(name: "藜麥燒肉珍珠堡(牛)", store: "mosburger", type: "food", price: "75", image: "https://timesofindia.indiatimes.com/thumb/msid-69058419,width-800,height-600,resizemode-4/69058419.jpg", isLiked: false, description: "香Q美味的米飯，搭配新鮮現炒的紐西蘭牛肉片與洋蔥絲與青生菜，是最受歡迎的米漢堡", cart:false),
+        Product(name: "薑燒珍珠堡", store: "mosburger", type: "food", price: "65", image: "https://timesofindia.indiatimes.com/thumb/msid-70143101,imgsize-1269404,width-800,height-600,resizemode-4/70143101.jpg", isLiked: false, description: "香Q美味的米飯，搭配現炒薑味醃製豬肉片，與青生菜", cart:false),
+        Product(name: "藜麥薑燒珍珠堡", store: "mosburger", type: "food", price: "70", image: "pr_mos004", isLiked: false, description: "香Q美味的米飯，搭配現炒薑味醃製豬肉片，與青生菜", cart:false),
+        Product(name: "海洋珍珠堡", store: "mosburger", type: "food", price: "75", image: "pr_mos005", isLiked: false, description: "香Q美味的米飯，搭配鮮蝦、干貝、墨魚等豐富的美味海鮮", cart:false)
+    ]
+    
+    
+    
     
     
     //actiontest
@@ -123,18 +156,7 @@ class ProductTableViewController: UITableViewController, NSFetchedResultsControl
 //            appDelegate.saveContext()
 //        }
         
-        var productsT:[Product] = [
-            Product(name: "燒肉珍珠堡(牛)", store: "mosburger", type: "food", price: "70", image: "pr_mos001", isLiked: false, description: "香Q美味的米飯，搭配新鮮現炒的紐西蘭牛肉片與洋蔥絲與青生菜，是最受歡迎的米漢堡", cart:false),
-            Product(name: "藜麥燒肉珍珠堡(牛)", store: "mosburger", type: "food", price: "75", image: "pr_mos002", isLiked: false, description: "香Q美味的米飯，搭配新鮮現炒的紐西蘭牛肉片與洋蔥絲與青生菜，是最受歡迎的米漢堡", cart:false),
-            Product(name: "薑燒珍珠堡", store: "mosburger", type: "food", price: "65", image: "pr_mos003", isLiked: false, description: "香Q美味的米飯，搭配現炒薑味醃製豬肉片，與青生菜", cart:false),
-            Product(name: "藜麥薑燒珍珠堡", store: "mosburger", type: "food", price: "70", image: "pr_mos004", isLiked: false, description: "香Q美味的米飯，搭配現炒薑味醃製豬肉片，與青生菜", cart:false),
-            Product(name: "海洋珍珠堡", store: "mosburger", type: "food", price: "75", image: "pr_mos005", isLiked: false, description: "香Q美味的米飯，搭配鮮蝦、干貝、墨魚等豐富的美味海鮮", cart:false),
-            Product(name: "藜麥海洋珍珠堡", store: "mosburger", type: "food", price: "80", image: "pr_mos006", isLiked: false, description: "香Q美味的米飯，搭配鮮蝦、干貝、墨魚等豐富的美味海鮮", cart:false),
-            Product(name: "藜麥蓮藕牛蒡珍珠堡", store: "mosburger", type: "food", price: "80", image: "pr_mos007", isLiked: false, description: "使用薑末慢火爆香，加入牛蒡、蓮藕、紅蘿蔔及鴻喜菇等蔬菜焙炒，並使用香椿及七味粉調出鹹香帶甜且微辣的美味，最後再加入蒟蒻條讓口感層次更豐富。是一款充滿醬香、富有口感且低負擔的漢堡，讓喜愛健康飲食的顧客有多一種選擇", cart:false),
-            Product(name: "杏鮑菇珍珠堡", store: "mosburger", type: "food", price: "70", image: "pr_mos008", isLiked: false, description: "選用杏鮑菇為主食材，搭配豆皮及紅蘿蔔一同料理，口味鹹香帶甜，讓素食風味也可以很滿足！", cart:false),
-            Product(name: "藜麥杏鮑菇珍珠堡", store: "mosburger", type: "food", price: "75", image: "pr_mos009", isLiked: false, description: "選用杏鮑菇為主食材，搭配豆皮及紅蘿蔔一同料理，口味鹹香帶甜，讓素食風味也可以很滿足！", cart:false),
-            Product(name: "元氣和牛珍珠堡(牛)", store: "mosburger", type: "food", price: "105", image: "pr_mos010", isLiked: false, description: "使用澳洲和牛，搭配摩斯獨家蔬菜醬，蔬果原汁原味的清甜與香氣，使漢堡整體更增層次感。與摩斯特有米漢堡、元氣蛋相互搭配，交疊出獨特的風味", cart:false)
-        ]
+        
         
         if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
 //            productsTest = ProductMO(context: appDelegate.persistentContainer.viewContext)
@@ -268,7 +290,7 @@ class ProductTableViewController: UITableViewController, NSFetchedResultsControl
     // MARK: - UITableViewDataSource協定
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        if products.count > 0 {
+        if productsT.count > 0 {
             tableView.backgroundView?.isHidden = true
             tableView.separatorStyle = .singleLine
         } else {
@@ -285,7 +307,7 @@ class ProductTableViewController: UITableViewController, NSFetchedResultsControl
         //        return str02_product_name.count
         
         //1110
-        return products.count
+        return productsT.count
 //        if searchController.isActive{
 //            return searchResults.count
 //        }else{
@@ -300,114 +322,141 @@ class ProductTableViewController: UITableViewController, NSFetchedResultsControl
         let cellIdentifier = "ProductCell"
         let productCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)as!ProductTableViewCell
         
-        let product = products[indexPath.row]
-        //1110
-//        // Determine if we get the restaurant from search result or the original array 20.4
-//        let product = (searchController.isActive) ? searchResults[indexPath.row] : products[indexPath.row]
+        //利用網址抓圖片
+        let urlStr = NSURL(string: productsT[indexPath.row].image)
+        let data = NSData(contentsOf: urlStr! as URL)
+        productCell.thumbnailImageView.image = UIImage(data: data! as Data)
         
         //設定cell
-        productCell.nameLabel.text = product.name
-        if let productImage = product.image {
-            productCell.thumbnailImageView.image = UIImage(data: productImage as Data)
-        }
-        productCell.storeLabel.text = product.store
-        //productCell.typeLabel.text = product.type
-        productCell.heartImageView.isHidden = product.isLiked ? false : true
+        productCell.nameLabel.text = productsT[indexPath.row].name
+        //        recommendCell.thumbnailImageView.image = UIImage(named: products[indexPath.row].image)
+        productCell.storeLabel.text = productsT[indexPath.row].store
+        productCell.heartImageView.isHidden = productsT[indexPath.row].isLiked ? false : true
         
-//        productCell.nameLabel.text = products[indexPath.row].name
-//        if let productImage = products[indexPath.row].image {
+//        let product = products[indexPath.row]
+//        //1110
+////        // Determine if we get the restaurant from search result or the original array 20.4
+////        let product = (searchController.isActive) ? searchResults[indexPath.row] : products[indexPath.row]
+//
+//        //設定cell
+//        productCell.nameLabel.text = product.name
+//
+//        if let productImage = product.image {
 //            productCell.thumbnailImageView.image = UIImage(data: productImage as Data)
 //        }
-//        productCell.storeLabel.text = products[indexPath.row].store
-//        productCell.typeLabel.text = products[indexPath.row].type
-        
-        //        productCell.nameLabel.text = str02_product_name[indexPath.row]
-        //        productCell.thumbnailImageView.image = UIImage(named: str02_product_image[indexPath.row])
-        //        productCell.storeLabel.text = str02_store_name
-        //        productCell.typeLabel.text = str02_store_type
-        
-        //        productCell.accessoryType = productIsLiked[indexPath.row] ? .checkmark: .none
-        //        if productIsLiked[indexPath.row]{
-        //            productCell.accessoryType = .checkmark
-        //        }else{
-        //            productCell.accessoryType = .none
-        //        }
-        //        productCell.heartImageView.isHidden = self.productIsLiked[indexPath.row] ? false : true
+//        productCell.storeLabel.text = product.store
+//        //productCell.typeLabel.text = product.type
+//        productCell.heartImageView.isHidden = product.isLiked ? false : true
+//
+////        productCell.nameLabel.text = products[indexPath.row].name
+////        if let productImage = products[indexPath.row].image {
+////            productCell.thumbnailImageView.image = UIImage(data: productImage as Data)
+////        }
+////        productCell.storeLabel.text = products[indexPath.row].store
+////        productCell.typeLabel.text = products[indexPath.row].type
+//
+//        //        productCell.nameLabel.text = str02_product_name[indexPath.row]
+//        //        productCell.thumbnailImageView.image = UIImage(named: str02_product_image[indexPath.row])
+//        //        productCell.storeLabel.text = str02_store_name
+//        //        productCell.typeLabel.text = str02_store_type
+//
+//        //        productCell.accessoryType = productIsLiked[indexPath.row] ? .checkmark: .none
+//        //        if productIsLiked[indexPath.row]{
+//        //            productCell.accessoryType = .checkmark
+//        //        }else{
+//        //            productCell.accessoryType = .none
+//        //        }
+//        //        productCell.heartImageView.isHidden = self.productIsLiked[indexPath.row] ? false : true
         
         return productCell
     }
     
-    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-//        let deleteAction = UIContextualAction(style: .destructive, title: "Delete"){
-//            (action, sourceView, completionHandler) in
-//            self.products.remove(at: indexPath.row)
-//            self.tableView.deleteRows(at: [indexPath], with: .fade)
+    //1124
+//    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+////        let deleteAction = UIContextualAction(style: .destructive, title: "Delete"){
+////            (action, sourceView, completionHandler) in
+////            self.products.remove(at: indexPath.row)
+////            self.tableView.deleteRows(at: [indexPath], with: .fade)
+////            completionHandler(true)
+////        }
+//
+//        //19.10
+//        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (action, sourceView, completionHandler) in
+//            // Delete the row from the data store
+//            if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+//                let context = appDelegate.persistentContainer.viewContext
+//                let productToDelete = self.fetchResultController.object(at: indexPath)
+//                context.delete(productToDelete)
+//
+//                appDelegate.saveContext()
+//            }
+//
+//            // Call completion handler with true to indicate
 //            completionHandler(true)
 //        }
-        
-        //19.10
-        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (action, sourceView, completionHandler) in
-            // Delete the row from the data store
-            if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
-                let context = appDelegate.persistentContainer.viewContext
-                let productToDelete = self.fetchResultController.object(at: indexPath)
-                context.delete(productToDelete)
-                
-                appDelegate.saveContext()
-            }
-            
-            // Call completion handler with true to indicate
-            completionHandler(true)
-        }
-
-        let shareAction = UIContextualAction(style: .normal, title: "Share"){(action, sourceView, completionHandler) in
-            let defaultText = "Just checking in at " + self.products[indexPath.row].name!
-            let activityController: UIActivityViewController
-            
-            if let productImage = self.products[indexPath.row].image,
-                let imageToShare = UIImage(data: productImage as Data){
-                activityController = UIActivityViewController(activityItems: [defaultText, imageToShare], applicationActivities: nil)
-            }else{
-                activityController = UIActivityViewController(activityItems: [defaultText], applicationActivities: nil)
-            }
-
-            if let popoverController = activityController.popoverPresentationController{
-                if let productCell = tableView.cellForRow(at: indexPath){
-                    popoverController.sourceView = productCell
-                    popoverController.sourceRect = productCell.bounds
-                }
-            }
-
-            self.present(activityController, animated: true, completion: nil)
-            completionHandler(true)
-
-        }
-
-        deleteAction.backgroundColor = UIColor(red: 231.0/255.0, green: 76.0/255.0, blue: 60.0/255.0, alpha: 1.0)
-        deleteAction.image = UIImage(named: "delete")
-        deleteAction.backgroundColor = UIColor(red: 254.0/255.0, green: 149.0/255.0, blue: 38.0/255.0, alpha: 1.0)
-        shareAction.image = UIImage(named: "share")
-
-        let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction, shareAction])
-
-        return swipeConfiguration
-
-    }
+//
+//        let shareAction = UIContextualAction(style: .normal, title: "Share"){(action, sourceView, completionHandler) in
+//            let defaultText = "Just checking in at " + self.products[indexPath.row].name!
+//            let activityController: UIActivityViewController
+//
+//            if let productImage = self.products[indexPath.row].image,
+//                let imageToShare = UIImage(data: productImage as Data){
+//                activityController = UIActivityViewController(activityItems: [defaultText, imageToShare], applicationActivities: nil)
+//            }else{
+//                activityController = UIActivityViewController(activityItems: [defaultText], applicationActivities: nil)
+//            }
+//
+//            if let popoverController = activityController.popoverPresentationController{
+//                if let productCell = tableView.cellForRow(at: indexPath){
+//                    popoverController.sourceView = productCell
+//                    popoverController.sourceRect = productCell.bounds
+//                }
+//            }
+//
+//            self.present(activityController, animated: true, completion: nil)
+//            completionHandler(true)
+//
+//        }
+//
+//        deleteAction.backgroundColor = UIColor(red: 231.0/255.0, green: 76.0/255.0, blue: 60.0/255.0, alpha: 1.0)
+//        deleteAction.image = UIImage(named: "delete")
+//        deleteAction.backgroundColor = UIColor(red: 254.0/255.0, green: 149.0/255.0, blue: 38.0/255.0, alpha: 1.0)
+//        shareAction.image = UIImage(named: "share")
+//
+//        let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction, shareAction])
+//
+//        return swipeConfiguration
+//
+//    }
     
+    
+    //liked
     override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let likeAction = UIContextualAction(style: .normal, title: "Like"){
             (action, sourceView, completionHandler) in
             let productCell = tableView.cellForRow(at: indexPath) as! ProductTableViewCell
-            self.products[indexPath.row].isLiked = (self.products[indexPath.row].isLiked) ? false : true
-            productCell.heartImageView.isHidden = self.products[indexPath.row].isLiked ? false : true
+            self.productsT[indexPath.row].isLiked = (self.products[indexPath.row].isLiked) ? false : true
+            productCell.heartImageView.isHidden = self.productsT[indexPath.row].isLiked ? false : true
             completionHandler(true)
             if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+                favorite = FavoriteMO(context: appDelegate.persistentContainer.viewContext)
+                favorite.name = productT.name
+                favorite.store = productT.store
+                favorite.type = productT.type
+                favorite.price = productT.price
+                favorite.isLiked = productT.isLiked
+                favorite.description = productT.description
+                favorite.cart = productT.cart
+                
+                
+                print("Saving data to context ...")
                 appDelegate.saveContext()
             }
+            
         }
 
         likeAction.backgroundColor = UIColor(red: 39.0/255.0, green: 174.0/255.0, blue: 96.0/255.0, alpha: 1.0)
-        likeAction.image = self.products[indexPath.row].isLiked ? UIImage(named: "undo") : UIImage(named: "tick")
+        likeAction.image = self.productsT[indexPath.row].isLiked ? UIImage(named: "undo") : UIImage(named: "tick")
 
         let swipeConfiguration = UISwipeActionsConfiguration(actions: [likeAction])
         
@@ -512,10 +561,10 @@ class ProductTableViewController: UITableViewController, NSFetchedResultsControl
             
             
             if let indexPath = tableView.indexPathForSelectedRow {
-                let destinationController = segue.destination as! ProductDetailViewController
+                let destinationController = segue.destination as! ProductDetail2ViewController
                 
                 //1110
-                destinationController.product = products[indexPath.row]
+                destinationController.product = productsT[indexPath.row]
 //                //轉給下一頁
 //                destinationController.product = (searchController.isActive) ? searchResults[indexPath.row]:products[indexPath.row]
                 

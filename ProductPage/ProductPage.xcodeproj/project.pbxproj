@@ -32,6 +32,8 @@
 		A340478B225C828D003E77E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A340478A225C828D003E77E9 /* AppDelegate.swift */; };
 		A37BE4B5228070D3005FC25A /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37BE4B4228070D3005FC25A /* ReviewViewController.swift */; };
 		A37BE4B7228085BF005FC25A /* ProductDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37BE4B6228085BF005FC25A /* ProductDetailHeaderView.swift */; };
+		A38ADAD5238AAF150000945E /* FavoriteMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38ADAD3238AAF150000945E /* FavoriteMO+CoreDataClass.swift */; };
+		A38ADAD6238AAF150000945E /* FavoriteMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38ADAD4238AAF150000945E /* FavoriteMO+CoreDataProperties.swift */; };
 		A38C2ABC2361BD17003FF728 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38C2ABB2361BD17003FF728 /* UIColor+Ext.swift */; };
 		A38C2ABE2361C37B003FF728 /* Review2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38C2ABD2361C37B003FF728 /* Review2ViewController.swift */; };
 		A3948BBF237AFBCD00FD339B /* OrderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3948BBE237AFBCD00FD339B /* OrderTableViewController.swift */; };
@@ -81,6 +83,8 @@
 		A340478A225C828D003E77E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A37BE4B4228070D3005FC25A /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		A37BE4B6228085BF005FC25A /* ProductDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailHeaderView.swift; sourceTree = "<group>"; };
+		A38ADAD3238AAF150000945E /* FavoriteMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "FavoriteMO+CoreDataClass.swift"; path = "ProductPage/Extensions/FavoriteMO+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A38ADAD4238AAF150000945E /* FavoriteMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "FavoriteMO+CoreDataProperties.swift"; path = "ProductPage/Extensions/FavoriteMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A38C2ABB2361BD17003FF728 /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 		A38C2ABD2361C37B003FF728 /* Review2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review2ViewController.swift; sourceTree = "<group>"; };
 		A3948BBE237AFBCD00FD339B /* OrderTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewController.swift; sourceTree = "<group>"; };
@@ -135,6 +139,8 @@
 		A3404760225C7EE5003E77E9 = {
 			isa = PBXGroup;
 			children = (
+				A38ADAD3238AAF150000945E /* FavoriteMO+CoreDataClass.swift */,
+				A38ADAD4238AAF150000945E /* FavoriteMO+CoreDataProperties.swift */,
 				A340476B225C7EE5003E77E9 /* ProductPage */,
 				A340476A225C7EE5003E77E9 /* Products */,
 				A3F1A45A237BCFC500834D91 /* Frameworks */,
@@ -336,6 +342,7 @@
 				A33D2F0B2372A97700BD808F /* RecordTableViewController.swift in Sources */,
 				A39A22832265F67200390639 /* UINavigationController+Ext.swift in Sources */,
 				A3404783225C7FB0003E77E9 /* Product.swift in Sources */,
+				A38ADAD5238AAF150000945E /* FavoriteMO+CoreDataClass.swift in Sources */,
 				A37BE4B7228085BF005FC25A /* ProductDetailHeaderView.swift in Sources */,
 				A3404789225C80A3003E77E9 /* ProductDetailViewController.swift in Sources */,
 				A3C1493F2292C55D003672E9 /* ProductPage.xcdatamodeld in Sources */,
@@ -345,6 +352,7 @@
 				A3404785225C8036003E77E9 /* ProductTableViewCell.swift in Sources */,
 				A3F3043A22672F5F00BBF2B6 /* ProductDetailSeparatorCell.swift in Sources */,
 				A3DCD6C4235CC0B30047716F /* ProductDetail2ViewController.swift in Sources */,
+				A38ADAD6238AAF150000945E /* FavoriteMO+CoreDataProperties.swift in Sources */,
 				A3A6CB5D2343253400A3973D /* Helper2TableViewController.swift in Sources */,
 				A38C2ABE2361C37B003FF728 /* Review2ViewController.swift in Sources */,
 				A3E5A3F2228154CA00A76CB5 /* RoundedTextField.swift in Sources */,
@@ -512,6 +520,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PH4A446ZQA;
 				INFOPLIST_FILE = ProductPage/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -532,6 +541,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PH4A446ZQA;
 				INFOPLIST_FILE = ProductPage/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
