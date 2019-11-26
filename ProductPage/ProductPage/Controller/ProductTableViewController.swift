@@ -90,6 +90,7 @@ class ProductTableViewController: UITableViewController, NSFetchedResultsControl
     
     @IBOutlet var emptyProductView: UIView!
     
+    var fetchResultController: NSFetchedResultsController<FavoriteMO>!
 //    var fetchResultController: NSFetchedResultsController<ProductMO>!
     var searchController: UISearchController!
     
@@ -471,23 +472,49 @@ class ProductTableViewController: UITableViewController, NSFetchedResultsControl
             productCell.heartImageView.isHidden = self.productsT[indexPath.row].isLiked ? false : true
             completionHandler(true)
             
+            if self.productsT[indexPath.row].isLiked == true{
             
-            if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
-                var favorite: FavoriteMO!
-                favorite = FavoriteMO(context: appDelegate.persistentContainer.viewContext)
-                favorite.name = self.productsT[indexPath.row].name
-                favorite.store = self.productsT[indexPath.row].store
-                favorite.type = self.productsT[indexPath.row].type
-                favorite.price = self.productsT[indexPath.row].price
-                favorite.image = self.productsT[indexPath.row].image
-                favorite.isLiked = self.productsT[indexPath.row].isLiked
-                favorite.summary = self.productsT[indexPath.row].description
-                favorite.cart = self.productsT[indexPath.row].cart
+                if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+                    var favorite: FavoriteMO!
+                    favorite = FavoriteMO(context: appDelegate.persistentContainer.viewContext)
+                    favorite.name = self.productsT[indexPath.row].name
+                    favorite.store = self.productsT[indexPath.row].store
+                    favorite.type = self.productsT[indexPath.row].type
+                    favorite.price = self.productsT[indexPath.row].price
+                    favorite.image = self.productsT[indexPath.row].image
+                    favorite.isLiked = self.productsT[indexPath.row].isLiked
+                    favorite.summary = self.productsT[indexPath.row].description
+                    favorite.cart = self.productsT[indexPath.row].cart
+        
+                    
+                    print("Saving data to context ...")
+                    appDelegate.saveContext()
+                }
                 
                 
-                print("Saving data to context ...")
-                appDelegate.saveContext()
             }
+            
+            
+//            if self.productsT[indexPath.row].isLiked == false{
+//
+//                var fetchResultControllerF: NSFetchedResultsController<FavoriteMO>!
+//                let fetchRequestF: NSFetchRequest<FavoriteMO> = FavoriteMO.fetchRequest()
+//                if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+//                    let context = appDelegate.persistentContainer.viewContext
+//
+//                    fetchResultControllerF = NSFetchedResultsController(fetchRequest: fetchRequestF, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+//                    fetchResultControllerF.delegate = self
+//
+//                    let productToDelete = fetchResultControllerF.object(at: indexPath)
+//                    context.delete(productToDelete)
+//
+//                    appDelegate.saveContext()
+//                }
+//            }
+            
+            
+            
+            
             
         }
 

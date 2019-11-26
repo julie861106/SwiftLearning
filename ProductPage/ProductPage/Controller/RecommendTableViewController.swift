@@ -311,7 +311,6 @@ class RecommendTableViewController: UITableViewController, NSFetchedResultsContr
         recommendCell.nameLabel.text = favorite.name
 //        recommendCell.thumbnailImageView.image = favorite.image
         
-        print("image\(favorite.image)")
         
         if favorite.image != nil{
             favoriteimages = favorite.image!

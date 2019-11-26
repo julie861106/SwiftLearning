@@ -11,7 +11,7 @@ import CoreData
 import MapKit
 import CoreLocation
 
-class SearchClothingTableViewController: UITableViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+class SearchClothingTableViewController: UITableViewController, NSFetchedResultsControllerDelegate, MKMapViewDelegate, CLLocationManagerDelegate {
 
     var products:[Product] = [
         
@@ -129,46 +129,46 @@ class SearchClothingTableViewController: UITableViewController, MKMapViewDelegat
         return resultCell
     }
     
-    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let deleteAction = UIContextualAction(style: .destructive, title: "Delete"){
-            (action, sourceView, completionHandler) in
-            self.products.remove(at: indexPath.row)
-            self.tableView.deleteRows(at: [indexPath], with: .fade)
-            completionHandler(true)
-        }
-        
-        let shareAction = UIContextualAction(style: .normal, title: "Share"){(action, sourceView, completionHandler) in
-            let defaultText = "Just checking in at " + self.products[indexPath.row].name
-            let activityController: UIActivityViewController
-            
-            if let imageToShare = UIImage(named: self.products[indexPath.row].image){
-                activityController = UIActivityViewController(activityItems: [defaultText, imageToShare], applicationActivities: nil)
-            }else{
-                activityController = UIActivityViewController(activityItems: [defaultText], applicationActivities: nil)
-            }
-            
-            if let popoverController = activityController.popoverPresentationController{
-                if let productCell = tableView.cellForRow(at: indexPath){
-                    popoverController.sourceView = productCell
-                    popoverController.sourceRect = productCell.bounds
-                }
-            }
-            
-            self.present(activityController, animated: true, completion: nil)
-            completionHandler(true)
-            
-        }
-        
-        deleteAction.backgroundColor = UIColor(red: 231.0/255.0, green: 76.0/255.0, blue: 60.0/255.0, alpha: 1.0)
-        deleteAction.image = UIImage(named: "delete")
-        deleteAction.backgroundColor = UIColor(red: 254.0/255.0, green: 149.0/255.0, blue: 38.0/255.0, alpha: 1.0)
-        shareAction.image = UIImage(named: "share")
-        
-        let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction, shareAction])
-        
-        return swipeConfiguration
-        
-    }
+//    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+//        let deleteAction = UIContextualAction(style: .destructive, title: "Delete"){
+//            (action, sourceView, completionHandler) in
+//            self.products.remove(at: indexPath.row)
+//            self.tableView.deleteRows(at: [indexPath], with: .fade)
+//            completionHandler(true)
+//        }
+//
+//        let shareAction = UIContextualAction(style: .normal, title: "Share"){(action, sourceView, completionHandler) in
+//            let defaultText = "Just checking in at " + self.products[indexPath.row].name
+//            let activityController: UIActivityViewController
+//
+//            if let imageToShare = UIImage(named: self.products[indexPath.row].image){
+//                activityController = UIActivityViewController(activityItems: [defaultText, imageToShare], applicationActivities: nil)
+//            }else{
+//                activityController = UIActivityViewController(activityItems: [defaultText], applicationActivities: nil)
+//            }
+//
+//            if let popoverController = activityController.popoverPresentationController{
+//                if let productCell = tableView.cellForRow(at: indexPath){
+//                    popoverController.sourceView = productCell
+//                    popoverController.sourceRect = productCell.bounds
+//                }
+//            }
+//
+//            self.present(activityController, animated: true, completion: nil)
+//            completionHandler(true)
+//
+//        }
+//
+//        deleteAction.backgroundColor = UIColor(red: 231.0/255.0, green: 76.0/255.0, blue: 60.0/255.0, alpha: 1.0)
+//        deleteAction.image = UIImage(named: "delete")
+//        deleteAction.backgroundColor = UIColor(red: 254.0/255.0, green: 149.0/255.0, blue: 38.0/255.0, alpha: 1.0)
+//        shareAction.image = UIImage(named: "share")
+//
+//        let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction, shareAction])
+//
+//        return swipeConfiguration
+//
+//    }
     
     override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let likeAction = UIContextualAction(style: .normal, title: "Like"){
@@ -177,12 +177,39 @@ class SearchClothingTableViewController: UITableViewController, MKMapViewDelegat
             self.products[indexPath.row].isLiked = (self.products[indexPath.row].isLiked) ? false : true
             productCell.heartImageView.isHidden = self.products[indexPath.row].isLiked ? false : true
             completionHandler(true)
+            
+            if self.products[indexPath.row].isLiked == true{
+                
+                if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+                    var favorite: FavoriteMO!
+                    favorite = FavoriteMO(context: appDelegate.persistentContainer.viewContext)
+                    favorite.name = self.products[indexPath.row].name
+                    favorite.store = self.products[indexPath.row].store
+                    favorite.type = self.products[indexPath.row].type
+                    favorite.price = self.products[indexPath.row].price
+                    favorite.image = self.products[indexPath.row].image
+                    favorite.isLiked = self.products[indexPath.row].isLiked
+                    favorite.summary = self.products[indexPath.row].description
+                    favorite.cart = self.products[indexPath.row].cart
+                    
+                    
+                    print("Saving data to context ...")
+                    appDelegate.saveContext()
+                }
+                
+                
+            }
+            
         }
         
         likeAction.backgroundColor = UIColor(red: 39.0/255.0, green: 174.0/255.0, blue: 96.0/255.0, alpha: 1.0)
         likeAction.image = self.products[indexPath.row].isLiked ? UIImage(named: "undo") : UIImage(named: "tick")
         
         let swipeConfiguration = UISwipeActionsConfiguration(actions: [likeAction])
+        
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate){
+            appDelegate.saveContext()
+        }
         
         return swipeConfiguration
         
