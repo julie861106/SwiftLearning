@@ -250,20 +250,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="ABC store" id="Hze-a9-nYj">
-                        <rightBarButtonItems>
-                            <barButtonItem image="plus" id="Vvx-XR-Eps">
-                                <color key="tintColor" red="0.83983546499999995" green="0.34268105030000001" blue="0.2705485225" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <connections>
-                                    <segue destination="mHw-5a-gPr" kind="presentation" identifier="addProduct" id="qxm-tb-8CW"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem title="Item" image="messenger" id="fbE-Kd-oEM" userLabel="Helper">
-                                <color key="tintColor" red="0.83983546499999995" green="0.34268105030000001" blue="0.2705485225" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <connections>
-                                    <segue destination="NJp-Oa-bSN" kind="presentation" id="VvZ-rj-hBm"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="messenger" id="fbE-Kd-oEM" userLabel="Helper">
+                            <color key="tintColor" red="0.83983546499999995" green="0.34268105030000001" blue="0.2705485225" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <segue destination="NJp-Oa-bSN" kind="presentation" id="VvZ-rj-hBm"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <size key="freeformSize" width="375" height="900"/>
@@ -712,7 +704,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rpv-C0-Ahw">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
+                                <rect key="frame" x="0.0" y="52" width="375" height="1148"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="edB-xN-Lx1" userLabel="Header View" customClass="ProductDetailHeaderView" customModule="ProductPage" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="350"/>
@@ -2131,7 +2123,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qFo-0o-ElG">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
+                                <rect key="frame" x="0.0" y="52" width="375" height="1148"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="rbM-nv-dN4" userLabel="Header View" customClass="ProductDetailHeaderView" customModule="ProductPage" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="350"/>
@@ -2893,9 +2885,11 @@
                                         <constraint firstItem="ngp-Kz-bZL" firstAttribute="centerY" secondItem="DqM-LH-Cxk" secondAttribute="centerY" id="Gtf-47-tsn"/>
                                         <constraint firstItem="Haz-Yc-ICO" firstAttribute="centerY" secondItem="DqM-LH-Cxk" secondAttribute="centerY" id="Qqd-1k-bAk"/>
                                         <constraint firstItem="ngp-Kz-bZL" firstAttribute="leading" secondItem="DqM-LH-Cxk" secondAttribute="leadingMargin" constant="16" id="Srr-bJ-29S"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="ngp-Kz-bZL" secondAttribute="bottom" constant="4" id="ao8-cu-1aV"/>
                                         <constraint firstItem="Haz-Yc-ICO" firstAttribute="centerY" secondItem="ngp-Kz-bZL" secondAttribute="centerY" id="jPR-7Y-Zle"/>
                                         <constraint firstItem="2dO-I9-peS" firstAttribute="centerY" secondItem="ngp-Kz-bZL" secondAttribute="centerY" id="jd9-cF-6yV"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="Haz-Yc-ICO" secondAttribute="trailing" constant="4" id="nvB-mi-hfn"/>
+                                        <constraint firstItem="ngp-Kz-bZL" firstAttribute="top" secondItem="DqM-LH-Cxk" secondAttribute="topMargin" constant="4" id="nvN-Wj-g5d"/>
                                         <constraint firstItem="2dO-I9-peS" firstAttribute="centerY" secondItem="DqM-LH-Cxk" secondAttribute="centerY" id="pYI-6T-0L4"/>
                                         <constraint firstItem="Haz-Yc-ICO" firstAttribute="leading" secondItem="2dO-I9-peS" secondAttribute="trailing" constant="8" id="rZL-2r-5n7"/>
                                         <constraint firstItem="2dO-I9-peS" firstAttribute="leading" secondItem="ngp-Kz-bZL" secondAttribute="trailing" id="udv-nf-Bya"/>
@@ -3239,6 +3233,8 @@
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="2I2-47-7Ns" secondAttribute="bottom" constant="4" id="3rP-E4-HJj"/>
+                                        <constraint firstItem="2I2-47-7Ns" firstAttribute="top" secondItem="bGl-84-buz" secondAttribute="topMargin" constant="4" id="7Sh-rZ-x8i"/>
                                         <constraint firstItem="eZ8-in-FvV" firstAttribute="centerY" secondItem="bGl-84-buz" secondAttribute="centerY" id="EwW-Sl-Nyp"/>
                                         <constraint firstItem="eZ8-in-FvV" firstAttribute="leading" secondItem="2I2-47-7Ns" secondAttribute="trailing" id="NDs-cc-ZvN"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="un9-Pi-bvb" secondAttribute="trailing" constant="4" id="O1p-z2-S8C"/>
@@ -3684,7 +3680,6 @@
         <image name="messenger" width="24" height="24"/>
         <image name="money-bag" width="512" height="512"/>
         <image name="photo" width="24" height="18"/>
-        <image name="plus" width="16" height="16"/>
         <image name="price" width="512" height="512"/>
         <image name="recommend" width="24" height="24"/>
         <image name="sad" width="78" height="87"/>
@@ -3699,6 +3694,6 @@
         <segue reference="U9J-l5-JG5"/>
         <segue reference="3Ql-pr-0mW"/>
         <segue reference="MfN-gK-oMC"/>
-        <segue reference="JNp-QQ-Pf2"/>
+        <segue reference="SSY-so-Ega"/>
     </inferredMetricsTieBreakers>
 </document>

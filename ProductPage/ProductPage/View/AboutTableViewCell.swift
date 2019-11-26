@@ -11,7 +11,11 @@ import UIKit
 class AboutTableViewCell: UITableViewCell {
     
     @IBOutlet var profileTitleLabel: UILabel!
-    @IBOutlet var profileInfoLabel: UILabel!
+    @IBOutlet var profileInfoLabel: UILabel!{
+        didSet{
+            profileInfoLabel.numberOfLines=0
+        }
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
