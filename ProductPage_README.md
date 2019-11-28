@@ -25,3 +25,9 @@
 1024-7 喜好頁面+換來換去
 1025 helper介面跟更改+icon
 1027 利用網址抓取圖片
+1030 購物車頁面
+1110 刪除search bar 改成button, +cart type
+1117 map導航
+1125 首頁改成non coredata
+1126 good
+1128-1 good 第二個耳環可以連到三個相關商品

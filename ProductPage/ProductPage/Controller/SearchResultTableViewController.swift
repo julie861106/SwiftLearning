@@ -13,6 +13,9 @@ import CoreLocation
 
 class SearchResultTableViewController: UITableViewController, NSFetchedResultsControllerDelegate, MKMapViewDelegate, CLLocationManagerDelegate {
     
+    
+    var searchContent:String = ""
+    
     var favorite: FavoriteMO!
     var products:[Product] = [
         

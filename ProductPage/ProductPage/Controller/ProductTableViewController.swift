@@ -18,6 +18,7 @@ class ProductTableViewController: UITableViewController, NSFetchedResultsControl
     var searchResults: [ProductMO] = []
     var productsTest: ProductMO!
     
+    @IBOutlet weak var searchField: UITextField!
     var favorite: FavoriteMO!
     
 //    @IBAction func addToLiked(_ sender: AnyObject) {
@@ -316,6 +317,8 @@ class ProductTableViewController: UITableViewController, NSFetchedResultsControl
         super.didReceiveMemoryWarning()
         //處理可以重建的資源
     }
+    
+    
     
     
     

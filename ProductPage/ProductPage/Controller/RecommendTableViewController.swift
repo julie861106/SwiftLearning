@@ -18,6 +18,8 @@ class RecommendTableViewController: UITableViewController, NSFetchedResultsContr
     
     var favoriteResults: [FavoriteMO] = []
     var fetchResultController: NSFetchedResultsController<FavoriteMO>!
+    
+    
 
     @IBOutlet var recommendTableView: UITableView!
     
