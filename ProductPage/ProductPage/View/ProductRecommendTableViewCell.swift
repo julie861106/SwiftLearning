@@ -10,7 +10,11 @@ import UIKit
 
 class ProductRecommendTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var recommendNameLabel: UILabel!
+    @IBOutlet weak var recommendNameLabel: UILabel!{
+        didSet{
+            recommendNameLabel.numberOfLines=0
+        }
+    }
     @IBOutlet weak var recommendStoreLabel: UILabel!
     @IBOutlet weak var recommendTypeLabel: UILabel!
     @IBOutlet weak var recommendThumbnailImageView: UIImageView!{

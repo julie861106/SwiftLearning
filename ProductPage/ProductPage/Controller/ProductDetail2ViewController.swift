@@ -24,13 +24,13 @@ class ProductDetail2ViewController: UIViewController, UITableViewDelegate, UITab
     var productType = ""
     var product: Product = Product()
     var cart: CartMO!
+    var listOfProduct = [ProductInfo]()
     
     var recommendProducts:[Product] = [
         Product(name: "燒肉珍珠堡(牛)", store: "mosburger", type: "food", price: "70", image: "https://images.theconversation.com/files/280024/original/file-20190618-118505-aag3r7.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=496&fit=clip", isLiked: false, description: "香Q美味的米飯，搭配新鮮現炒的紐西蘭牛肉片與洋蔥絲與青生菜，是最受歡迎的米漢堡", cart:false),
         Product(name: "藜麥燒肉珍珠堡(牛)", store: "mosburger", type: "food", price: "75", image: "https://timesofindia.indiatimes.com/thumb/msid-69058419,width-800,height-600,resizemode-4/69058419.jpg", isLiked: false, description: "香Q美味的米飯，搭配新鮮現炒的紐西蘭牛肉片與洋蔥絲與青生菜，是最受歡迎的米漢堡", cart:false),
         Product(name: "薑燒珍珠堡", store: "mosburger", type: "food", price: "65", image: "https://timesofindia.indiatimes.com/thumb/msid-70143101,imgsize-1269404,width-800,height-600,resizemode-4/70143101.jpg", isLiked: false, description: "香Q美味的米飯，搭配現炒薑味醃製豬肉片，與青生菜", cart:false),
-        Product(name: "藜麥薑燒珍珠堡", store: "mosburger", type: "food", price: "70", image: "pr_mos004", isLiked: false, description: "香Q美味的米飯，搭配現炒薑味醃製豬肉片，與青生菜", cart:false),
-        Product(name: "海洋珍珠堡", store: "mosburger", type: "food", price: "75", image: "pr_mos005", isLiked: false, description: "香Q美味的米飯，搭配鮮蝦、干貝、墨魚等豐富的美味海鮮", cart:false)
+        
     ]
     
     @IBAction func addToCart(_ sender: AnyObject) {
@@ -58,6 +58,37 @@ class ProductDetail2ViewController: UIViewController, UITableViewDelegate, UITab
         //        var price = [product.price]
         //        print(product.name)
         //        print(product.price)
+        
+    }
+    
+    func getProductList(){
+        
+        listOfProduct.removeAll()
+        let productRequest = ProductRequest(type: product.type)
+        productRequest.getProducts{[weak self] result in
+            switch result{
+            case .failure(let error):
+                print(error)
+            case .success(let product):
+                self?.listOfProduct = product
+                
+            }
+        }
+        
+        
+    }
+    
+    func updateRecommendList(){
+        
+        for i in 0...2{
+            recommendProducts[i].name = listOfProduct[i].title
+            recommendProducts[i].store = product.store
+            recommendProducts[i].type = listOfProduct[i].asin
+            recommendProducts[i].price = listOfProduct[i].price
+            recommendProducts[i].image = listOfProduct[i].imUrl
+            recommendProducts[i].description = listOfProduct[i].description
+        }
+        
         
     }
 
@@ -115,6 +146,9 @@ class ProductDetail2ViewController: UIViewController, UITableViewDelegate, UITab
 //        productStoreLabel.text = productStore
 //        productTypeLabel.text = productType
         
+        getProductList()
+//        print("test\(getProductList())")
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -122,6 +156,7 @@ class ProductDetail2ViewController: UIViewController, UITableViewDelegate, UITab
         
         navigationController?.hidesBarsOnSwipe = false
         navigationController?.setNavigationBarHidden(false, animated: true)
+//        getProductList()
     }
     
     
@@ -139,6 +174,7 @@ class ProductDetail2ViewController: UIViewController, UITableViewDelegate, UITab
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ProductDetailPriceTableViewCell.self), for: indexPath) as! ProductDetailPriceTableViewCell
             cell.priceIconImageView.image = UIImage(named: "price")
+//            cell.priceTextLabel.text = listOfProduct[indexPath.row].title
             cell.priceTextLabel.text = product.price
             return cell
             
@@ -183,16 +219,36 @@ class ProductDetail2ViewController: UIViewController, UITableViewDelegate, UITab
             
         case 5...7:
             
-            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ProductRecommendTableViewCell.self), for: indexPath) as! ProductRecommendTableViewCell
             
-            //利用網址抓圖片
-            let urlStr = NSURL(string: recommendProducts[(indexPath.row)-5].image)
+//            updateRecommendList()
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ProductRecommendTableViewCell.self), for: indexPath) as! ProductRecommendTableViewCell
+//
+//            //api
+//            //利用網址抓圖片
+            print("這裏\(listOfProduct)")
+            let urlStr = NSURL(string: listOfProduct[(indexPath.row)-5].imUrl)
             let data = NSData(contentsOf: urlStr! as URL)
             cell.recommendThumbnailImageView.image = UIImage(data: data! as Data)
+//
+
+            cell.recommendNameLabel.text = listOfProduct[(indexPath.row)-5].title
+            cell.recommendStoreLabel.text = product.store
+//            //cell.recommendTypeLabel.text = recommendProducts[(indexPath.row)-5].type
+//            //            cell.recommendThumbnailImageView.image = UIImage(named: recommendProducts[(indexPath.row)-5].image)
+//            cell.recommendHeartImageView.isHidden = recommendProducts[(indexPath.row)-5].isLiked ? false : true
             
+//
+            //原
             
-            cell.recommendNameLabel.text = recommendProducts[(indexPath.row)-5].name
-            cell.recommendStoreLabel.text = recommendProducts[(indexPath.row)-5].store
+            //利用網址抓圖片
+//            let urlStr = NSURL(string: recommendProducts[(indexPath.row)-5].image)
+//            let data = NSData(contentsOf: urlStr! as URL)
+//            cell.recommendThumbnailImageView.image = UIImage(data: data! as Data)
+
+
+//            cell.recommendNameLabel.text = recommendProducts[(indexPath.row)-5].name
+//            cell.recommendStoreLabel.text = recommendProducts[(indexPath.row)-5].store
             //cell.recommendTypeLabel.text = recommendProducts[(indexPath.row)-5].type
 //            cell.recommendThumbnailImageView.image = UIImage(named: recommendProducts[(indexPath.row)-5].image)
             cell.recommendHeartImageView.isHidden = recommendProducts[(indexPath.row)-5].isLiked ? false : true
@@ -258,6 +314,8 @@ class ProductDetail2ViewController: UIViewController, UITableViewDelegate, UITab
             
             if let indexPath = tableView.indexPathForSelectedRow {
                 let destinationController = segue.destination as! ProductDetail2ViewController
+                
+                
                 
                 //轉給下一頁
                 destinationController.product = recommendProducts[indexPath.row-5]
