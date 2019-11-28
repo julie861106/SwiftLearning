@@ -11,10 +11,12 @@ import CoreData
 import MapKit
 import CoreLocation
 
+//查詢關鍵字後的頁面
 class SearchResultTableViewController: UITableViewController, NSFetchedResultsControllerDelegate, MKMapViewDelegate, CLLocationManagerDelegate {
     
     
-    var searchContent:String = ""
+    var searchContent:String = "shoe"
+    var listOfSearchProduct = [ProductInfo]()
     
     var favorite: FavoriteMO!
     var products:[Product] = [
@@ -28,12 +30,12 @@ class SearchResultTableViewController: UITableViewController, NSFetchedResultsCo
         Product(name:"Dickies Occupational Workwear C993RNB 32x34 Denim Cotton Regular Fit Men's Industrial Jean with Straight Leg, 32&quot; Waist Size, 34&quot; Inseam, Indigo Blue", store:"clothing", type:"B0001YROC2", price:"17.19", image:"http://ecx.images-amazon.com/images/I/41RN1uQz4VL._SY445_.jpg", isLiked: false, description: "Dickies men's industrial regular fit jean with straight leg. Designed for industrial laundries. Deep front pockets. Heavy duty ratcheting brass zipper. 14 ounces premium denim, 100 percent cotton, garment washed. Rivets at stress points. Traditional fit. Fits over most boots. Special leatherette. Decorative back pocket stitching. Industrial wash friendly.", cart: false),
         Product(name:"Adult Satin Baseball Jacket with Striped Trim From Augusta Sportswear", store:"clothing", type:"B0001ZV418", price:"42.4", image:"http://ecx.images-amazon.com/images/I/41G8TllWA6L._SY300_.jpg", isLiked: false, description: "Outer shell of nylon satin, polyester brushed tricot liningBaseball stylingRaglan sleevesReinforced slash front pocketsColor and white-striped 1x1 rib-knit cuffs and bottom bandWater-resistantMachine-washableAdult Sizing:SizeSMLXL2XL3XL4XL5XLChest34-3638-4042-4446-4850-5254-5658-6062-64Waist28-3032-3436-3840-4244-4648-50", cart: false),
         Product(name:"Marmot Women's Flair Jacket", store:"clothing", type:"B00020X47Y", price:"65.61", image:"http://ecx.images-amazon.com/images/I/31cYtkEBjFL._SY300_.jpg", isLiked: false, description: "Stay in because of freezing temps? Not this stylish mountain dweller. The Flair Jacket keeps you cozy regardless of chill factor with beautiful, plush Raschel fleece. Zippered handwarmer pockets, and a wind flap behind the front zipper for added protection.", cart: false),
-        Product(name:"Marmot Women's Sling Shot Jacket", store:"clothing", type:"B00022LVYA", price:"325.0", image:"http://ecx.images-amazon.com/images/I/41HZU2RPFnL._SY300_.jpg", isLiked: false, description: "You&#x2019;re tracking your fourth hour of hidden champagne powder and the temperature&#x2019;s still hovering in the preteens. That&#x2019;s when you&#x2019;ll appreciate the amazing performance served up in this superb offering. Two-layer MemBrain waterproof, breathable fabric and 650 fill goose down deliver warmth, protection, and comfort for extended stays in the white room.", cart: false),
-        Product(name:"Zildjian Classic T-Shirt Black Large", store:"clothing", type:"B0002D0IB6", price:"12.96", image:"http://ecx.images-amazon.com/images/I/41nd0xnSAyL._SX300_.jpg", isLiked: false, description: "Zildjian's script logo is on the front; the company's Avedis Zildjian logo and Arabic script is screened on the back. 100% cotton.", cart: false),
-        Product(name:"Russell Outdoors Men's Flintlock Hooded Jacket", store:"clothing", type:"B0002EDQLY", price:"24.95", image:"http://ecx.images-amazon.com/images/I/51nYjiLtRZL._SY300_.jpg", isLiked: false, description: "The Flintlock Hooded Jacket is a basic insulated jacket is essential to any huntsman&#x2019;s wardrobe.  The Flintlock hooded jacket is medium weight 60/40 cotton/poly with polyester insulation. It has two exterior snap pockets and an adjustable hood.  The Flintlock Hooded Jacket has a two way zipper covered with a storm flap for added protection from the elements. The rear of the jacket features a license loop.", cart: false),
-        Product(name:"Zildjian Tank Top, Black Xl", store:"clothing", type:"B0002GIVHQ", price:"25.82", image:"http://ecx.images-amazon.com/images/I/41-Tv%2BM5doL._SY300_.jpg", isLiked: false, description: "Free your playing arms. 100% Cotton.", cart: false),
-        Product(name:"Anvil 7.1 oz Cotton Short-Sleeve Henley (Anvil1202) Available in 7 Colors", store:"clothing", type:"B0002NZN8E", price:"19.95", image:"http://ecx.images-amazon.com/images/I/213vWk-93CL.jpg", isLiked: false, description: "Dressed up-sure-but never \"buttoned down.\" Henley neckline is an undated take on a vintage style.", cart: false),
-        Product(name:"Fender Logo Tee,Black, Medium", store:"clothing", type:"B0002KZGUM", price:"19.99", image:"http://ecx.images-amazon.com/images/I/41Gw%2BB42y2L._SY300_.jpg", isLiked: false, description: "100-percent pre-shrunk cotton tee features full-front screen printing, a seamless collar, taped neck and shoulders, and double-needle stitching. Let 'em know who makes the finest musical instruments in the biz!!", cart: false)
+        Product(name:"Marmot Women's Sling Shot Jacket", store:"clothing", type:"B00022LVYA", price:"325.0", image:"http://ecx.images-amazon.com/images/I/41HZU2RPFnL._SY300_.jpg", isLiked: false, description: "You&#x2019;re tracking your fourth hour of hidden champagne powder and the temperature&#x2019;s still hovering in the preteens. That&#x2019;s when you&#x2019;ll appreciate the amazing performance served up in this superb offering. Two-layer MemBrain waterproof, breathable fabric and 650 fill goose down deliver warmth, protection, and comfort for extended stays in the white room.", cart: false)
+//        Product(name:"Zildjian Classic T-Shirt Black Large", store:"clothing", type:"B0002D0IB6", price:"12.96", image:"http://ecx.images-amazon.com/images/I/41nd0xnSAyL._SX300_.jpg", isLiked: false, description: "Zildjian's script logo is on the front; the company's Avedis Zildjian logo and Arabic script is screened on the back. 100% cotton.", cart: false),
+//        Product(name:"Russell Outdoors Men's Flintlock Hooded Jacket", store:"clothing", type:"B0002EDQLY", price:"24.95", image:"http://ecx.images-amazon.com/images/I/51nYjiLtRZL._SY300_.jpg", isLiked: false, description: "The Flintlock Hooded Jacket is a basic insulated jacket is essential to any huntsman&#x2019;s wardrobe.  The Flintlock hooded jacket is medium weight 60/40 cotton/poly with polyester insulation. It has two exterior snap pockets and an adjustable hood.  The Flintlock Hooded Jacket has a two way zipper covered with a storm flap for added protection from the elements. The rear of the jacket features a license loop.", cart: false),
+//        Product(name:"Zildjian Tank Top, Black Xl", store:"clothing", type:"B0002GIVHQ", price:"25.82", image:"http://ecx.images-amazon.com/images/I/41-Tv%2BM5doL._SY300_.jpg", isLiked: false, description: "Free your playing arms. 100% Cotton.", cart: false),
+//        Product(name:"Anvil 7.1 oz Cotton Short-Sleeve Henley (Anvil1202) Available in 7 Colors", store:"clothing", type:"B0002NZN8E", price:"19.95", image:"http://ecx.images-amazon.com/images/I/213vWk-93CL.jpg", isLiked: false, description: "Dressed up-sure-but never \"buttoned down.\" Henley neckline is an undated take on a vintage style.", cart: false),
+//        Product(name:"Fender Logo Tee,Black, Medium", store:"clothing", type:"B0002KZGUM", price:"19.99", image:"http://ecx.images-amazon.com/images/I/41Gw%2BB42y2L._SY300_.jpg", isLiked: false, description: "100-percent pre-shrunk cotton tee features full-front screen printing, a seamless collar, taped neck and shoulders, and double-needle stitching. Let 'em know who makes the finest musical instruments in the biz!!", cart: false)
         
     ]
     
@@ -68,8 +70,24 @@ class SearchResultTableViewController: UITableViewController, NSFetchedResultsCo
         locationManager.requestWhenInUseAuthorization()
         
         navigationController?.hidesBarsOnSwipe = true
+        getSearchProductList()
         
         
+    }
+    
+    func getSearchProductList(){
+        let productSearchRequest = ProductSearchRequest(searchContent: "shoe")
+        productSearchRequest.getSearchProducts{[weak self] result in
+            switch result{
+            case .failure(let error):
+                print(error)
+            case .success(let product):
+                self?.listOfSearchProduct = product
+                
+                
+                
+            }
+        }
         
     }
     
@@ -111,7 +129,9 @@ class SearchResultTableViewController: UITableViewController, NSFetchedResultsCo
         resultCell.thumbnailImageView.image = UIImage(data: data! as Data)
         
         //設定cell
-        resultCell.nameLabel.text = products[indexPath.row].name
+        print("listOfSearchProduct\(listOfSearchProduct)")
+        resultCell.nameLabel.text = listOfSearchProduct[indexPath.row].title
+//        resultCell.nameLabel.text = products[indexPath.row].name
         //        recommendCell.thumbnailImageView.image = UIImage(named: products[indexPath.row].image)
         resultCell.storeLabel.text = products[indexPath.row].store
         //recommendCell.typeLabel.text = products[indexPath.row].type
@@ -239,6 +259,9 @@ class SearchResultTableViewController: UITableViewController, NSFetchedResultsCo
                 
             }
         }
+        
+        
+        
     }
     
     

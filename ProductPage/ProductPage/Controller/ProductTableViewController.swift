@@ -644,6 +644,16 @@ class ProductTableViewController: UITableViewController, NSFetchedResultsControl
             }
         }
         
+//        //尚未修好
+//        if segue.identifier == "showSearchResult" {
+//
+//
+//            let destinationController = segue.destination as! SearchResultTableViewController
+//            destinationController.searchContent = searchField.text!
+//
+//
+//        }
+        
     }
     
     @IBAction func unwindToHome(segue: UIStoryboardSegue) {
