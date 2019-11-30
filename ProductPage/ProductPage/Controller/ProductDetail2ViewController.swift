@@ -63,7 +63,7 @@ class ProductDetail2ViewController: UIViewController, UITableViewDelegate, UITab
     
     func getProductList(){
         
-        listOfProduct.removeAll()
+//        listOfProduct.removeAll()
         let productRequest = ProductRequest(type: product.type)
         productRequest.getProducts{[weak self] result in
             switch result{
@@ -74,6 +74,7 @@ class ProductDetail2ViewController: UIViewController, UITableViewDelegate, UITab
                 
             }
         }
+//        tableView.reloadData()
         
         
     }
@@ -146,8 +147,10 @@ class ProductDetail2ViewController: UIViewController, UITableViewDelegate, UITab
 //        productStoreLabel.text = productStore
 //        productTypeLabel.text = productType
         
-        getProductList()
+//        listOfProduct.removeAll()
+//        getProductList()
 //        print("test\(getProductList())")
+        print("Didload")
         
     }
     
@@ -156,7 +159,10 @@ class ProductDetail2ViewController: UIViewController, UITableViewDelegate, UITab
         
         navigationController?.hidesBarsOnSwipe = false
         navigationController?.setNavigationBarHidden(false, animated: true)
-//        getProductList()
+        listOfProduct.removeAll()
+        getProductList()
+        print("WillAppear")
+        
     }
     
     
