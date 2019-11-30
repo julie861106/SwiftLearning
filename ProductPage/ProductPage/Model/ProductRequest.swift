@@ -27,6 +27,11 @@ struct ProductRequest {
     }
     
     func getProducts (completion: @escaping(Result<[ProductInfo], ProductError>) -> Void) {
+        let configuration = URLSessionConfiguration.default
+        configuration.timeoutIntervalForRequest = .infinity
+        let urlSession = URLSession(configuration: configuration)
+        // TODO : let timeout infinity!!!
+        // ref : https://medium.com/@jerrywang0420/urlsession-%E6%95%99%E5%AD%B8-swift-3-ios-part-3-34699564fb12
         let dataTask = URLSession.shared.dataTask(with: resourcelURL){data, _, _ in
             guard let jsonData = data else {
                 completion(.failure(.noDataAvailable))

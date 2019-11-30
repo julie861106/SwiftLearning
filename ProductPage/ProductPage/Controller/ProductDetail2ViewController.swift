@@ -60,7 +60,7 @@ class ProductDetail2ViewController: UIViewController, UITableViewDelegate, UITab
         //        print(product.price)
         
     }
-    
+// call api
     func getProductList(){
         
 //        listOfProduct.removeAll()
