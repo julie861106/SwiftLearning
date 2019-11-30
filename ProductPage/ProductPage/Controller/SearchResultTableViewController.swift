@@ -15,7 +15,7 @@ import CoreLocation
 class SearchResultTableViewController: UITableViewController, NSFetchedResultsControllerDelegate, MKMapViewDelegate, CLLocationManagerDelegate {
     
     
-    var searchContent:String = "shoe"
+    var searchContent:String = ""
     var listOfSearchProduct = [ProductInfo]()
     
     var favorite: FavoriteMO!
@@ -53,6 +53,7 @@ class SearchResultTableViewController: UITableViewController, NSFetchedResultsCo
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.cellLayoutMarginsFollowReadableWidth = true
+        navigationController?.navigationBar.barTintColor = UIColor(red: 231.0/255.0, green: 76.0/255.0, blue: 60.0/255.0, alpha: 1.0)
 //        navigationController?.navigationBar.prefersLargeTitles = true
 //        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
 //        navigationController?.navigationBar.shadowImage = UIImage()
@@ -76,7 +77,7 @@ class SearchResultTableViewController: UITableViewController, NSFetchedResultsCo
     }
     
     func getSearchProductList(){
-        let productSearchRequest = ProductSearchRequest(searchContent: "shoe")
+        let productSearchRequest = ProductSearchRequest(searchContent: searchContent)
         productSearchRequest.getSearchProducts{[weak self] result in
             switch result{
             case .failure(let error):
@@ -130,8 +131,8 @@ class SearchResultTableViewController: UITableViewController, NSFetchedResultsCo
         
         //設定cell
         print("listOfSearchProduct\(listOfSearchProduct)")
-        resultCell.nameLabel.text = listOfSearchProduct[indexPath.row].title
-//        resultCell.nameLabel.text = products[indexPath.row].name
+//        resultCell.nameLabel.text = listOfSearchProduct[indexPath.row].title
+        resultCell.nameLabel.text = products[indexPath.row].name
         //        recommendCell.thumbnailImageView.image = UIImage(named: products[indexPath.row].image)
         resultCell.storeLabel.text = products[indexPath.row].store
         //recommendCell.typeLabel.text = products[indexPath.row].type

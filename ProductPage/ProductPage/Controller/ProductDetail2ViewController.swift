@@ -65,6 +65,7 @@ class ProductDetail2ViewController: UIViewController, UITableViewDelegate, UITab
         
 //        listOfProduct.removeAll()
         let productRequest = ProductRequest(type: product.type)
+        print("product.type\(product.type)")
         productRequest.getProducts{[weak self] result in
             switch result{
             case .failure(let error):
