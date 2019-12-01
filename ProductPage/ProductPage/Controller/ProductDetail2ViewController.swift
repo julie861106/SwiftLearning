@@ -27,7 +27,7 @@ class ProductDetail2ViewController: UIViewController, UITableViewDelegate, UITab
     var listOfProduct = [ProductInfo]()
     
     var recommendProducts:[Product] = [
-        Product(name:"Mizuno Men's 9-Spike Classic Mid G4 Cleat", store:"shoes", type:"B0010WE01W", price:"39.99", image:"http://ecx.images-amazon.com/images/I/51B4rMEqB9L._SY300_.jpg", isLiked: false, description: "Leather construction and versatile mid-height styling deliver top-notch support and durability.", cart: false),
+        Product(name:"Mizuno Women's 9-Spike Classic Mid G4 Cleat", store:"shoes", type:"B0010WE01W", price:"39.99", image:"http://ecx.images-amazon.com/images/I/51B4rMEqB9L._SY300_.jpg", isLiked: false, description: "Leather construction and versatile mid-height styling deliver top-notch support and durability.", cart: false),
         Product(name:"Mizuno Women's Team II Warm Up Jacke", store:"clothing", type:"B002M788IA", price:"79.97", image:"http://ecx.images-amazon.com/images/I/51os2AoSMtL._SY300_.jpg", isLiked: false, description: "Sleek and keen, FiveTen's Fox will keep you comfortable, secure, and looking sharp, even during a tough climb.", cart: false),
         Product(name:"FiveTen Women's Siren Climbing Shoe", store:"shoes", type:"B004MXZVNM", price:"99.97", image:"http://ecx.images-amazon.com/images/I/41zzMFqjBHL._SX300_.jpg", isLiked: false, description: "Leather construction and versatile mid-height styling deliver top-notch support and durability.", cart: false)
         
@@ -79,6 +79,8 @@ class ProductDetail2ViewController: UIViewController, UITableViewDelegate, UITab
         
         
     }
+    
+    //將傳給下一頁的值換掉
     
     func updateRecommendList(){
         
@@ -231,22 +233,26 @@ class ProductDetail2ViewController: UIViewController, UITableViewDelegate, UITab
             
             let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ProductRecommendTableViewCell.self), for: indexPath) as! ProductRecommendTableViewCell
 //
-//            //api
+//            //串接api
 //            //利用網址抓圖片
             print("這裏\(listOfProduct)")
+            
+            //串接api 推薦的圖片
+            
 //            let urlStr = NSURL(string: listOfProduct[(indexPath.row)-5].imUrl)
 //            let data = NSData(contentsOf: urlStr! as URL)
 //            cell.recommendThumbnailImageView.image = UIImage(data: data! as Data)
 //
-
+            //串接api 推薦的商品名稱
 //            cell.recommendNameLabel.text = listOfProduct[(indexPath.row)-5].title
             cell.recommendStoreLabel.text = product.store
-//            //cell.recommendTypeLabel.text = recommendProducts[(indexPath.row)-5].type
+            
+            //cell.recommendTypeLabel.text = recommendProducts[(indexPath.row)-5].type
 //            //            cell.recommendThumbnailImageView.image = UIImage(named: recommendProducts[(indexPath.row)-5].image)
 //            cell.recommendHeartImageView.isHidden = recommendProducts[(indexPath.row)-5].isLiked ? false : true
             
 //
-            //原
+            //原來 既定的推薦列表 （不會報錯）
             
             //利用網址抓圖片
             let urlStr = NSURL(string: recommendProducts[(indexPath.row)-5].image)
@@ -325,6 +331,8 @@ class ProductDetail2ViewController: UIViewController, UITableViewDelegate, UITab
                 
                 
                 //轉給下一頁
+                //將傳給下一頁的值換掉
+                updateRecommendList()
                 destinationController.product = recommendProducts[indexPath.row-5]
                 
                 //                destinationController.product = products[indexPath.row]
@@ -336,6 +344,12 @@ class ProductDetail2ViewController: UIViewController, UITableViewDelegate, UITab
                 
             }
         }
+        
+        
+        
+        
+        
+        
     }
     
     
