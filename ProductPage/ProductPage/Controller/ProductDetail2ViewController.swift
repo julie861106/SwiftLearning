@@ -164,6 +164,7 @@ class ProductDetail2ViewController: UIViewController, UITableViewDelegate, UITab
         navigationController?.setNavigationBarHidden(false, animated: true)
         listOfProduct.removeAll()
         getProductList()
+        
         print("WillAppear")
         
     }
@@ -179,6 +180,7 @@ class ProductDetail2ViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         switch indexPath.row {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ProductDetailPriceTableViewCell.self), for: indexPath) as! ProductDetailPriceTableViewCell
@@ -327,7 +329,6 @@ class ProductDetail2ViewController: UIViewController, UITableViewDelegate, UITab
             
             if let indexPath = tableView.indexPathForSelectedRow {
                 let destinationController = segue.destination as! ProductDetail2ViewController
-                
                 
                 
                 //轉給下一頁
