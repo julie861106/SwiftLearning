@@ -27,9 +27,9 @@ class ProductDetail2ViewController: UIViewController, UITableViewDelegate, UITab
     var listOfProduct = [ProductInfo]()
     
     var recommendProducts:[Product] = [
-        Product(name: "燒肉珍珠堡(牛)", store: "mosburger", type: "food", price: "70", image: "https://images.theconversation.com/files/280024/original/file-20190618-118505-aag3r7.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=496&fit=clip", isLiked: false, description: "香Q美味的米飯，搭配新鮮現炒的紐西蘭牛肉片與洋蔥絲與青生菜，是最受歡迎的米漢堡", cart:false),
-        Product(name: "藜麥燒肉珍珠堡(牛)", store: "mosburger", type: "food", price: "75", image: "https://timesofindia.indiatimes.com/thumb/msid-69058419,width-800,height-600,resizemode-4/69058419.jpg", isLiked: false, description: "香Q美味的米飯，搭配新鮮現炒的紐西蘭牛肉片與洋蔥絲與青生菜，是最受歡迎的米漢堡", cart:false),
-        Product(name: "薑燒珍珠堡", store: "mosburger", type: "food", price: "65", image: "https://timesofindia.indiatimes.com/thumb/msid-70143101,imgsize-1269404,width-800,height-600,resizemode-4/70143101.jpg", isLiked: false, description: "香Q美味的米飯，搭配現炒薑味醃製豬肉片，與青生菜", cart:false),
+        Product(name:"Mizuno Men's 9-Spike Classic Mid G4 Cleat", store:"shoes", type:"B0010WE01W", price:"39.99", image:"http://ecx.images-amazon.com/images/I/51B4rMEqB9L._SY300_.jpg", isLiked: false, description: "Leather construction and versatile mid-height styling deliver top-notch support and durability.", cart: false),
+        Product(name:"Mizuno Women's Team II Warm Up Jacke", store:"clothing", type:"B002M788IA", price:"79.97", image:"http://ecx.images-amazon.com/images/I/51os2AoSMtL._SY300_.jpg", isLiked: false, description: "Sleek and keen, FiveTen's Fox will keep you comfortable, secure, and looking sharp, even during a tough climb.", cart: false),
+        Product(name:"FiveTen Women's Siren Climbing Shoe", store:"shoes", type:"B004MXZVNM", price:"99.97", image:"http://ecx.images-amazon.com/images/I/41zzMFqjBHL._SX300_.jpg", isLiked: false, description: "Leather construction and versatile mid-height styling deliver top-notch support and durability.", cart: false)
         
     ]
     
@@ -234,12 +234,12 @@ class ProductDetail2ViewController: UIViewController, UITableViewDelegate, UITab
 //            //api
 //            //利用網址抓圖片
             print("這裏\(listOfProduct)")
-            let urlStr = NSURL(string: listOfProduct[(indexPath.row)-5].imUrl)
-            let data = NSData(contentsOf: urlStr! as URL)
-            cell.recommendThumbnailImageView.image = UIImage(data: data! as Data)
+//            let urlStr = NSURL(string: listOfProduct[(indexPath.row)-5].imUrl)
+//            let data = NSData(contentsOf: urlStr! as URL)
+//            cell.recommendThumbnailImageView.image = UIImage(data: data! as Data)
 //
 
-            cell.recommendNameLabel.text = listOfProduct[(indexPath.row)-5].title
+//            cell.recommendNameLabel.text = listOfProduct[(indexPath.row)-5].title
             cell.recommendStoreLabel.text = product.store
 //            //cell.recommendTypeLabel.text = recommendProducts[(indexPath.row)-5].type
 //            //            cell.recommendThumbnailImageView.image = UIImage(named: recommendProducts[(indexPath.row)-5].image)
@@ -249,12 +249,12 @@ class ProductDetail2ViewController: UIViewController, UITableViewDelegate, UITab
             //原
             
             //利用網址抓圖片
-//            let urlStr = NSURL(string: recommendProducts[(indexPath.row)-5].image)
-//            let data = NSData(contentsOf: urlStr! as URL)
-//            cell.recommendThumbnailImageView.image = UIImage(data: data! as Data)
+            let urlStr = NSURL(string: recommendProducts[(indexPath.row)-5].image)
+            let data = NSData(contentsOf: urlStr! as URL)
+            cell.recommendThumbnailImageView.image = UIImage(data: data! as Data)
 
 
-//            cell.recommendNameLabel.text = recommendProducts[(indexPath.row)-5].name
+            cell.recommendNameLabel.text = recommendProducts[(indexPath.row)-5].name
 //            cell.recommendStoreLabel.text = recommendProducts[(indexPath.row)-5].store
             //cell.recommendTypeLabel.text = recommendProducts[(indexPath.row)-5].type
 //            cell.recommendThumbnailImageView.image = UIImage(named: recommendProducts[(indexPath.row)-5].image)
