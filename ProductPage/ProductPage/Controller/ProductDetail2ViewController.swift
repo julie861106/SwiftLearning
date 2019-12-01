@@ -70,8 +70,10 @@ class ProductDetail2ViewController: UIViewController, UITableViewDelegate, UITab
             switch result{
             case .failure(let error):
                 print(error)
+                print("這裡是error")
             case .success(let product):
                 self?.listOfProduct = product
+                print("這裡是listOfProduct")
                 
             }
         }
@@ -151,7 +153,7 @@ class ProductDetail2ViewController: UIViewController, UITableViewDelegate, UITab
 //        productTypeLabel.text = productType
         
 //        listOfProduct.removeAll()
-//        getProductList()
+        getProductList()
 //        print("test\(getProductList())")
         print("Didload")
         
@@ -163,7 +165,7 @@ class ProductDetail2ViewController: UIViewController, UITableViewDelegate, UITab
         navigationController?.hidesBarsOnSwipe = false
         navigationController?.setNavigationBarHidden(false, animated: true)
         listOfProduct.removeAll()
-        getProductList()
+//        getProductList()
         
         print("WillAppear")
         
@@ -334,6 +336,7 @@ class ProductDetail2ViewController: UIViewController, UITableViewDelegate, UITab
                 //轉給下一頁
                 //將傳給下一頁的值換掉
                 updateRecommendList()
+                print("樂這裡\(listOfProduct[0].title)")
                 destinationController.product = recommendProducts[indexPath.row-5]
                 
                 //                destinationController.product = products[indexPath.row]
