@@ -644,15 +644,15 @@ class ProductTableViewController: UITableViewController, NSFetchedResultsControl
             }
         }
         
-//        //
-//        if segue.identifier == "showSearchResult" {
-//
-//
-//            let destinationController = segue.destination as! SearchResultTableViewController
-//            destinationController.searchContent = searchField.text!
-//
-//
-//        }
+        //
+        if segue.identifier == "showSearchResult" {
+
+
+            let destinationController = segue.destination as! SearchResultTableViewController
+            destinationController.searchContent = searchField.text!
+
+
+        }
         
     }
     

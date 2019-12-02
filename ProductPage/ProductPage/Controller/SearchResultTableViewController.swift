@@ -94,6 +94,20 @@ class SearchResultTableViewController: UITableViewController, NSFetchedResultsCo
         
     }
     
+    func updateList(){
+        
+        for i in 0...2{
+            products[i].name = listOfSearchProduct[i].title
+            products[i].store = "clothing"
+            products[i].type = listOfSearchProduct[i].asin
+            products[i].price = listOfSearchProduct[i].price
+            products[i].image = listOfSearchProduct[i].imUrl
+            products[i].description = listOfSearchProduct[i].description
+        }
+        
+        
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -252,7 +266,7 @@ class SearchResultTableViewController: UITableViewController, NSFetchedResultsCo
                 
                 //轉給下一頁
                 //                destinationController.product = (searchController.isActive) ? searchResults[indexPath.row]:products[indexPath.row]
-                
+                updateList()
                 destinationController.product = products[indexPath.row]
                 //                destinationController.productImageViewName = str02_product_image[indexPath.row]
                 //                destinationController.productName = str02_product_name[indexPath.row]
