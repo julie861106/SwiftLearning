@@ -17,6 +17,7 @@ class ProductTableViewController: UITableViewController, NSFetchedResultsControl
     var products:[ProductMO] = []
     var searchResults: [ProductMO] = []
     var productsTest: ProductMO!
+    var listOfProduct = [ProductInfo]()
     
     @IBOutlet weak var searchField: UITextField!
     var favorite: FavoriteMO!
@@ -83,6 +84,30 @@ class ProductTableViewController: UITableViewController, NSFetchedResultsControl
     ]
     
     
+    // MARK: -call api
+    
+    
+//    func getProductList(i: Int){
+//
+//     //        listOfProduct.removeAll()
+//             let productRequest = ProductRequest(type: productsT[i].type)
+//             print("product.type\(productsT[i].type)")
+//             productRequest.getProducts{[weak self] result in
+//                 switch result{
+//                 case .failure(let error):
+//                     print(error)
+//                     print("這裡是error")
+//                 case .success(let product):
+//                     self?.listOfProduct = product
+//                     print("這裡是listOfProduct")
+//
+//                 }
+//             }
+//     //        tableView.reloadData()
+//
+//
+//    }
+    
     
     
     
@@ -107,7 +132,7 @@ class ProductTableViewController: UITableViewController, NSFetchedResultsControl
     let locationManager = CLLocationManager()
 //    print(locationManager.location)
     
-    // MARK: - 視圖控制器生命週期
+    // MARK: - Didload 視圖控制器生命週期
     override func viewDidLoad() {
         super.viewDidLoad()
         locationManager.delegate = self;
@@ -622,6 +647,8 @@ class ProductTableViewController: UITableViewController, NSFetchedResultsControl
     //
     //
     //    }
+    
+    // MARK: - prepare
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showProductDetail" {
             
@@ -631,6 +658,12 @@ class ProductTableViewController: UITableViewController, NSFetchedResultsControl
                 
                 //1110
                 destinationController.product = productsT[indexPath.row]
+                
+                //想法 預先call api 傳值給下一頁
+//                getProductList(i:indexPath)
+//                print("tableView的\(listOfProduct)")
+//                destinationController.listOfProduct = listOfProduct
+                
 //                //轉給下一頁
 //                destinationController.product = (searchController.isActive) ? searchResults[indexPath.row]:products[indexPath.row]
                 

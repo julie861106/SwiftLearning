@@ -61,6 +61,7 @@ class ProductDetail2ViewController: UIViewController, UITableViewDelegate, UITab
         
     }
 // call api
+    // MARK: -call api
     func getProductList(){
         
 //        listOfProduct.removeAll()
@@ -103,6 +104,7 @@ class ProductDetail2ViewController: UIViewController, UITableViewDelegate, UITab
     
     var productimages: String = ""
     
+    //MARK:-DidLoad
     override func viewDidLoad(){
         super.viewDidLoad()
         
@@ -155,7 +157,7 @@ class ProductDetail2ViewController: UIViewController, UITableViewDelegate, UITab
 //        listOfProduct.removeAll()
         getProductList()
 //        print("test\(getProductList())")
-        print("Didload")
+        print("Didload\(listOfProduct)")
         
     }
     
@@ -180,6 +182,8 @@ class ProductDetail2ViewController: UIViewController, UITableViewDelegate, UITab
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 8
     }
+    
+    //MARK:-cellForRowAt
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -241,13 +245,13 @@ class ProductDetail2ViewController: UIViewController, UITableViewDelegate, UITab
 //            //利用網址抓圖片
             print("這裏\(listOfProduct)")
             
-            //串接api 推薦的圖片
+            //MARK:-串接api 推薦的圖片
             
 //            let urlStr = NSURL(string: listOfProduct[(indexPath.row)-5].imUrl)
 //            let data = NSData(contentsOf: urlStr! as URL)
 //            cell.recommendThumbnailImageView.image = UIImage(data: data! as Data)
 //
-            //串接api 推薦的商品名稱
+            //MARK:-串接api 推薦的商品名稱
 //            cell.recommendNameLabel.text = listOfProduct[(indexPath.row)-5].title
             cell.recommendStoreLabel.text = product.store
             
@@ -256,14 +260,14 @@ class ProductDetail2ViewController: UIViewController, UITableViewDelegate, UITab
 //            cell.recommendHeartImageView.isHidden = recommendProducts[(indexPath.row)-5].isLiked ? false : true
             
 //
-            //原來 既定的推薦列表 （不會報錯）
+            //MARK:-原來 既定的推薦列表 （不會報錯）
             
-            //利用網址抓圖片
+            //MARK:-原來 利用網址抓圖片
             let urlStr = NSURL(string: recommendProducts[(indexPath.row)-5].image)
             let data = NSData(contentsOf: urlStr! as URL)
             cell.recommendThumbnailImageView.image = UIImage(data: data! as Data)
 
-
+            //MARK:-原來 商品名稱
             cell.recommendNameLabel.text = recommendProducts[(indexPath.row)-5].name
 //            cell.recommendStoreLabel.text = recommendProducts[(indexPath.row)-5].store
             //cell.recommendTypeLabel.text = recommendProducts[(indexPath.row)-5].type
