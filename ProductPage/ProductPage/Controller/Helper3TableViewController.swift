@@ -10,7 +10,7 @@ import UIKit
 
 class Helper3TableViewController: UITableViewController {
 
-    var options3 = ["Ｑ：你這頓飯的目的是什麼呢？", "單純吃飽", "與另一半約會", "與家人、朋友聚餐", "其他"]
+    var options3 = ["Ｑ：喜歡商品哪一色系？", "冷色系", "暖色系"]
 //    var options3 = ["123", "23", "4", "1234"]
     
     override func viewDidLoad() {
@@ -35,10 +35,10 @@ class Helper3TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cellIdentifier = "Helper3Cell"
-        let option3Cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)as!Helper3TableViewCell
+        let option3Cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)as!HelperTableViewCell
         
         //設定cell
-        option3Cell.option3Label.text = options3[indexPath.row]
+        option3Cell.optionLabel.text = options3[indexPath.row]
         
         
         return option3Cell

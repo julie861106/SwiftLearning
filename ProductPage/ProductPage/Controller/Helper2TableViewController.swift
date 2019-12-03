@@ -9,7 +9,8 @@
 import UIKit
 
 class Helper2TableViewController: UITableViewController {
-    var options2 = ["Ｑ：很餓嗎？還是嘴饞呢？", "嘴饞而已", "小餓", "非常餓"]
+//    var options2 = ["Ｑ：很餓嗎？還是嘴饞呢？", "嘴饞而已", "小餓", "非常餓"]
+    var options2 = ["Ｑ：想要商品呈現的風格？", "氣質優雅", "帥氣中性", "慵懶自在"]
 //    var options2 = ["小饞", "有點餓", "餓", "超級餓"]
 
     override func viewDidLoad() {
@@ -42,10 +43,10 @@ class Helper2TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cellIdentifier = "Helper2Cell"
-        let option2Cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)as!Helper2TableViewCell
+        let option2Cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)as!HelperTableViewCell
         
         //設定cell
-        option2Cell.option2Label.text = options2[indexPath.row]
+        option2Cell.optionLabel.text = options2[indexPath.row]
         
         
         return option2Cell
