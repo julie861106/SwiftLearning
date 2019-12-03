@@ -251,6 +251,8 @@ class ProductDetail2ViewController: UIViewController, UITableViewDelegate, UITab
 //            let data = NSData(contentsOf: urlStr! as URL)
 //            cell.recommendThumbnailImageView.image = UIImage(data: data! as Data)
 //
+            
+            
             //MARK:-串接api 推薦的商品名稱
 //            cell.recommendNameLabel.text = listOfProduct[(indexPath.row)-5].title
             cell.recommendStoreLabel.text = product.store

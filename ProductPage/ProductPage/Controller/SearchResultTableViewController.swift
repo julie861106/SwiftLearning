@@ -20,8 +20,10 @@ class SearchResultTableViewController: UITableViewController, NSFetchedResultsCo
     
     var favorite: FavoriteMO!
     var products:[Product] = [
-        
+        Product(name:"Dickies Occupational Workwear Denim Cotton Relaxed Fit Men's Industrial Jean", store:"clothing", type:"B0001YRNKU", price:"16.99", image:"http://ecx.images-amazon.com/images/I/41weB4OGW2L._SX342_.jpg", isLiked: false, description: "Dickies men's industrial relaxed fit jean with straight leg.", cart: false),
         Product(name:"Mizuno Womens Finch Franshise TPU Cleats", store:"shoes", type:"B0009WQG1G", price:"39.99", image:"http://ecx.images-amazon.com/images/I/51BNGZZ4TKL._SY300_.jpg", isLiked: false, description: "Mizuno's primary TPU cleat designed for competitive league play Proprietary synthetic leather is lightweight, breathable, and provides excellent durability Patented 9-Spike&trade.", cart: false),
+        Product(name:"Dupree Designer Jeans, New to 2013, Featured in Men's Magazine to Diesel", store:"clothing", type:"B00EDTLHS8", price:"45.88",  image:"http://ecx.images-amazon.com/images/I/41veDYXLOSL._SX300_.jpg", isLiked: false, description: "Dupree's Brand, Men's Designer Jeans. New button fly design", cart: false),
+        Product(name:"Benchmark Men's Flame Resistant Relaxed Fit American Denim Jeans", store:"clothing", type:"B009DMTZJ8", price:"78.61",  image:"http://ecx.images-amazon.com/images/I/41yx-sfqRIL._SY445_.jpg", isLiked: false, description: "It does not shrink and offers a generous and comfortable fit.", cart: false),
         Product(name:"Fila Men's Original Vintage Tennis Shoe", store:"shoes", type:"B000EYDGNA", price:"76.95", image:"http://ecx.images-amazon.com/images/I/4126N8P1PPL._SY300_.jpg", isLiked: false, description: "Fila is inspired by Biella's dedication to artistry, luxury, and elegance. They continue to enrich the athletic experience by improving comfort and performance with Italian design, quality craftsmanship, and refined materials.", cart: false),
         Product(name:"adidas Originals Men's Italia 74 Training Shoe", store:"shoes", type:"B000EE3HLQ", price:"79.99", image:"http://ecx.images-amazon.com/images/I/41T8FKBGATL._SY300_.jpg", isLiked: false, description: "An EVA midsole delivers enviable shock absorption, while the full leather upper and suede toe bumper provide flexible support and ample foot protection.", cart: false),
         Product(name:"Zephz BlackLite Cheerleading Shoe Womens", store:"shoes", type:"B0006V9G2G", price:"39.99", image:"http://ecx.images-amazon.com/images/I/516pk9-%2BSJL._SY300_.jpg", isLiked: false, description: "This lightweight shoe features a high quality leather upper which provides comfort and durability.", cart: false),
@@ -31,7 +33,7 @@ class SearchResultTableViewController: UITableViewController, NSFetchedResultsCo
         Product(name:"FiveTen Men's Coyote Lace-Up Climbing Shoe", store:"shoes", type:"B0009U5EH0", price:"24.93", image:"http://ecx.images-amazon.com/images/I/51NP13O3uEL._SY300_.jpg", isLiked: false, description: "Five Ten's Coyote was made particularly for those whose love sport climbing. The pull-on loops offer an easy entry while its traditional lace-up offers a custom, comfortable fit.", cart: false),
         Product(name:"FiveTen Women's Siren Climbing Shoe", store:"shoes", type:"B000FDUMIW", price:"99.97", image:"http://ecx.images-amazon.com/images/I/41zzMFqjBHL._SX300_.jpg", isLiked: false, description: "With FiveTen's Siren, you can embrace the alluring call of the climb with strength and confidence. 100% cotton.", cart: false),
         Product(name:"Zildjian Classic T-Shirt Black Large", store:"clothing", type:"B0002D0IB6", price:"12.96", image:"http://ecx.images-amazon.com/images/I/41nd0xnSAyL._SX300_.jpg", isLiked: false, description: "Zildjian's script logo is on the front; the company's Avedis Zildjian logo and Arabic script is screened on the back. 100% cotton.", cart: false),
-        Product(name:"Fender Logo Tee,Black, Medium", store:"clothing", type:"B0002KZGUM", price:"19.99", image:"http://ecx.images-amazon.com/images/I/41Gw%2BB42y2L._SY300_.jpg", isLiked: false, description: "100-percent pre-shrunk cotton tee features full-front screen printing, a seamless collar, taped neck and shoulders, and double-needle stitching.", cart: false)
+//        Product(name:"Fender Logo Tee,Black, Medium", store:"clothing", type:"B0002KZGUM", price:"19.99", image:"http://ecx.images-amazon.com/images/I/41Gw%2BB42y2L._SY300_.jpg", isLiked: false, description: "100-percent pre-shrunk cotton tee features full-front screen printing, a seamless collar, taped neck and shoulders, and double-needle stitching.", cart: false)
         
 //        Product(name:"Zildjian Classic T-Shirt Black Large", store:"clothing", type:"B0002D0IB6", price:"12.96", image:"http://ecx.images-amazon.com/images/I/41nd0xnSAyL._SX300_.jpg", isLiked: false, description: "Zildjian's script logo is on the front; the company's Avedis Zildjian logo and Arabic script is screened on the back. 100% cotton.", cart: false),
 //        Product(name:"Russell Outdoors Men's Flintlock Hooded Jacket", store:"clothing", type:"B0002EDQLY", price:"24.95", image:"http://ecx.images-amazon.com/images/I/51nYjiLtRZL._SY300_.jpg", isLiked: false, description: "The Flintlock Hooded Jacket is a basic insulated jacket is essential to any huntsman&#x2019;s wardrobe.  The Flintlock hooded jacket is medium weight 60/40 cotton/poly with polyester insulation. It has two exterior snap pockets and an adjustable hood.  The Flintlock Hooded Jacket has a two way zipper covered with a storm flap for added protection from the elements. The rear of the jacket features a license loop.", cart: false),
@@ -96,7 +98,7 @@ class SearchResultTableViewController: UITableViewController, NSFetchedResultsCo
     
     func updateList(){
         
-        for i in 0...2{
+        for i in 0...9{
             products[i].name = listOfSearchProduct[i].title
             products[i].store = "clothing"
             products[i].type = listOfSearchProduct[i].asin
@@ -266,6 +268,7 @@ class SearchResultTableViewController: UITableViewController, NSFetchedResultsCo
                 
                 //轉給下一頁
                 //                destinationController.product = (searchController.isActive) ? searchResults[indexPath.row]:products[indexPath.row]
+                print(listOfSearchProduct[0].title)
                 updateList()
                 destinationController.product = products[indexPath.row]
                 //                destinationController.productImageViewName = str02_product_image[indexPath.row]

@@ -12,7 +12,7 @@ class AboutTableViewController: UITableViewController {
 
     
     var profileTitle = ["姓名", "帳號", "性別", "生日", "email"]
-    var profileInfo = ["叮伶伶", "dinglinlin", "女", "2019/12/09", "dinglinlin@nccu.edu.tw"]
+    var profileInfo = ["王小明", "LittleMing123", "男", "2019/12/09", "LittleMing123@nccu.edu.tw"]
     
     
     override func viewDidLoad() {

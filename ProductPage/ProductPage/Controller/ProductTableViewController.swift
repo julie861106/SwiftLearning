@@ -45,11 +45,31 @@ class ProductTableViewController: UITableViewController, NSFetchedResultsControl
     
     var productsT:[Product] = [
         
-        Product(name:"Glow in the Dark Fashion Beaded Penuar", store:"clothing", type:"1304743128", price:"19.99", image:"http://ecx.images-amazon.com/images/I/41qSrLck4gL._SY300_.jpg", isLiked: false, description: "glow in the dark fashion penuar", cart: false),
-        Product(name:"Boston Red Sox Socks Earrings", store:"accessories", type:"B0002XLWDY", price:"5.99", image:"http://ecx.images-amazon.com/images/I/11NYV1JR6TL.jpg", isLiked: false, description: "Boston Red Sox Socks Earrings", cart: false),
-        Product(name:"Green Bay Packers Foam Cheese Earrings", store:"accessories", type:"B00021LLU0", price:"8.19", image:"http://ecx.images-amazon.com/images/I/41oJfv2qNaL._SX300_.jpg", isLiked: false, description: "Pierced Earrings are shaped like two slices of cheese.", cart: false),
-        Product(name:"RHODIUM NECKLACE JEWELRY SILVER JERUSALEM CROSS K-131", store:"accessories", type:"9895501900", price:"4.99", image:"http://ecx.images-amazon.com/images/I/31Y%2B-QiRsyL._SY300_.jpg", isLiked: false, description: "The Size Of The Cross Is 1.5X1.5 cm", cart: false),
-        Product(name:"Marmot Women's Sling Shot Jacket", store:"clothing", type:"B00022LVYA", price:"325.0", image:"http://ecx.images-amazon.com/images/I/41HZU2RPFnL._SY300_.jpg", isLiked: false, description: "Two-layer MemBrain waterproof, breathable fabric and 650 fill goose down deliver warmth, protection, and comfort for extended stays in the white room.", cart: false),
+        Product(name:"Marmot Men's Pipeline Relaxed Fit Jeans - Dark Indigo 36 - Long", store:"clothing", type:"B0059KTP70", price:"84.95",  image:"http://ecx.images-amazon.com/images/I/41xouUiE1IL._SY300_.jpg", isLiked: false, description: "A slight bit of stretch gives you the freedom to enjoy the great outdoors to their fullest extent.", cart: false),
+        Product(name:"Benchmark Men's Flame Resistant Relaxed Fit American Denim Jeans", store:"clothing", type:"B009DMTZJ8", price:"78.61",  image:"http://ecx.images-amazon.com/images/I/41yx-sfqRIL._SY445_.jpg", isLiked: false, description: "It does not shrink and offers a generous and comfortable fit.", cart: false),
+        Product(name:"Dupree Designer Jeans, New to 2013, Featured in Men's Magazine to Diesel", store:"clothing", type:"B00EDTLHS8", price:"45.88",  image:"http://ecx.images-amazon.com/images/I/41veDYXLOSL._SX300_.jpg", isLiked: false, description: "Dupree's Brand, Men's Designer Jeans. New button fly design", cart: false),
+        Product(name:"adidas Originals Men's Italia 74 Training Shoe", store:"shoes", type:"B000EE3HLQ", price:"79.99", image:"http://ecx.images-amazon.com/images/I/41T8FKBGATL._SY300_.jpg", isLiked: false, description: "An EVA midsole delivers enviable shock absorption, while the full leather upper and suede toe bumper provide flexible support and ample foot protection.", cart: false),
+        Product(name:"Fila Men's Original Vintage Tennis Shoe", store:"shoes", type:"B000EYDGNA", price:"76.95", image:"http://ecx.images-amazon.com/images/I/4126N8P1PPL._SY300_.jpg", isLiked: false, description: "Fila is inspired by Biella's dedication to artistry, luxury, and elegance. They continue to enrich the athletic experience by improving comfort and performance with Italian design, quality craftsmanship, and refined materials.", cart: false),
+        Product(name:"Dickies Occupational Workwear Denim Cotton Relaxed Fit Men's Industrial Jean", store:"clothing", type:"B0001YRNKU", price:"16.99", image:"http://ecx.images-amazon.com/images/I/41weB4OGW2L._SX342_.jpg", isLiked: false, description: "Dickies men's industrial relaxed fit jean with straight leg.", cart: false),
+        Product(name:"Dickies Occupational Workwear Denim Cotton Regular Fit Men's Industrial Jean Indigo Blue", store:"clothing", type:"B0001YROC2", price:"17.19", image:"http://ecx.images-amazon.com/images/I/41RN1uQz4VL._SY445_.jpg", isLiked: false, description: "Dickies men's industrial regular fit jean with straight leg.", cart: false),
+        Product(name:"Russell Outdoors Men's Flintlock Hooded Jacket", store:"clothing", type:"B0002EDQLY", price:"24.95", image:"http://ecx.images-amazon.com/images/I/51nYjiLtRZL._SY300_.jpg", isLiked: false, description: "The Flintlock Hooded Jacket has a two way zipper covered with a storm flap for added protection from the elements. The rear of the jacket features a license loop.", cart: false),
+        Product(name:"FiveTen Men's Coyote Lace-Up Climbing Shoe", store:"shoes", type:"B0009U5EH0", price:"24.93", image:"http://ecx.images-amazon.com/images/I/51NP13O3uEL._SY300_.jpg", isLiked: false, description: "Five Ten's Coyote was made particularly for those whose love sport climbing. The pull-on loops offer an easy entry while its traditional lace-up offers a custom, comfortable fit.", cart: false),
+        Product(name:"Mountain Hardwear Men's Exposure II Parka", store:"clothing", type:"B0000E1YVK", price:"190.0", image:"http://ecx.images-amazon.com/images/I/31LbdeF-KcL._SX300_.jpg", isLiked: false, description: "The Mountain Hardwear Exposure II waterproof and breathable parka is for those of you who do a little of everything in all types of conditions and want your parka to do the same.", cart: false),
+        Product(name:"Honeywell Safety 74928-8 Servus Men's Shrimp Mid Boot", store:"shoes", type:"B0000DCS8K", price:"22.77", image:"http://ecx.images-amazon.com/images/I/41POktnmGOL._SY300_.jpg", isLiked: false, description: "These Servus men's mid boot features plain toe, extended ribbed steel shank, removable and washable ergonomic insoles.", cart: false),
+        Product(name:"Bucket Boss Brand 06005 Contractors Briefcase", store:"accessories", type:"B00002243H", price:"29.99", image:"http://ecx.images-amazon.com/images/I/51fhCAW06nL._SX300_.jpg", isLiked: false, description: "The Bucket Boss 06005 Contractor's Briefcase handles both the business and the tool aspects of your job. Two jumbo cargo pockets have room for a laptop, papers, and files, and smaller pockets hold card, pens, and pencils. A security pocket holds your checkbook, and a zippered flap pocket on the outside keeps papers for frequent and easy access.", cart: false),
+        Product(name:"Fender Logo Tee,Black, Medium", store:"clothing", type:"B0002KZGUM", price:"19.99", image:"http://ecx.images-amazon.com/images/I/41Gw%2BB42y2L._SY300_.jpg", isLiked: false, description: "100-percent pre-shrunk cotton tee features full-front screen printing, a seamless collar, taped neck and shoulders, and double-needle stitching.", cart: false),
+        Product(name:"Australian XTRA Large Black Oilskin Duster - Riding Coat", store:"clothing", type:"B00016IYDI", price:"99.95", image:"http://ecx.images-amazon.com/images/I/41ALVrPFfKL._SY300_.jpg", isLiked: false, description: "Australian extra large duster from is completely wind and waterproof. Made of premium oiled Egyptian cotton. Comes with full shoulder cape and rear gusset.", cart: false),
+        Product(name:"Adult Satin Baseball Jacket with Striped Trim From Augusta Sportswear", store:"clothing", type:"B0001ZV418", price:"42.4", image:"http://ecx.images-amazon.com/images/I/41G8TllWA6L._SY300_.jpg", isLiked: false, description: "Outer shell of nylon satin, polyester brushed tricot liningBaseball stylingRaglan sleevesReinforced slash front pocketsColor and white-striped 1x1 rib-knit cuffs.", cart: false),
+        Product(name:"Zildjian Classic T-Shirt Black Large", store:"clothing", type:"B0002D0IB6", price:"12.96", image:"http://ecx.images-amazon.com/images/I/41nd0xnSAyL._SX300_.jpg", isLiked: false, description: "Zildjian's script logo is on the front; the company's Avedis Zildjian logo and Arabic script is screened on the back. 100% cotton.", cart: false),
+        Product(name:"Zildjian Tank Top, Black Xl", store:"clothing", type:"B0002GIVHQ", price:"25.82", image:"http://ecx.images-amazon.com/images/I/41-Tv%2BM5doL._SY300_.jpg", isLiked: false, description: "Free your playing arms. 100% Cotton.", cart: false),
+        Product(name:"Onguard 16&quot; Monarch Steel Toe PVC Knee Boot", store:"shoes", type:"B0008F4HR4", price:"16.99", image:"http://ecx.images-amazon.com/images/I/41H38KTBRVL._SY300_.jpg", isLiked: false, description: "This 100% waterproof boot features cushion insoles, pull-up and kick-off lugs for easy on and off, and a cut-off band for height adjustment.", cart: false),
+        Product(name:"Anvil 7.1 oz Cotton Short-Sleeve Henley Available in 7 Colors", store:"clothing", type:"B0002NZN8E", price:"19.95", image:"http://ecx.images-amazon.com/images/I/213vWk-93CL.jpg", isLiked: false, description: "Dressed up-sure-but never \"buttoned down.\" Henley neckline is an undated take on a vintage style.", cart: false),
+        Product(name:"Wizard of Oz Child's Deluxe Dorothy Ruby Red Slippers", store:"shoes", type:"B00004U3SF", price:"20.09", image:"http://ecx.images-amazon.com/images/I/41MWXUHWGZL._SY300_.jpg", isLiked: false, description: "For any girl who's enchanted by theWizard of Oz, and Dorothy in  particular, there can be no peace in the kingdom until the magic ruby slippers are hers.", cart: false),
+        Product(name:"Birkenstock 68051 Green Super Birki Clog)", store:"shoes", type:"B00004VWJW", price:"71.9", image:"http://ecx.images-amazon.com/images/I/41CHQ5CFCQL._SX300_.jpg", isLiked: false, description: "There's a delicious satisfaction in slipping on a good pair of clogs as you head out to the garden. These are those kinds of clogs, and typical Birkenstocks in every sense: classically colored, intensely comfortable, and smartly made.", cart: false),
+        Product(name:"Birkenstock 68041Yellow Super Birki Clog", store:"shoes", type:"B00004VWJH", price:"65.9", image:"http://ecx.images-amazon.com/images/I/31HK3GG03AL._SX300_.jpg", isLiked: false, description: "There's a delicious satisfaction in slipping on a good pair of clogs as you head out to the garden. These are those kinds of clogs, and typical Birkenstocks in every sense: classically colored, intensely comfortable, and smartly made.", cart: false),
+        Product(name:"Lacrosse 18-Inch Grange Boot", store:"shoes", type:"B00004VWKY", price:"84.99", image:"http://ecx.images-amazon.com/images/I/41P15E2PWML._SY300_.jpg", isLiked: false, description: "LaCrosse has a strong heritage in rubber. Their standards remain high.  LaCrosse 18-inch Grange boot is less prone to ozone damage, which can cause surface cracking and failure, is less likely to tear, and has a durable lining.", cart: false),
+        Product(name:"Bon 14-722 Heavy Duty Yellow Rubber Contractor's Overshoe Boot", store:"shoes", type:"B0006846JM", price:"33.75", image:"http://ecx.images-amazon.com/images/I/41kVCRGWyZL._SY300_.jpg", isLiked: false, description: "Heavy duty yellow rubber boots with reinforced soles and heavy treads protect against slipping.  Perfect for contractors or anyone else working in the outdoors in less that ideal conditions.", cart: false),
+        Product(name:"Norcross Safety 74928-11 PVC Safety Boot", store:"shoes", type:"B000676YXE", price:"24.97", image:"http://ecx.images-amazon.com/images/I/418mqre06iL._SY300_.jpg", isLiked: false, description: "Constructed with beige Anti-Skid outsole and heel for added traction. Foot Form contour cushion insole gives exceptional comfort.", cart: false),
         Product(name:"Zephz BlackLite Cheerleading Shoe Womens", store:"shoes", type:"B0006V9G2G", price:"39.99", image:"http://ecx.images-amazon.com/images/I/516pk9-%2BSJL._SY300_.jpg", isLiked: false, description: "This lightweight shoe features a high quality leather upper which provides comfort and durability.", cart: false),
         Product(name:"Mizuno Womens Finch Franshise TPU Cleats", store:"shoes", type:"B0009WQG1G", price:"39.99", image:"http://ecx.images-amazon.com/images/I/51BNGZZ4TKL._SY300_.jpg", isLiked: false, description: "Mizuno's primary TPU cleat designed for competitive league play Proprietary synthetic leather is lightweight, breathable, and provides excellent durability Patented 9-Spike&trade.", cart: false),
         Product(name:"Vera Bradley Tote Blue Rhapsody", store:"accessories", type:"0641997078", price:"47.99", image:"http://ecx.images-amazon.com/images/I/51WqmUxYACL._SY300_.jpg", isLiked: false, description: "Vera Bradley Tote\n1 veryberry paisley,3 symphony in hue, 2 baroque 2 poppy fields 1 blue rhapsody in stock.", cart: false),
@@ -59,54 +79,37 @@ class ProductTableViewController: UITableViewController, NSFetchedResultsControl
         Product(name:"Silver Super Lustrous Butterfly Bracelet Homemade Style", store:"accessories", type:"1983049581", price:"7.98", image:"http://ecx.images-amazon.com/images/I/41BdF%2B4Q47L._SY300_.jpg", isLiked: false, description: "Brand new and high quality\nSize: 24x4x0.5cm\nShape: round\nType: Butterfly Bracelet\nLuster: super lustrous\nColor: Silver\nWeight: 0.20oz", cart: false),
         Product(name:"Arroyo Capris - Women's by Mountain Hardwear", store:"clothing", type:"B0001UF5WW", price:"54.95", image:"http://ecx.images-amazon.com/images/I/31np%2BOV088L._SY300_.jpg", isLiked: false, description: "The stylin' Arroyo Capri by Mountain Hardwear packs a lot of punch into a cute, trail-worthy Capri.", cart: false),
         Product(name:"Marmot Women's Flair Jacket", store:"clothing", type:"B00020X47Y", price:"65.61", image:"http://ecx.images-amazon.com/images/I/31cYtkEBjFL._SY300_.jpg", isLiked: false, description: "Stay in because of freezing temps? Not this stylish mountain dweller. The Flair Jacket keeps you cozy regardless of chill factor with beautiful, plush Raschel fleece.", cart: false),
-        Product(name:"Fender Logo Tee,Black, Medium", store:"clothing", type:"B0002KZGUM", price:"19.99", image:"http://ecx.images-amazon.com/images/I/41Gw%2BB42y2L._SY300_.jpg", isLiked: false, description: "100-percent pre-shrunk cotton tee features full-front screen printing, a seamless collar, taped neck and shoulders, and double-needle stitching.", cart: false),
-        Product(name:"Australian XTRA Large Black Oilskin Duster - Riding Coat", store:"clothing", type:"B00016IYDI", price:"99.95", image:"http://ecx.images-amazon.com/images/I/41ALVrPFfKL._SY300_.jpg", isLiked: false, description: "Australian extra large duster from is completely wind and waterproof. Made of premium oiled Egyptian cotton. Comes with full shoulder cape and rear gusset.", cart: false),
-        Product(name:"Adult Satin Baseball Jacket with Striped Trim From Augusta Sportswear", store:"clothing", type:"B0001ZV418", price:"42.4", image:"http://ecx.images-amazon.com/images/I/41G8TllWA6L._SY300_.jpg", isLiked: false, description: "Outer shell of nylon satin, polyester brushed tricot liningBaseball stylingRaglan sleevesReinforced slash front pocketsColor and white-striped 1x1 rib-knit cuffs.", cart: false),
-        Product(name:"Zildjian Classic T-Shirt Black Large", store:"clothing", type:"B0002D0IB6", price:"12.96", image:"http://ecx.images-amazon.com/images/I/41nd0xnSAyL._SX300_.jpg", isLiked: false, description: "Zildjian's script logo is on the front; the company's Avedis Zildjian logo and Arabic script is screened on the back. 100% cotton.", cart: false),
-        Product(name:"Bon 14-722 Heavy Duty Yellow Rubber Contractor's Overshoe Boot", store:"shoes", type:"B0006846JM", price:"33.75", image:"http://ecx.images-amazon.com/images/I/41kVCRGWyZL._SY300_.jpg", isLiked: false, description: "Heavy duty yellow rubber boots with reinforced soles and heavy treads protect against slipping.  Perfect for contractors or anyone else working in the outdoors in less that ideal conditions.", cart: false),
-        Product(name:"Norcross Safety 74928-11 PVC Safety Boot", store:"shoes", type:"B000676YXE", price:"24.97", image:"http://ecx.images-amazon.com/images/I/418mqre06iL._SY300_.jpg", isLiked: false, description: "Constructed with beige Anti-Skid outsole and heel for added traction. Foot Form contour cushion insole gives exceptional comfort.", cart: false),
-        Product(name:"Zildjian Tank Top, Black Xl", store:"clothing", type:"B0002GIVHQ", price:"25.82", image:"http://ecx.images-amazon.com/images/I/41-Tv%2BM5doL._SY300_.jpg", isLiked: false, description: "Free your playing arms. 100% Cotton.", cart: false),
-        Product(name:"Onguard 16&quot; Monarch Steel Toe PVC Knee Boot", store:"shoes", type:"B0008F4HR4", price:"16.99", image:"http://ecx.images-amazon.com/images/I/41H38KTBRVL._SY300_.jpg", isLiked: false, description: "This 100% waterproof boot features cushion insoles, pull-up and kick-off lugs for easy on and off, and a cut-off band for height adjustment.", cart: false),
-        Product(name:"Anvil 7.1 oz Cotton Short-Sleeve Henley Available in 7 Colors", store:"clothing", type:"B0002NZN8E", price:"19.95", image:"http://ecx.images-amazon.com/images/I/213vWk-93CL.jpg", isLiked: false, description: "Dressed up-sure-but never \"buttoned down.\" Henley neckline is an undated take on a vintage style.", cart: false),
-        Product(name:"Wizard of Oz Child's Deluxe Dorothy Ruby Red Slippers", store:"shoes", type:"B00004U3SF", price:"20.09", image:"http://ecx.images-amazon.com/images/I/41MWXUHWGZL._SY300_.jpg", isLiked: false, description: "For any girl who's enchanted by theWizard of Oz, and Dorothy in  particular, there can be no peace in the kingdom until the magic ruby slippers are hers.", cart: false),
-        Product(name:"Birkenstock 68051 Green Super Birki Clog)", store:"shoes", type:"B00004VWJW", price:"71.9", image:"http://ecx.images-amazon.com/images/I/41CHQ5CFCQL._SX300_.jpg", isLiked: false, description: "There's a delicious satisfaction in slipping on a good pair of clogs as you head out to the garden. These are those kinds of clogs, and typical Birkenstocks in every sense: classically colored, intensely comfortable, and smartly made.", cart: false),
-        Product(name:"Birkenstock 68041Yellow Super Birki Clog", store:"shoes", type:"B00004VWJH", price:"65.9", image:"http://ecx.images-amazon.com/images/I/31HK3GG03AL._SX300_.jpg", isLiked: false, description: "There's a delicious satisfaction in slipping on a good pair of clogs as you head out to the garden. These are those kinds of clogs, and typical Birkenstocks in every sense: classically colored, intensely comfortable, and smartly made.", cart: false),
-        Product(name:"Lacrosse 18-Inch Grange Boot", store:"shoes", type:"B00004VWKY", price:"84.99", image:"http://ecx.images-amazon.com/images/I/41P15E2PWML._SY300_.jpg", isLiked: false, description: "LaCrosse has a strong heritage in rubber. Their standards remain high.  LaCrosse 18-inch Grange boot is less prone to ozone damage, which can cause surface cracking and failure, is less likely to tear, and has a durable lining.", cart: false),
-        Product(name:"adidas Originals Men's Italia 74 Training Shoe", store:"shoes", type:"B000EE3HLQ", price:"79.99", image:"http://ecx.images-amazon.com/images/I/41T8FKBGATL._SY300_.jpg", isLiked: false, description: "An EVA midsole delivers enviable shock absorption, while the full leather upper and suede toe bumper provide flexible support and ample foot protection.", cart: false),
-        Product(name:"Fila Men's Original Vintage Tennis Shoe", store:"shoes", type:"B000EYDGNA", price:"76.95", image:"http://ecx.images-amazon.com/images/I/4126N8P1PPL._SY300_.jpg", isLiked: false, description: "Fila is inspired by Biella's dedication to artistry, luxury, and elegance. They continue to enrich the athletic experience by improving comfort and performance with Italian design, quality craftsmanship, and refined materials.", cart: false),
-        Product(name:"Dickies Occupational Workwear Denim Cotton Relaxed Fit Men's Industrial Jean", store:"clothing", type:"B0001YRNKU", price:"16.99", image:"http://ecx.images-amazon.com/images/I/41weB4OGW2L._SX342_.jpg", isLiked: false, description: "Dickies men's industrial relaxed fit jean with straight leg.", cart: false),
-        Product(name:"Dickies Occupational Workwear Denim Cotton Regular Fit Men's Industrial Jean Indigo Blue", store:"clothing", type:"B0001YROC2", price:"17.19", image:"http://ecx.images-amazon.com/images/I/41RN1uQz4VL._SY445_.jpg", isLiked: false, description: "Dickies men's industrial regular fit jean with straight leg.", cart: false),
-        Product(name:"Russell Outdoors Men's Flintlock Hooded Jacket", store:"clothing", type:"B0002EDQLY", price:"24.95", image:"http://ecx.images-amazon.com/images/I/51nYjiLtRZL._SY300_.jpg", isLiked: false, description: "The Flintlock Hooded Jacket has a two way zipper covered with a storm flap for added protection from the elements. The rear of the jacket features a license loop.", cart: false),
-        Product(name:"FiveTen Men's Coyote Lace-Up Climbing Shoe", store:"shoes", type:"B0009U5EH0", price:"24.93", image:"http://ecx.images-amazon.com/images/I/51NP13O3uEL._SY300_.jpg", isLiked: false, description: "Five Ten's Coyote was made particularly for those whose love sport climbing. The pull-on loops offer an easy entry while its traditional lace-up offers a custom, comfortable fit.", cart: false),
-        Product(name:"Mountain Hardwear Men's Exposure II Parka", store:"clothing", type:"B0000E1YVK", price:"190.0", image:"http://ecx.images-amazon.com/images/I/31LbdeF-KcL._SX300_.jpg", isLiked: false, description: "The Mountain Hardwear Exposure II waterproof and breathable parka is for those of you who do a little of everything in all types of conditions and want your parka to do the same.", cart: false),
-        Product(name:"Honeywell Safety 74928-8 Servus Men's Shrimp Mid Boot", store:"shoes", type:"B0000DCS8K", price:"22.77", image:"http://ecx.images-amazon.com/images/I/41POktnmGOL._SY300_.jpg", isLiked: false, description: "These Servus men's mid boot features plain toe, extended ribbed steel shank, removable and washable ergonomic insoles.", cart: false),
-        Product(name:"Bucket Boss Brand 06005 Contractors Briefcase", store:"accessories", type:"B00002243H", price:"29.99", image:"http://ecx.images-amazon.com/images/I/51fhCAW06nL._SX300_.jpg", isLiked: false, description: "The Bucket Boss 06005 Contractor's Briefcase handles both the business and the tool aspects of your job. Two jumbo cargo pockets have room for a laptop, papers, and files, and smaller pockets hold card, pens, and pencils. A security pocket holds your checkbook, and a zippered flap pocket on the outside keeps papers for frequent and easy access.", cart: false)
+        Product(name:"Green Bay Packers Foam Cheese Earrings", store:"accessories", type:"B00021LLU0", price:"8.19", image:"http://ecx.images-amazon.com/images/I/41oJfv2qNaL._SX300_.jpg", isLiked: false, description: "Pierced Earrings are shaped like two slices of cheese.", cart: false),
+        Product(name:"RHODIUM NECKLACE JEWELRY SILVER JERUSALEM CROSS K-131", store:"accessories", type:"9895501900", price:"4.99", image:"http://ecx.images-amazon.com/images/I/31Y%2B-QiRsyL._SY300_.jpg", isLiked: false, description: "The Size Of The Cross Is 1.5X1.5 cmㄡ", cart: false),
+        Product(name:"Marmot Women's Sling Shot Jacket", store:"clothing", type:"B00022LVYA", price:"325.0", image:"http://ecx.images-amazon.com/images/I/41HZU2RPFnL._SY300_.jpg", isLiked: false, description: "Two-layer MemBrain waterproof, breathable fabric and 650 fill goose down deliver warmth, protection, and comfort for extended stays in the white room.", cart: false),
+        Product(name:"Glow in the Dark Fashion Beaded Penuar", store:"clothing", type:"1304743128", price:"19.99", image:"http://ecx.images-amazon.com/images/I/41qSrLck4gL._SY300_.jpg", isLiked: false, description: "glow in the dark fashion penuar", cart: false),
+        Product(name:"Boston Red Sox Socks Earrings", store:"accessories", type:"B0002XLWDY", price:"5.99", image:"http://ecx.images-amazon.com/images/I/11NYV1JR6TL.jpg", isLiked: false, description: "Boston Red Sox Socks Earrings", cart: false)
     ]
     
     
     // MARK: -call api
     
     
-//    func getProductList(i: Int){
-//
-//     //        listOfProduct.removeAll()
-//             let productRequest = ProductRequest(type: productsT[i].type)
-//             print("product.type\(productsT[i].type)")
-//             productRequest.getProducts{[weak self] result in
-//                 switch result{
-//                 case .failure(let error):
-//                     print(error)
-//                     print("這裡是error")
-//                 case .success(let product):
-//                     self?.listOfProduct = product
-//                     print("這裡是listOfProduct")
-//
-//                 }
-//             }
-//     //        tableView.reloadData()
-//
-//
-//    }
+    func getProductList(i: Int){
+
+     //        listOfProduct.removeAll()
+             let productRequest = ProductRequest(type: productsT[i].type)
+             print("product.type\(productsT[i].type)")
+             productRequest.getProducts{[weak self] result in
+                 switch result{
+                 case .failure(let error):
+                     print(error)
+                     print("這裡是error")
+                 case .success(let product):
+                     self?.listOfProduct = product
+                     print("這裡是listOfProduct")
+
+                 }
+             }
+     //        tableView.reloadData()
+
+
+    }
     
     
     
@@ -251,16 +254,19 @@ class ProductTableViewController: UITableViewController, NSFetchedResultsControl
 //        searchController = UISearchController(searchResultsController: nil)
 //        self.navigationItem.searchController = searchController
         
-        
+        //MARK:-推播
         //推播
         //設置推送内容
         let content = UNMutableNotificationContent()
         content.title = "ABC store"
         //        content.subtitle = "subtitle：佳妤想睡覺"
-        content.body = "我發現最近您都在瀏覽秋冬毛呢背心！\n我們新出了好幾款您可能會喜歡的，\n點進來看看吧🔜🔜🔜"
+//        content.body = "我發現最近您都在瀏覽秋冬毛呢背心！\n我們新出了好幾款您可能會喜歡的，\n點進來看看吧🔜🔜🔜"
         
         //        content.body = "‼️上週你的3個商品還沒完成結帳哦！\n庫存已經不多了，趕快去看看吧👀"
-        //        content.body = "嘿！你好像越來越接近我們的商店囉！🛍\n剛好最近我們正在做當季折扣，點我前進導航🔜"
+        //boy
+        content.body = "嘿！下雨了🌧我們的商店距離你只有500公尺，快進來躲雨吧☔️☔️☔️\n我們正在做當季折扣，點我前進導航🔜"
+        //girl
+//        content.body = "嘿！你好像越來越接近我們的商店囉！🛍\n剛好最近我們正在做當季折扣，點我前進導航🔜"
         content.badge = 1
         content.sound = UNNotificationSound.default
         // 設置點擊通知後取得的資訊
@@ -270,13 +276,20 @@ class ProductTableViewController: UITableViewController, NSFetchedResultsControl
         let content2 = UNMutableNotificationContent()
         content2.title = "ABC store"
         //        content.subtitle = "subtitle：佳妤想睡覺"
-        content2.body = "嗨！好久沒有進來看看了👀\n您按讚的紀錄中有商品在打折哦，\n🛍🛍🛍趕快把握機會購買！"
+        
+        //boy
+        content2.body = "我發現最近您都在瀏覽牛仔褲！\n我們新出了好幾款您可能會喜歡的，\n點進來看看吧🔜🔜🔜"
+        //girl
+//        content2.body = "嗨！好久沒有進來看看了👀\n您按讚的紀錄中有商品在打折哦，\n🛍🛍🛍趕快把握機會購買！"
+        
         content2.badge = 1
         
         //設置推送内容
         let content3 = UNMutableNotificationContent()
         content3.title = "ABC store"
         //        content.subtitle = "subtitle：佳妤想睡覺"
+        //boy
+        //girl
         content3.body = "‼️‼️上週你的3個商品還沒完成結帳哦！\n庫存已經不多了，趕快去看看吧><"
         content3.badge = 1
         
@@ -334,6 +347,7 @@ class ProductTableViewController: UITableViewController, NSFetchedResultsControl
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        getProductList(i: 0)
         
         navigationController?.hidesBarsOnSwipe = true
     }
@@ -660,9 +674,9 @@ class ProductTableViewController: UITableViewController, NSFetchedResultsControl
                 destinationController.product = productsT[indexPath.row]
                 
                 //想法 預先call api 傳值給下一頁
-//                getProductList(i:indexPath)
-//                print("tableView的\(listOfProduct)")
-//                destinationController.listOfProduct = listOfProduct
+//                getProductList(i:indexPath.row)
+                print("tableView的\(listOfProduct)")
+                destinationController.listOfProduct = listOfProduct
                 
 //                //轉給下一頁
 //                destinationController.product = (searchController.isActive) ? searchResults[indexPath.row]:products[indexPath.row]
