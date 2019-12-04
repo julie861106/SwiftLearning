@@ -12,6 +12,8 @@ class Helper2TableViewController: UITableViewController {
 //    var options2 = ["Ｑ：很餓嗎？還是嘴饞呢？", "嘴饞而已", "小餓", "非常餓"]
     var options2 = ["Ｑ：想要商品呈現的風格？", "氣質優雅", "帥氣中性", "慵懶自在"]
 //    var options2 = ["小饞", "有點餓", "餓", "超級餓"]
+    
+    var num = Int()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +52,27 @@ class Helper2TableViewController: UITableViewController {
         
         
         return option2Cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if segue.identifier == "showFavorite3" {
+                
+                
+                if let indexPath = tableView.indexPathForSelectedRow {
+                    let destinationController = segue.destination as! Helper3TableViewController
+                    
+                    //轉給下一頁
+    //                destinationController.product = (searchController.isActive) ? searchResults[indexPath.row]:products[indexPath.row]
+                    
+                    destinationController.num = (indexPath.row)*3+num
+    //                destinationController.productImageViewName = str02_product_image[indexPath.row]
+    //                destinationController.productName = str02_product_name[indexPath.row]
+    //                destinationController.productStore = str02_store_name
+    //                destinationController.productType = str02_store_type
+                    
+                    
+                }
+            }
     }
 
 }

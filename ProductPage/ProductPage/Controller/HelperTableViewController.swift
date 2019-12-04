@@ -70,7 +70,30 @@ class HelperTableViewController: UITableViewController{
 
         return optionCell
     }
-
-
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+                if segue.identifier == "showFavorite2" {
+                    
+                    
+                    if let indexPath = tableView.indexPathForSelectedRow {
+                        let destinationController = segue.destination as! Helper2TableViewController
+                        
+                        //轉給下一頁
+        //                destinationController.product = (searchController.isActive) ? searchResults[indexPath.row]:products[indexPath.row]
+                        
+                        destinationController.num = indexPath.row
+        //                destinationController.productImageViewName = str02_product_image[indexPath.row]
+        //                destinationController.productName = str02_product_name[indexPath.row]
+        //                destinationController.productStore = str02_store_name
+        //                destinationController.productType = str02_store_type
+                        
+                        
+                    }
+                }
+    }
+        
 }
+
+
+
+

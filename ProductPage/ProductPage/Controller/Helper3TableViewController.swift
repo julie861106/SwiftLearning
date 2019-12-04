@@ -13,6 +13,8 @@ class Helper3TableViewController: UITableViewController {
     var options3 = ["Ｑ：喜歡商品哪一色系？", "冷色系", "暖色系"]
 //    var options3 = ["123", "23", "4", "1234"]
     
+    var num = Int()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let item = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
@@ -42,6 +44,27 @@ class Helper3TableViewController: UITableViewController {
         
         
         return option3Cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if segue.identifier == "showFavoriteFinal" {
+                
+                
+                if let indexPath = tableView.indexPathForSelectedRow {
+                    let destinationController = segue.destination as! FavoriteTableViewController
+                    
+                    //轉給下一頁
+    //                destinationController.product = (searchController.isActive) ? searchResults[indexPath.row]:products[indexPath.row]
+                    
+                    destinationController.num = (indexPath.row)*9+num
+    //                destinationController.productImageViewName = str02_product_image[indexPath.row]
+    //                destinationController.productName = str02_product_name[indexPath.row]
+    //                destinationController.productStore = str02_store_name
+    //                destinationController.productType = str02_store_type
+                    
+                    
+                }
+            }
     }
     
 }

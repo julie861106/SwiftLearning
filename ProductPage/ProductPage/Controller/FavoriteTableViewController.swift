@@ -19,6 +19,7 @@ class FavoriteTableViewController: UITableViewController{
 //            }
 //        }
     
+    var num = Int()
     
     
     
@@ -67,7 +68,7 @@ class FavoriteTableViewController: UITableViewController{
         }
         
     }
-    
+
     var products:[Product] = [
         Product(name:"Dickies Occupational Workwear CR393RNB 34x32 Denim Cotton Relaxed Fit Men's Industrial Jean", store:"clothing", type:"B0001YRNKU", price:"16.99", image:"http://ecx.images-amazon.com/images/I/41weB4OGW2L._SX342_.jpg", isLiked: false, description: "Dickies men's industrial relaxed fit jean with straight leg. Designed for industrial laundries. Deep front pockets. Heavy duty ratcheting brass zipper. ", cart: false),
 
@@ -78,8 +79,7 @@ class FavoriteTableViewController: UITableViewController{
         Product(name:"Benchmark Men's Flame Resistant Relaxed Fit American Denim Jeans", store:"clothing", type:"B009DMTZJ8", price:"78.61",  image:"http://ecx.images-amazon.com/images/I/41yx-sfqRIL._SY445_.jpg", isLiked: false, description: "It does not shrink and offers a generous and comfortable fit.", cart: false),
 
         Product(name:"Dupree Designer Jeans, New to 2013, Featured in Men's Magazine to Diesel", store:"clothing", type:"B00EDTLHS8", price:"45.88",  image:"http://ecx.images-amazon.com/images/I/41veDYXLOSL._SX300_.jpg", isLiked: false, description: "Dupree's Brand, Men's Designer Jeans. New button fly design", cart: false),
-        
-        
+                
         ]
     
     override func viewWillAppear(_ animated: Bool) {
@@ -104,7 +104,8 @@ class FavoriteTableViewController: UITableViewController{
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         //        return str02_product_name.count
-        return products.count
+//        return products.count
+        return 4
         
     }
     
@@ -116,15 +117,31 @@ class FavoriteTableViewController: UITableViewController{
         
         
         //利用網址抓圖片
-        let urlStr = NSURL(string: products[indexPath.row].image)
-        let data = NSData(contentsOf: urlStr! as URL)
-        recommendCell.thumbnailImageView.image = UIImage(data: data! as Data)
+        print("數字\(num)")
+        if num == 13{
+            let urlStr = NSURL(string: products[indexPath.row].image)
+            let data = NSData(contentsOf: urlStr! as URL)
+            recommendCell.thumbnailImageView.image = UIImage(data: data! as Data)
+            //設定cell test
+            //        recommendCell.nameLabel.text = listOfProduct[indexPath.row].title
+            recommendCell.nameLabel.text = products[indexPath.row].name
+
+            recommendCell.storeLabel.text = products[indexPath.row].store
+        }else{
+            let urlStr = NSURL(string: products[indexPath.row+1].image)
+            let data = NSData(contentsOf: urlStr! as URL)
+            recommendCell.thumbnailImageView.image = UIImage(data: data! as Data)
+            //設定cell test
+            //        recommendCell.nameLabel.text = listOfProduct[indexPath.row].title
+            recommendCell.nameLabel.text = products[indexPath.row+1].name
+
+            recommendCell.storeLabel.text = products[indexPath.row+1].store
+        }
         
-        //設定cell test
-//        recommendCell.nameLabel.text = listOfProduct[indexPath.row].title
-        recommendCell.nameLabel.text = products[indexPath.row].name
+        
+        
+        
 //        recommendCell.thumbnailImageView.image = UIImage(named: products[indexPath.row].image)
-        recommendCell.storeLabel.text = products[indexPath.row].store
         //recommendCell.typeLabel.text = products[indexPath.row].type
         
         //        productCell.nameLabel.text = str02_product_name[indexPath.row]
@@ -144,46 +161,46 @@ class FavoriteTableViewController: UITableViewController{
         return recommendCell
     }
     
-    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let deleteAction = UIContextualAction(style: .destructive, title: "Delete"){
-            (action, sourceView, completionHandler) in
-            self.products.remove(at: indexPath.row)
-            self.tableView.deleteRows(at: [indexPath], with: .fade)
-            completionHandler(true)
-        }
-        
-        let shareAction = UIContextualAction(style: .normal, title: "Share"){(action, sourceView, completionHandler) in
-            let defaultText = "Just checking in at " + self.products[indexPath.row].name
-            let activityController: UIActivityViewController
-            
-            if let imageToShare = UIImage(named: self.products[indexPath.row].image){
-                activityController = UIActivityViewController(activityItems: [defaultText, imageToShare], applicationActivities: nil)
-            }else{
-                activityController = UIActivityViewController(activityItems: [defaultText], applicationActivities: nil)
-            }
-            
-            if let popoverController = activityController.popoverPresentationController{
-                if let productCell = tableView.cellForRow(at: indexPath){
-                    popoverController.sourceView = productCell
-                    popoverController.sourceRect = productCell.bounds
-                }
-            }
-            
-            self.present(activityController, animated: true, completion: nil)
-            completionHandler(true)
-            
-        }
-        
-        deleteAction.backgroundColor = UIColor(red: 231.0/255.0, green: 76.0/255.0, blue: 60.0/255.0, alpha: 1.0)
-        deleteAction.image = UIImage(named: "delete")
-        deleteAction.backgroundColor = UIColor(red: 254.0/255.0, green: 149.0/255.0, blue: 38.0/255.0, alpha: 1.0)
-        shareAction.image = UIImage(named: "share")
-        
-        let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction, shareAction])
-        
-        return swipeConfiguration
-        
-    }
+//    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+//        let deleteAction = UIContextualAction(style: .destructive, title: "Delete"){
+//            (action, sourceView, completionHandler) in
+//            self.products.remove(at: indexPath.row)
+//            self.tableView.deleteRows(at: [indexPath], with: .fade)
+//            completionHandler(true)
+//        }
+//
+//        let shareAction = UIContextualAction(style: .normal, title: "Share"){(action, sourceView, completionHandler) in
+//            let defaultText = "Just checking in at " + self.products[indexPath.row].name
+//            let activityController: UIActivityViewController
+//
+//            if let imageToShare = UIImage(named: self.products[indexPath.row].image){
+//                activityController = UIActivityViewController(activityItems: [defaultText, imageToShare], applicationActivities: nil)
+//            }else{
+//                activityController = UIActivityViewController(activityItems: [defaultText], applicationActivities: nil)
+//            }
+//
+//            if let popoverController = activityController.popoverPresentationController{
+//                if let productCell = tableView.cellForRow(at: indexPath){
+//                    popoverController.sourceView = productCell
+//                    popoverController.sourceRect = productCell.bounds
+//                }
+//            }
+//
+//            self.present(activityController, animated: true, completion: nil)
+//            completionHandler(true)
+//
+//        }
+//
+//        deleteAction.backgroundColor = UIColor(red: 231.0/255.0, green: 76.0/255.0, blue: 60.0/255.0, alpha: 1.0)
+//        deleteAction.image = UIImage(named: "delete")
+//        deleteAction.backgroundColor = UIColor(red: 254.0/255.0, green: 149.0/255.0, blue: 38.0/255.0, alpha: 1.0)
+//        shareAction.image = UIImage(named: "share")
+//
+//        let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction, shareAction])
+//
+//        return swipeConfiguration
+//
+//    }
     
     override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let likeAction = UIContextualAction(style: .normal, title: "Like"){
