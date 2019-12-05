@@ -10,7 +10,7 @@ import UIKit
 
 class Helper2TableViewController: UITableViewController {
 //    var options2 = ["Ｑ：很餓嗎？還是嘴饞呢？", "嘴饞而已", "小餓", "非常餓"]
-    var options2 = ["Ｑ：想要商品呈現的風格？", "氣質優雅", "帥氣中性", "慵懶自在"]
+    var options2 = ["Ｑ：想要商品呈現的風格？", "休閒運動", "正式"]
 //    var options2 = ["小饞", "有點餓", "餓", "超級餓"]
     
     var num = Int()
