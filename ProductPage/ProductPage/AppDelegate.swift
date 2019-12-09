@@ -123,10 +123,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         completionHandler()
         
         // 2. 終點座標
-        let sourceLocation = CLLocationCoordinate2D(latitude: 25.0195714, longitude: 121.5412916)
-        //25.0196607,121.5411974
-        //25.0304814,121.5331462
-        let destinationLocation = CLLocationCoordinate2D(latitude: 25.0304814, longitude: 121.5331462)
+        let sourceLocation = CLLocationCoordinate2D(latitude: 25.0324054, longitude: 121.5510823)
+                   //25.0196607,121.5411974
+                   //25.0304814,121.5331462
+                   //25.0335589,121.5520207
+        let destinationLocation = CLLocationCoordinate2D(latitude: 25.0335589, longitude: 121.5520207)
         
         // 3. 初始化 MKPlacemark
         let sourcePlacemark = MKPlacemark(coordinate: sourceLocation, addressDictionary: nil)
