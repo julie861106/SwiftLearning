@@ -23,10 +23,12 @@ class ProductDetailMapCell: UITableViewCell, MKMapViewDelegate{
         // 詢問使用者是否取得當前位置的授權
         locationManager.requestWhenInUseAuthorization()
         
+        
+        
         let studioAnnotation = MKPointAnnotation()
         // 設定大頭針座標
 //        studioAnnotation.coordinate = CLLocationCoordinate2D(latitude: 22.999613, longitude: 120.212775)
-        studioAnnotation.coordinate = CLLocationCoordinate2D(latitude: 25.0195714, longitude: 121.5412916)
+        studioAnnotation.coordinate = CLLocationCoordinate2D(latitude: 25.0324054, longitude: 121.5510823)
         //敦化
 //        studioAnnotation.coordinate = CLLocationCoordinate2D(latitude: 25.015549, longitude: 121.5427091)
         //信義安和
@@ -102,7 +104,7 @@ class ProductDetailMapCell: UITableViewCell, MKMapViewDelegate{
             
             // 設定中間描述
             let label = UILabel()
-            label.text = "辛亥店"
+            label.text = "信義安和店"
             label.font = UIFont(name: "PingFangTC-Medium", size: 14)
             studioAnnotationView?.detailCalloutAccessoryView = label
             
@@ -126,6 +128,7 @@ class ProductDetailMapCell: UITableViewCell, MKMapViewDelegate{
             
 //            let targetLocation = CLLocationCoordinate2D(latitude: 22.999613, longitude: 120.212775)
             
+<<<<<<< HEAD
 //            // 2. 終點座標 G
 //            let sourceLocation = CLLocationCoordinate2D(latitude: 25.0195714, longitude: 121.5412916)
 //            //25.0196607,121.5411974
@@ -137,6 +140,16 @@ class ProductDetailMapCell: UITableViewCell, MKMapViewDelegate{
             //25.0196607,121.5411974
             //25.0304814,121.5331462
             let destinationLocation = CLLocationCoordinate2D(latitude: 25.0335589, longitude: 121.5520207)
+=======
+            // 2. 終點座標
+            let sourceLocation = CLLocationCoordinate2D(latitude: 25.0324054, longitude: 121.5510823)
+                       //25.0196607,121.5411974
+                       //25.0304814,121.5331462
+                       //25.0335589,121.5520207
+            let destinationLocation = CLLocationCoordinate2D(latitude: 25.0335589, longitude: 121.5520207)
+            
+        
+>>>>>>> 38557fcc27559c260acacd30896565c1983a170d
             
             // 3. 初始化 MKPlacemark
             let sourcePlacemark = MKPlacemark(coordinate: sourceLocation, addressDictionary: nil)
