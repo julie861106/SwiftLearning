@@ -27,9 +27,9 @@ class ProductDetail2ViewController: UIViewController, UITableViewDelegate, UITab
     var listOfProduct = [ProductInfo]()
     
     var recommendProducts:[Product] = [
-        Product(name:"Mizuno Women's 9-Spike Classic Mid G4 Cleat", store:"shoes", type:"B0010WE01W", price:"39.99", image:"http://ecx.images-amazon.com/images/I/51B4rMEqB9L._SY300_.jpg", isLiked: false, description: "Leather construction and versatile mid-height styling deliver top-notch support and durability.", cart: false),
-        Product(name:"Mizuno Women's Team II Warm Up Jacke", store:"clothing", type:"B002M788IA", price:"79.97", image:"http://ecx.images-amazon.com/images/I/51os2AoSMtL._SY300_.jpg", isLiked: false, description: "Sleek and keen, FiveTen's Fox will keep you comfortable, secure, and looking sharp, even during a tough climb.", cart: false),
-        Product(name:"FiveTen Women's Siren Climbing Shoe", store:"shoes", type:"B004MXZVNM", price:"99.97", image:"http://ecx.images-amazon.com/images/I/41zzMFqjBHL._SX300_.jpg", isLiked: false, description: "Leather construction and versatile mid-height styling deliver top-notch support and durability.", cart: false)
+        Product(name:"Marmot Men's Pipeline Relaxed Fit Jeans - Dark Indigo 36 - Long", store:"clothing", type:"B0059KTP70", price:"84.95",  image:"http://ecx.images-amazon.com/images/I/41xouUiE1IL._SY300_.jpg", isLiked: false, description: "A slight bit of stretch gives you the freedom to enjoy the great outdoors to their fullest extent.", cart: false),
+        Product(name:"Benchmark Men's Flame Resistant Relaxed Fit American Denim Jeans", store:"clothing", type:"B009DMTZJ8", price:"78.61",  image:"http://ecx.images-amazon.com/images/I/41yx-sfqRIL._SY445_.jpg", isLiked: false, description: "It does not shrink and offers a generous and comfortable fit.", cart: false),
+        Product(name:"Dupree Designer Jeans, New to 2013, Featured in Men's Magazine to Diesel", store:"clothing", type:"B00EDTLHS8", price:"45.88",  image:"http://ecx.images-amazon.com/images/I/41veDYXLOSL._SX300_.jpg", isLiked: false, description: "Dupree's Brand, Men's Designer Jeans. New button fly design", cart: false),
         
     ]
     

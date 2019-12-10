@@ -30,14 +30,14 @@ class ProductDetailMapCell: UITableViewCell, MKMapViewDelegate{
         //敦化
 //        studioAnnotation.coordinate = CLLocationCoordinate2D(latitude: 25.015549, longitude: 121.5427091)
         //信義安和
-//        studioAnnotation.coordinate = CLLocationCoordinate2D(latitude: 25.0324054, longitude: 121.5510823)
+        studioAnnotation.coordinate = CLLocationCoordinate2D(latitude: 25.0324054, longitude: 121.5510823)
         // 設置大頭針標題
         studioAnnotation.title = "ABC store"
         // 設置大頭針副標題，需點選才能看見
 //        studioAnnotation.subtitle = "資工系 德田館"
     
-        studioAnnotation.subtitle = "辛亥店"
-//        studioAnnotation.subtitle = "信義安和店"
+//        studioAnnotation.subtitle = "辛亥店"
+        studioAnnotation.subtitle = "信義安和店"
         // 將大頭針的座標位置設為我們的地圖的中心點
         mapView.setCenter(studioAnnotation.coordinate, animated: true)
         // 更改當前可見區域，並且根據指定的坐標和距離值創建新的MKCoordinateRegion。
@@ -126,11 +126,17 @@ class ProductDetailMapCell: UITableViewCell, MKMapViewDelegate{
             
 //            let targetLocation = CLLocationCoordinate2D(latitude: 22.999613, longitude: 120.212775)
             
-            // 2. 終點座標
-            let sourceLocation = CLLocationCoordinate2D(latitude: 25.0195714, longitude: 121.5412916)
+//            // 2. 終點座標 G
+//            let sourceLocation = CLLocationCoordinate2D(latitude: 25.0195714, longitude: 121.5412916)
+//            //25.0196607,121.5411974
+//            //25.0304814,121.5331462
+//            let destinationLocation = CLLocationCoordinate2D(latitude: 25.0304814, longitude: 121.5331462)
+            
+            // 2. 終點座標B
+            let sourceLocation = CLLocationCoordinate2D(latitude: 25.0324054, longitude: 121.5510823)
             //25.0196607,121.5411974
             //25.0304814,121.5331462
-            let destinationLocation = CLLocationCoordinate2D(latitude: 25.0304814, longitude: 121.5331462)
+            let destinationLocation = CLLocationCoordinate2D(latitude: 25.0335589, longitude: 121.5520207)
             
             // 3. 初始化 MKPlacemark
             let sourcePlacemark = MKPlacemark(coordinate: sourceLocation, addressDictionary: nil)
